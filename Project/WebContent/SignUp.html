@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link  rel="stylesheet" href=”TopPage.css”>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+		<title>TopPage</title>
+	</head>
+	<body>
+		<header id="an_header">
+			<div id="an_header_bar">
+				<div class="container">
+					<div id="an_search">
+						<form id="gSearch_form" action="" method="get" >
+							<p class="input">
+								<span class="icon_font">
+									<i class="fas fa-search"></i>
+									<input type="text" autocomplete="off" placeholder="どうぶつをさがす">
+								</span>
+							</p>
+						</form>
+					</div>
+					<h1 class="logo">
+						<a href="TopPage.html" class="icon_font">
+							Animals
+						</a>
+					</h1>
+					<div class ="no_login">
+						<div class="login">
+							<i class="far fa-user"></i>
+							<a href="ログイン" class="icon_font over">
+							ログイン
+							</a>
+						</div>
+						<p class="regist">
+							<a href="登録画面" class="over">新規会員登録</a>
+						</p>
+					<!-- /.no_login -->
+					</div>
+
+				<!-- /.container -->
+				</div>
+			<!-- /#an_header_bar -->
+			</div>
+		</header>
+		<article id="an_main">
+			<header id="an_title">
+				<div id="an_title_container" class="clearfix">
+					<div class="title_container clearfix">
+						<h1 class="tit icon_font">Animals 新規会員登録</h1>
+						<!-- /.title_container -->
+					</div>
+				<!-- /#an_title_comtainer -->
+				</div>
+				<!-- /#an_title -->
+			</header>
+			<div id="an_body" class="clearfix">
+				<div id="regist" class="clearfix">
+					<div id="wearid" class="section">
+						<h2>新規会員登録</h2>
+						<form action method="post">
+							<div class="section_container">
+								<div class="input">
+									<p class>
+										<input type="text" name="UserName" id="username" placeholder="Animal ID（半角英数のみ）" value="">
+									</p>
+									<p class>
+										<input type="text" name="MailAddress" id="mail_address" placeholder="メールアドレス" value="">
+									</p>
+									<p class>
+										<input type="password" name="Password1" placeholder="パスワード" value="">
+									</p>
+									<p class>
+										<input type="password" name="Password2" placeholder="パスワード(確認用)" value="">
+									</p>
+									<!-- /.input -->
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- /#wearid -->
+				</div>
+				<!-- /#an_body -->
+			</div>
+			<!-- /#an_main -->
+		</article>
+	</body>
+</html>
