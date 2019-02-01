@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link  rel="stylesheet" href=”SignUp.css”>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+		<title>Animals 新規会員登録 - Animals</title>
+	</head>
+	<body>
+		<header id="an_header">
+			<div id="an_header_bar">
+				<div class="container">
+					<div id="an_search">
+						<form id="gSearch_form" action="" method="get" >
+							<p class="input">
+								<span class="icon_font">
+									<i class="fas fa-search"></i>
+									<input type="text" autocomplete="off" placeholder="どうぶつをさがす">
+								</span>
+							</p>
+						</form>
+					</div>
+					<h1 class="logo">
+						<a href="TopPage.html" class="icon_font">
+							Animals
+						</a>
+					</h1>
+					<div class ="no_login">
+						<div class="login">
+							<i class="far fa-user"></i>
+							<a href="Login.html" class="icon_font over">
+							ログイン
+							</a>
+						</div>
+						<p class="regist">
+							<a href="SignUp.html" class="over">新規会員登録</a>
+						</p>
+					<!-- /.no_login -->
+					</div>
+
+				<!-- /.container -->
+				</div>
+			<!-- /#an_header_bar -->
+			</div>
+		</header>
+		<article id="an_main">
+			<header id="an_title">
+				<div id="an_title_container" class="clearfix">
+					<nav id="bread">
+						<ol>
+							<li>
+								<a href="TopPage.html">
+									<span>Animals</span>
+								</a>
+							</li>
+							<li>
+								"ログイン"
+							</li>
+						</ol>
+					<!-- /#bread -->
+					</nav>
+					<div class="title_container clearfix">
+						<h1 class="tit icon_font">ログイン</h1>
+						<!-- /.title_container -->
+					</div>
+				<!-- /#an_title_comtainer -->
+				</div>
+				<!-- /#an_title -->
+			</header>
+			<div id="an_body" class="clearfix">
+					<div id="wearid" class="section">
+						<h2>Animals IDでログイン</h2>
+						<form action="登録" method="post">
+							<div class="section_container">
+								<div class="input">
+									<p>
+										<input type="text" name="UserName" id="username" placeholder="Animals ID または メールアドレス" value="">
+									</p>
+									<p>
+										<input type="password" name="Password" placeholder="パスワード" value="">
+									</p>
+									<!-- /.input -->
+								</div>
+								<div class="sub">
+									<p class="btn">
+									<input type="submit" name="LoginButton" value="ログイン">
+									</p>
+									<!-- /.notes_container -->
+								</div>
+								<!-- /.sub -->
+							</div>
+						</form>
+					</div>
+					<!-- /#wearid -->
+				</div>
+				<!-- /#an_body -->
+			<!-- /#an_main -->
+		</article>
+	</body>
+</html>
