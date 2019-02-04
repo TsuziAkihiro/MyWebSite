@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<link  rel="stylesheet" href=”TopPage.css”>
 		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-		<title>プロフィール - Animals</title>
+		<title>プロフィールの更新 - Animals</title>
 	</head>
 	<body>
 		<div id="container">
@@ -54,13 +54,13 @@
 									</a>
 								</li>
 								<li>
-									"プロフィール"
+									"プロフィールの更新"
 								</li>
 							</ol>
 						<!-- /#bread -->
 						</nav>
 						<div class="title_container clearfix">
-							<h1 class="tit"><i class="fas fa-cogs"></i>"Animalsプロフィール"</h1>
+							<h1 class="tit"><i class="fas fa-cogs"></i>"Animalsプロフィールの更新"</h1>
 							<!-- /.title_container -->
 						</div>
 					</div>
@@ -70,7 +70,7 @@
 						<article id="content_container" class="clearfix">
 							<section id="main">
 								<div id="main_container">
-									<h3>プロフィール情報の閲覧ができます。</h3>
+									<h3>プロフィール情報の更新ができます。</h3>
 									<div id="basic_info" class="list">
 										<p class="tit">基本情報</p>
 										<ul>
@@ -79,7 +79,9 @@
 													<p>Animals ID</p>
 												</div>
 												<div class="main">
-													<p>サンプルネーム</p>
+													<p>
+														<input type="text" name="UserName" id="username" placeholder="Animal ID（半角英数のみ）" value="">
+													</p>
 												</div>
 											</li>
 											<li class="clearfix">
@@ -87,7 +89,9 @@
 													<p>メールアドレス</p>
 												</div>
 												<div class="main">
-													<p>サンプルメールアドレス</p>
+													<p>
+														<input type="text" name="MailAddress" id="mail_address" placeholder="メールアドレス" value="">
+													</p>
 												</div>
 											</li>
 											<li class="clearfix">
@@ -95,7 +99,9 @@
 													<p>生年月日</p>
 												</div>
 												<div class="main">
-													<p>サンプル生年月日</p>
+													<p>
+														<input type="text" name="Birthday" placeholder="生年月日" value="">
+													</p>
 												</div>
 											</li>
 											<li class="clearfix">
@@ -103,15 +109,19 @@
 													<p>性別</p>
 												</div>
 												<div class="main">
-													<p>サンプル性別</p>
+													<p>
+														<label><input type="radio" name="answer" value="男性">男性</label>
+														<label><input type="radio" name="answer" value="女性">女性</label>
+														<label><input type="radio" name="answer" value="その他">その他</label>
+													</p>
 												</div>
 											</li>
 											<li class="button clearfix">
 												<div class="button1">
-													<p><input type="button" onclick="location.href='Update.html'"value="更新"></p>
+													<p><input type="button" onclick="location.href='MyPage.html'"value="戻る"></p>
 												</div>
 												<div class="button2">
-													<p><input type="button" onclick="location.href='TopPage.html'"value="削除"></p>
+													<p><input type="button" onclick="location.href='TopPage.html'"value="更新"></p>
 												</div>
 											</li>
 										</ul>
