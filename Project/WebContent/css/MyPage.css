@@ -1,0 +1,51 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+header{
+  height:65px;
+  width:100%;
+  background-color:#fffff0;
+  box-shadow:0 2px 4px rgba(255,255,255,0.3);
+  top:10px;
+}
+/* containerクラスのCSSを指定してください */
+.container{
+  width:1170px;
+  padding:0 50px;
+  margin:auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-center .title{
+	font-size:50px;
+	color:#808080;
+	line-height:65px;
+	position: relative;
+	float: left;
+	font-family: 'Open Sans';
+}
+.header-right{
+	width:200px;
+	font-size:18px;
+	line-height:65px;
+	float:right;
+}
+.btn{
+	padding:10px;
+	font-size:30px;
+	color:#808080;
+}
+
+.btn:hover{
+	background-color:#4682b4;
+}
+
