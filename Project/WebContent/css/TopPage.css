@@ -111,7 +111,6 @@ header{
 .lesson-wrapper{
 	height:350px;
 	text-align:center;
-	font-size:30px;
 }
 
 .lesson-wrapper .container{
@@ -120,10 +119,10 @@ header{
 	margin:30px 0 0 30px;
 	background-color:rgba(192,192,192,0.2);
 	border-radius: 2px;
-	float:left;
 }
 
-.lesson-wrapper .container p{
-	line-height:230px;
+.lesson-wrapper .container{
+	line-height:280px;
 	font-family: 'Open Sans';
+	font-size:10px;
 }
