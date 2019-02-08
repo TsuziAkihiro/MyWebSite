@@ -144,12 +144,12 @@ header{
 
 .login_btn{
 	margin-right:10px;
-	border:1.3px solid #483d8b;
+	box-shadow:0 0 1px gray;
 	color:#483d8b;
 	border-radius: 3px;
 }
 .login_btn:hover{
-	border:1.3px solid #27224d;
+	box-shadow:0 0 5px gray;
 	color:#27224d;
 }
 
