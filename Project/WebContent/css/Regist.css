@@ -155,3 +155,16 @@ header{
 .signup_btn:hover{
 	background-color:#b31031;
 }
+footer{
+	height:40px;
+	margin-top:40px;
+background: #FFAFBD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+footer .text{
+	color:white;
+	text-align:center;
+	line-height:40px;
+}
