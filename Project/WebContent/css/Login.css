@@ -37,6 +37,7 @@ footer .text{
   margin: 3em auto;
   max-width: 600px;
   box-shadow:0 0 1px gray;
+  padding-bottom:25px;
 }
 
 h1 {
@@ -50,6 +51,10 @@ a {
 }
 form {
   padding: 0 1.5em;
+}
+
+li{
+	list-style: none;
 }
 
 .form-item {
@@ -169,4 +174,10 @@ header{
 
 .signup_btn:hover{
 	background-color:#b31031;
+}
+.accounts{
+	padding:0 150px;
+}
+.account{
+	float:left;
 }
