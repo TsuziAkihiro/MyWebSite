@@ -22,7 +22,6 @@ body {
   background: #fafafa;
   margin: 3em auto;
   max-width: 600px;
-  padding-bottom:20px;
   box-shadow:0 0 1px gray;
 }
 
@@ -66,6 +65,7 @@ form {
 	text-align:center;
 	padding-top:20px;
 }
+
 .button-panel {
   margin: 2em 0 0;
   width: 100%;
@@ -73,7 +73,7 @@ form {
 
 .button-panel .button {
   background-color:white;
-  margin:0 0 0px;
+  margin:0 0 20px;
   border:1px solid #808080;
   border-radius: 2px;
   color: black;
@@ -85,7 +85,7 @@ form {
   text-align: center;
   text-transform: uppercase;
   transition: background 0.3s ease-in-out;
-  width: 100%
+  width: 100%;
 }
 
 .button:hover {
