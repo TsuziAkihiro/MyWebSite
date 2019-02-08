@@ -1,0 +1,152 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+header{
+  height:65px;
+  width:100%;
+  background-color:#fffff0;
+  box-shadow:0 2px 4px rgba(255,255,255,0.3);
+  top:10px;
+}
+/* containerクラスのCSSを指定してください */
+header .container{
+  width:1170px;
+  padding:0 50px;
+  margin:auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-center .title{
+	font-size:50px;
+	color:#808080;
+	line-height:65px;
+	position: relative;
+	float: left;
+	font-family: 'Open Sans';
+}
+.header-right{
+	width:250px;
+	font-size:18px;
+	line-height:65px;
+	float:right;
+}
+.btn{
+	padding:10px;
+	font-size:30px;
+	color:#808080;
+}
+
+.btn:hover{
+	background-color:#4682b4;
+}
+
+.top-wrapper{
+	height:800px;
+	padding-top:0px;
+}
+
+.top-wrapper .container{
+	padding:0 300px;
+
+
+	}
+
+h1{
+	text-align:center;
+	font-size:45px;
+	padding-top:20px;
+}
+
+h2{
+	font-size:30px;
+}
+
+.return{
+	display:block;
+	width:150px;
+	height:40px;
+	background-color:rgba(128,128,128,0.7);
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	line-height:40px;
+	margin:30px 150px 0 0;
+	float:left;
+}
+.return:hover{
+	background-color:rgba(128,128,128,1);
+}
+
+.a{
+	height:100px;
+}
+
+.w_container{
+	float:left;
+}
+.container-left{
+	width:500px;
+	height:650px;
+	margin:30px 0;
+	box-shadow:0 0 8px gray;
+	border-radius:5px
+}
+
+.cart_btn{
+	height:80px;
+	width:300px;
+	font-size:30px;
+	color:white;
+	background-color:#db2c4f;
+	border-radius:4px;
+	cursor:pointer;
+}
+
+.cart_btn:hover{
+	background-color:#cc2949
+}
+
+.container_in{
+	width:500px;
+	margin:0 100px;
+}
+
+.container_out{
+	height:700px;
+}
+
+.container-right_in{
+	padding-left:50px;
+}
+
+.item_name{
+	font-size:65px;
+	font-weight:bold;
+}
+
+.item_detail{
+	font-size:30px;
+}
+footer{
+	height:40px;
+	margin-top:40px;
+background: #FFAFBD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+footer .text{
+	color:white;
+	text-align:center;
+	line-height:40px;
+}
