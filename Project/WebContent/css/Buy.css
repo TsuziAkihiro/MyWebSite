@@ -9,16 +9,20 @@ body {
 a {
   text-decoration: none;
 }
+
+h3{
+	text-align:center;
+	font-size:30px;
+}
 header{
   height:65px;
   width:100%;
   background-color:#fffff0;
   box-shadow:0 2px 4px rgba(0,0,0,0.3);
-
   top:10px;
 }
 /* containerクラスのCSSを指定してください */
-.container{
+header .container{
   width:1170px;
   padding:0 50px;
   margin:auto;
@@ -40,14 +44,35 @@ header{
 	line-height:65px;
 	float:right;
 }
-.btn{
-	padding:10px;
-	font-size:30px;
-	color:#808080;
+
+.main{
+	padding-top:50px;
 }
 
-.btn:hover{
-	background-color:#4682b4;
+.main .container{
+	border:1px solid rgba(0,0,0,0.3);
+	width:80%;
+	margin:0 auto;
+	padding:30px 5px 5px 5px;
+}
+
+.cart_title{
+	padding-left:40px;
+}
+
+.go{
+	padding:10px 20px 10px 20px;
+	width:150px;
+	height:40px;
+	background: #FFAFBD;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	line-height:40px;
+
 }
 
 footer{
