@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="css/Regist.css">
 		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 		<link rel="icon" type="image/png" href="img/ice_cream.png">
+		<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
 	</head>
 	<body>
 	<header>
@@ -22,26 +24,30 @@
 		<div class="form-wrapper">
 	  <h1>新規会員登録</h1>
 	  <form>
-	    <div class="form-item">
+	  <p class="address">Cake IDを入力してください</p>
 	      <label for="email"></label>
-	      <input type="email" name="email" placeholder="Cake IDを入力してください"></input>
-	    </div>
-	    <div class="form-item">
+	      <input type="text" name="email" class="input_txt"></input>
+	  <p class="address">名前を入力してください</p>
+	      <label for="email"></label>
+	      <input type="text" name="email" class="input_txt"></input>
+	  <p class="address">メールアドレス</p>
 	      <label for="password"></label>
-	      <input type="text" name="password" placeholder="メールアドレス"></input>
-	    </div>
-	    <div class="form-item">
+	      <input type="email" name="password" class="input_txt"></input>
+	    <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
+	    <p class="address">郵便番号</p>
+		<input type="text" name="zip31" size="4" maxlength="3" class="input_address"> － <input type="text" name="zip32" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');" class="input_address">
+		<!-- ▼住所入力フィールド(都道府県) -->
+		<p class="address">都道府県</p>
+		<input type="text" name="pref31" size="20" class="input_txt">
+		<!-- ▼住所入力フィールド(都道府県以降の住所) -->
+		<p class="address">以降の住所</p>
+		<input type="text" name="addr31" size="40" class="input_txt">
+		<p class="address">パスワード</p>
 	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所"></input>
-	    </div>
-	    <div class="form-item">
+	      <input type="password" name="password1" class="input_txt"></input>
+	    <p class="address">パスワード(確認用)</p>
 	      <label for="password"></label>
-	      <input type="password" name="password1" placeholder="パスワード"></input>
-	    </div>
-	    <div class="form-item">
-	      <label for="password"></label>
-	      <input type="password" name="password2" placeholder="パスワード(確認用)"></input>
-	    </div>
+	      <input type="password" name="password2" class="input_txt"></input>
 	    <div class="button-panel">
 	      <input type="submit" class="button" title="Sign In" value="登録"></input>
 	    </div>

@@ -81,7 +81,6 @@ h2{
 	cursor:pointer;
 	line-height:40px;
 	margin:30px 150px 0 0;
-	float:left;
 }
 .return:hover{
 	background-color:rgba(128,128,128,1);

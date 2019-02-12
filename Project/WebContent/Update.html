@@ -22,19 +22,22 @@
 		<div class="form-wrapper">
 	  <h1>情報更新</h1>
 	  <form>
-	    <div class="form-item">
+	  <p class="address">Cake ID</p>
 	      <label for="email"></label>
-	      <input type="text" name="email" placeholder="Cake IDを入力してください" value="${udb.loginId}"></input>
-	    </div>
-	    <div class="form-item">
+	      <input type="email" name="email" class="input_txt"></input>
+	  <p class="address">メールアドレス</p>
 	      <label for="password"></label>
-	      <input type="address" name="password" placeholder="メールアドレス"  value="${udb.loginId}"></input>
-	    </div>
-	    <div class="form-item">
-	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所" value="${udb.address}"></input>
-	    </div>
-	    <div class="confirm_text">この内容で更新しますか？</div>
+	      <input type="text" name="password" class="input_txt"></input>
+	    <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
+	    <p class="address">郵便番号</p>
+		<input type="text" name="zip31" size="4" maxlength="3" class="input_address"> － <input type="text" name="zip32" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');" class="input_address">
+		<!-- ▼住所入力フィールド(都道府県) -->
+		<p class="address">都道府県</p>
+		<input type="text" name="pref31" size="20" class="input_txt">
+		<!-- ▼住所入力フィールド(都道府県以降の住所) -->
+		<p class="address">以降の住所</p>
+		<input type="text" name="addr31" size="40" class="input_txt">
+   <div class="confirm_text">この内容で更新しますか？</div>
 	    <div class="button-panel">
 	      <input type="submit" class="button" title="Sign In" value="戻る"></input>
 	    </div>
