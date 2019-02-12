@@ -69,10 +69,14 @@ header .container{
 	padding-left:40px;
 }
 
+.go_container{
+	padding:50px 0 0 0;
+}
 .go{
+	display:block;
 	padding:10px 20px 10px 20px;
-	width:150px;
-	height:40px;
+	width:50%;
+	margin:0 auto;
 	background: #FFAFBD;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
