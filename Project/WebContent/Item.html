@@ -6,6 +6,20 @@
 	<link rel="stylesheet" href="css/Item.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<script type="text/javascript">
+	        $(document).ready(function(){
+	            $('.slider').bxSlider({
+	            	controls: false,
+	                auto: false,
+	                pause: 5000,
+	            });
+	        });
+	</script>
 </head>
 	<body>
 		<header>
@@ -28,7 +42,12 @@
 				</div>
 				<div class="container_out">
 					<div class="container-left w_container">
-						<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375">
+						<div class="slider">
+							<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375" alt="">
+							<img src="gazou2.jpg" width="500" height="375" alt="">
+							<img src="gazou3.jpg" width="500" height="375" alt="">
+							<img src="gazou4.jpg" width="500" height="375" alt="">
+						</div>
 						<form action="ItemAdd" method="POST">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<div class="container_in">

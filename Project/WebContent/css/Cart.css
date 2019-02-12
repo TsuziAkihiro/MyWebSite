@@ -85,6 +85,19 @@ header .container{
 	line-height:40px;
 
 }
+
+.go:hover{
+		color:white;
+		text-decoration: none;
+		background:rgb(255,176,189);
+}
+
+.return_wrapper{
+	width:80%;
+	height:60px;
+	padding:0 390px;
+}
+
 .return{
 	display:block;
 	width:150px;
@@ -100,6 +113,8 @@ header .container{
 }
 .return:hover{
 	background-color:rgba(128,128,128,1);
+	color:white;
+	text-decoration: none;
 }
 footer{
 	height:40px;

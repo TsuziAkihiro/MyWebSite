@@ -88,6 +88,12 @@ header .container{
 
 }
 
+.go:hover{
+		color:white;
+		text-decoration: none;
+		background:rgb(255,176,189);
+}
+
 footer{
 	height:40px;
 	margin-top:40px;

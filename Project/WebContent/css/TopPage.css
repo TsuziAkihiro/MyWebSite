@@ -18,7 +18,17 @@ header{
   z-index:2;
 }
 /* containerクラスのCSSを指定してください */
-.container{
+header .container{
+  width:1170px;
+  padding:0 50px;
+  margin:auto;
+  position: relative;
+  overflow: hidden;
+  z-index:1;
+}
+
+
+.top-wrapper .container{
   width:1170px;
   padding:0 50px;
   margin:auto;
@@ -130,7 +140,7 @@ header{
 	text-align:center;
 }
 
-.lesson-wrapper .container{
+.lesson-wrapper .wrapper, .lesson-wrapper .container{
 	padding:0;
 	float:left;
 	width:25%;
@@ -144,6 +154,20 @@ header{
 	box-shadow:0 0 1px gray;
 }
 
+.container {
+	overflow: hidden;	/*拡大時にはみ出た部分を隠す*/
+	width: 320px;	/*画像の幅*/
+	height: 180px;	/*画像の高さ*/
+}
+.container img {
+	display: block;
+	transition-duration: 0.3s;	/*変化に掛かる時間*/
+}
+.container img:hover {
+	transform: scale(1.1);	/*画像の拡大率*/
+	transition-duration: 0.3s;	/*変化に掛かる時間*/
+}
+
 footer{
 	height:40px;
 	margin-top:40px;
@@ -152,13 +176,13 @@ background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-
 background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-footer .text{
+footer .container{
+	width:100%;
+	height:40px;
+}
+
+.container .text{
 	color:white;
 	text-align:center;
 	line-height:40px;
-}
-
-.swiper-container {
-    width: 600px;
-    height: 300px;
 }

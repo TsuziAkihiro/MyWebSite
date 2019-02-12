@@ -87,6 +87,11 @@ header .container{
 	line-height:40px;
 
 }
+.go:hover{
+		color:white;
+		text-decoration: none;
+		background:rgb(255,176,189);
+}
 
 footer{
 	height:40px;
