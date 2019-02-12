@@ -13,7 +13,8 @@ header{
   height:65px;
   width:100%;
   background-color:#fffff0;
-  box-shadow:0 2px 4px rgba(255,255,255,0.3);
+    box-shadow:0 2px 4px rgba(0,0,0,0.3);
+
   top:10px;
 }
 /* containerクラスのCSSを指定してください */

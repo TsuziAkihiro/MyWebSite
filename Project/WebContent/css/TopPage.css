@@ -13,7 +13,7 @@ header{
   height:65px;
   width:100%;
   background-color:#fffff0;
-  box-shadow: 0 10px rgba(0,0,0,0.5);
+  box-shadow:0 2px 4px rgba(0,0,0,0.3);
   top:10px;
   z-index:2;
 }
