@@ -170,7 +170,13 @@ header{
 }
 
 .input_address{
- width:50px;
+ width:75px;
+ height:25px;
+ border:1px solid #a9a9a9;
+ border-radius:2px;
+}
+.input_address_txt{
+ width:272px;
  height:25px;
  border:1px solid #a9a9a9;
  border-radius:2px;
