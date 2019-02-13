@@ -163,6 +163,10 @@ header{
 	background-color:#b31031;
 }
 
+.address{
+	padding-top:15px;
+	font-size:16px;
+}
 
 .input_txt{
  width:350px;
@@ -174,11 +178,19 @@ header{
 	margin-top:0;
 }
 .input_address{
- width:50px;
+ width:75px;
  height:25px;
  border:1px solid #a9a9a9;
  border-radius:2px;
 }
+
+.input_address_txt{
+ width:272px;
+ height:25px;
+ border:1px solid #a9a9a9;
+ border-radius:2px;
+}
+
 footer{
 	height:40px;
 	margin-top:40px;
