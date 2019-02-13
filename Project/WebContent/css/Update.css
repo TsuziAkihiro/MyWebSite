@@ -64,10 +64,10 @@ form {
 	font-size:20px;
 	text-align:center;
 	padding-top:20px;
+	padding-bottom:20px;
 }
 
 .button-panel {
-  margin: 2em 0 0;
   width: 100%;
 }
 
@@ -170,7 +170,9 @@ header{
  border:1px solid #a9a9a9;
  border-radius:2px;
 }
-
+.regist_btn_panel{
+	margin-top:0;
+}
 .input_address{
  width:50px;
  height:25px;
