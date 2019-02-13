@@ -1,0 +1,69 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+header{
+  height:65px;
+  width:100%;
+  background-color:#fffff0;
+  box-shadow:0 2px 4px rgba(0,0,0,0.3);
+  top:10px;
+}
+/* containerクラスのCSSを指定してください */
+header .container{
+  width:1170px;
+  padding:0 50px;
+  margin:auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-center .title{
+	font-size:50px;
+	color:#808080;
+	line-height:65px;
+	position: relative;
+	float: left;
+	font-family: 'Open Sans';
+}
+.header-right{
+	width:250px;
+	font-size:18px;
+	line-height:65px;
+	float:right;
+}
+.btn{
+	padding:10px;
+	font-size:30px;
+	color:#808080;
+}
+
+.btn:hover{
+	background-color:#4682b4;
+}
+
+.top-wrapper{
+
+}
+
+/*  フッター情報 */
+	footer{
+	height:40px;
+	margin-top:40px;
+background: #FFAFBD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+footer .text{
+	color:white;
+	text-align:center;
+	line-height:40px;
+}
