@@ -57,7 +57,7 @@ header .container{
 }
 
 .main{
-	padding-top:50px;
+	padding-top:30px;
 }
 
 .main .container{
@@ -108,7 +108,6 @@ header .container{
 	border-radius:5px;
 	cursor:pointer;
 	line-height:40px;
-	margin:30px 150px 0 0;
 	float:left;
 }
 .return:hover{

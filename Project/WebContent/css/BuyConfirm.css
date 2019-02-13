@@ -53,9 +53,32 @@ header .container{
 .btn:hover{
 	background-color:#4682b4;
 }
+.return_wrapper{
+	width:80%;
+	height:60px;
+	padding:0 390px;
+}
+
+.return{
+	display:block;
+	width:150px;
+	height:40px;
+	background-color:rgba(128,128,128,0.7);
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	line-height:40px;
+	float:left;
+}
+.return:hover{
+	background-color:rgba(128,128,128,1);
+	color:white;
+	text-decoration: none;
+}
 
 .main{
-	padding-top:50px;
+	padding-top:30px;
 }
 
 .main .container{

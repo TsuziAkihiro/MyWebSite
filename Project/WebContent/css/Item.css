@@ -136,6 +136,12 @@ h2{
 .item_detail{
 	font-size:30px;
 }
+
+.cnt_name{
+	width:50px;
+	height:40px;
+}
+
 footer{
 	height:40px;
 	margin-top:40px;

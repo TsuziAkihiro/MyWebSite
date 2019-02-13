@@ -38,7 +38,7 @@
 		<div class="top-wrapper">
 			<div class="container">
 				<div class="a">
-					<a href="List.html" class="return">>戻る</a>
+					<a href="TopPage.html" class="return">>戻る</a>
 				</div>
 				<div class="container_out">
 					<div class="container-left w_container">
@@ -51,7 +51,15 @@
 						<form action="ItemAdd" method="POST">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<div class="container_in">
-								<h2>¥${item.price}</h2>
+								<h2>¥${item.price}　
+									<select name="cnt" class="cnt_name">
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+								</h2>
 								<button class="cart_btn" type="submit" name="action">カートに入れる</button>
 							</div>
 						</form>
