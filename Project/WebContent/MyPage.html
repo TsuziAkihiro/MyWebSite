@@ -19,7 +19,7 @@
 	        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
 	        </div>
 	        <div class="header-right">
-	        	<a href="List.html" class="list_btn btn"><i class="fas fa-users"></i></a>
+	        	<a href="UserManager.html" class="list_btn btn"><i class="fas fa-users"></i></a>
 				<a href="MyPage.html" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
 				<a href="Cart.html" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 				<a href="Logout.html" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
@@ -112,5 +112,18 @@
 			</div>
 		</footer>
 	<script type="text/javascript" src="./js/MyPage.js"></script>
+	<script type="text/javascript">
+   $(function(){
+      // ▼マウスが載ったらサブメニューを表示
+      $("ul.ddmenu li").mouseenter(function(){
+         $(this).siblings().find("ul").hide();  // 兄弟要素に含まれるサブメニューを全部消す。
+         $(this).children().slideDown(150);     // 自分のサブメニューを表示する。
+      });
+      // ▼どこかがクリックされたらサブメニューを消す
+      $('html').click(function() {
+         $('ul.ddmenu ul').slideUp(150);
+      });
+   });
+</script>
 	</body>
 </html>
