@@ -76,7 +76,7 @@ header .container{
 }
 
 .main{
-	height:1250px;
+	height:1290px;
 	width:100%;
 	margin-bottom:100px;
 }
@@ -116,6 +116,7 @@ header .container{
 	width:20%;
 	margin-bottom:5px;
 	transition:box-shadow 0.2s;
+
 }
 
 .goods:hover{
