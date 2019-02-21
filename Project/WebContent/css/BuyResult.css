@@ -37,6 +37,7 @@ header .container{
 	position: relative;
 	float: left;
 	font-family: 'Open Sans';
+	text-decoration: none;
 }
 .header-right{
 	width:250px;

@@ -161,6 +161,37 @@ h2{
   -webkit-transition: background 1s steps(28);
   transition: background 1s steps(28);
 }
+
+.bot_wrapper{
+	text-align:center;
+}
+
+.bot_wrapper .container{
+	height:50px;
+}
+
+.go{
+	padding:30px 200px 30px 200px;
+	margin:100px 100px;
+	width:150px;
+	height:40px;
+	background: #FFAFBD;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	line-height:40px;
+
+}
+
+.go:hover{
+		color:white;
+		text-decoration: none;
+		background:rgb(255,176,189);
+}
+
 footer{
 	height:40px;
 	margin-top:40px;
