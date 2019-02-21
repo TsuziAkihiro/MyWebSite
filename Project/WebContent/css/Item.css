@@ -18,7 +18,7 @@ header{
 }
 /* containerクラスのCSSを指定してください */
 header .container{
-  width:1170px;
+  width:1050px;
   padding:0 50px;
   margin:auto;
   position: relative;
@@ -32,6 +32,7 @@ header .container{
 	position: relative;
 	float: left;
 	font-family: 'Open Sans';
+	text-decoration: none;
 }
 .header-right{
 	width:250px;
@@ -40,9 +41,15 @@ header .container{
 	float:right;
 }
 .btn{
-	padding:10px;
-	font-size:30px;
-	color:#808080;
+	color: #212529;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,
+				background-color .15s ease-in-out,
+				border-color .15s ease-in-out,
+				box-shadow .15s ease-in-out;
 }
 
 .btn:hover{
