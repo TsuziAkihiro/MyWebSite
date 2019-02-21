@@ -76,7 +76,7 @@ header .container{
 }
 
 .main{
-	height:1250px;
+	height:1350px;
 	width:100%;
 	margin-bottom:100px;
 }
@@ -86,6 +86,27 @@ header .container{
 	height:100%;
 	padding:0 50px 50px 50px;
 }
+
+.refer{
+	text-align:center;
+}
+
+.eat_text{
+	 height:45px;
+	 width:500px;
+	 font-size:20px;
+	 border-radius: 2px;
+	 margin-top:80px;
+	 opacity: 0.5;
+	 left:4.8px;
+	 bottom:9.9px;
+	border-bottom:1px solid #cccccc;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-radius:0px;
+}
+
 .text_wrapper{
 	padding:50px 0 40px 0;
 }
