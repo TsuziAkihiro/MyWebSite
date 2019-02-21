@@ -1,0 +1,211 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+
+p{
+	margin:0 0 0 0;
+}
+
+header{
+  height:65px;
+  width:100%;
+  background-color:#fffff0;
+  box-shadow:0 2px 4px rgba(0,0,0,0.3);
+  top:10px;
+}
+/* containerクラスのCSSを指定してください */
+header .container{
+  width:1050px;
+  padding:0 50px;
+  margin:auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-center .title{
+	font-size:50px;
+	color:#808080;
+	line-height:65px;
+	position: relative;
+	float: left;
+	font-family: 'Open Sans';
+	text-decoration: none;
+}
+.header-right{
+	width:250px;
+	font-size:18px;
+	line-height:65px;
+	float:right;
+}
+.btn{
+	color: #212529;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,
+				background-color .15s ease-in-out,
+				border-color .15s ease-in-out,
+				box-shadow .15s ease-in-out;
+}
+
+.btn:hover{
+	background-color:#4682b4;
+}
+
+.top-wrapper{
+	height:800px;
+	padding-top:0px;
+}
+
+.top-wrapper .container{
+	padding:0 300px;
+
+
+	}
+
+h1{
+	text-align:center;
+	font-size:45px;
+	padding-top:20px;
+}
+
+h2{
+	font-size:30px;
+}
+
+.return{
+	display:block;
+	width:150px;
+	height:40px;
+	background-color:rgba(128,128,128,0.7);
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	line-height:40px;
+	margin:30px 150px 0 0;
+}
+.return:hover{
+	background-color:rgba(128,128,128,1);
+}
+
+.a{
+	height:50px;
+}
+
+.w_container{
+	float:left;
+}
+.container-left{
+	width:500px;
+	height:650px;
+	margin:30px 0;
+	box-shadow:0 0 8px gray;
+	border-radius:5px
+}
+
+.cart_btn{
+	margin-top:50px;
+	height:80px;
+	width:300px;
+	font-size:30px;
+	color:white;
+	background-color:#db2c4f;
+	border-radius:4px;
+	cursor:pointer;
+}
+
+.cart_btn:hover{
+	background-color:#cc2949
+}
+
+.container_in{
+	width:500px;
+	margin:0 100px;
+}
+
+.container_out{
+	height:700px;
+}
+
+.container-right_in{
+	padding-left:50px;
+	padding-top:150px;
+}
+
+.item_name{
+	font-size:65px;
+	font-weight:bold;
+}
+
+.item_detail{
+	font-size:30px;
+}
+.price{
+	margin-top:20px;
+}
+
+.cnt_name{
+	width:50px;
+	height:40px;
+}
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url(http://nelog.jp/wp-content/uploads/2016/03/heart_animation.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  padding-top:100px;
+}
+.heart:active {
+  background-position: -2800px 0;
+  -webkit-transition: background 1s steps(28);
+  transition: background 1s steps(28);
+}
+
+.bot_wrapper{
+	text-align:center;
+}
+
+.bot_wrapper .container{
+	height:50px;
+}
+
+.detail{
+	display:block;
+	width:100px;
+}
+
+.itemDetail{
+	height:100px;
+	width:300px;
+}
+
+
+footer{
+	height:40px;
+	margin-top:40px;
+background: #FFAFBD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+footer .container{
+	width:100%;
+	height:40px;
+}
+
+.container .text{
+	color:white;
+	text-align:center;
+	line-height:40px;
+}

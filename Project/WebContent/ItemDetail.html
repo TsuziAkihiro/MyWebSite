@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>商品確認 - Cake</title>
-	<link rel="stylesheet" href="css/Item.css">
+	<link rel="stylesheet" href="css/ItemDetail.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
 
@@ -36,52 +36,37 @@
 			</div>
 	      </div>
 		</header>
-		<div class="top-wrapper">
-			<div class="container">
-				<div class="a">
-					<a href="TopPage.html" class="return">>戻る</a>
-				</div>
-				<div class="container_out">
-					<div class="container-left w_container">
-							<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375" alt="">
-						<form action="ItemAdd" method="POST">
-							<input type="hidden" name="item_id" value="${item.id}">
-							<div class="container_in">
-								<h2>¥${item.price}　
-									<select name="cnt" class="cnt_name">
-										<option value="1" selected>1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-									</select>
-								</h2>
-								<button class="cart_btn" type="submit" name="action">カートに入れる</button>
-							</div>
-						</form>
+		<form action="ItemAdd" method="POST">
+			<div class="top-wrapper">
+				<div class="container">
+					<div class="a">
+						<a href="Item.html" class="return">>戻る</a>
 					</div>
-					<div class="container-right w_container">
-						<form action="ItemAdd" method="POST">
-						<div class="container-right_in">
-							<p class="item_name">${item.name}</p>
-							<p class="item_detail">${item.detail}</p>
-							<button class="cart_btn" type="submit" name="action">お気に入り</button>
+					<div class="container_out">
+						<div class="container-left w_container">
+								<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375" alt="">
+								<input type="hidden" name="item_id" value="${item.id}">
+								<div class="container_in">
+									<input type="file">
+									<div class="price">
+										<label for="price2">値段</label>
+										<input type="text" class="detail">
+									</div>
+								</div>
 						</div>
-						</form>
+						<div class="container-right w_container">
+							<div class="container-right_in">
+								<label for="item_name detail">商品名</label>
+								<input type="text" class="detail" value="#####">
+								<label for="item_detail detail">商品情報</label>
+								<textarea class="detail itemDetail">12345</textarea>
+								<button class="cart_btn" type="submit" name="action">更新</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="bot_wrapper">
-			<div class="container">
-				<a href="ItemDetail.html" class="go">編集</a>
-				<a href="ItemDelete.html" class="go">削除</a>
-			</div>
-		</div>
+		</form>
 		<footer>
 			<div class="container">
 				<div class="text">Cake</div>
