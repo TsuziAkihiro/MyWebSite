@@ -14,7 +14,7 @@
 	<header>
 	  <div class="container">
         <div class="header-center">
-        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
         </div>
         <div class="header-right">
 			<a href="Login" class="login_btn btn">ログイン</a>
@@ -57,7 +57,7 @@
 			<img src="img/a11b4bb3ba448d1fa402ac3dc62cc91f.jpg" alt="海の写真" width="438.75vw" height="300vw">
 		</div>
 		<div class="container">
-			<a href="Item.html"><img src="img/MAX76_gjmax20140531_TP_V4.jpg" alt="海の写真" width="438.75vw" height="300vw"></a>
+			<a href="Item"><img src="img/MAX76_gjmax20140531_TP_V4.jpg" alt="海の写真" width="438.75vw" height="300vw"></a>
 		</div>
 		<div class="container">
 			<img src="img/merusi14.jpg" alt="海の写真" width="438.75vw" height="300vw">

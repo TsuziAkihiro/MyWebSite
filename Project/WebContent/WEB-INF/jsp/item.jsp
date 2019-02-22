@@ -28,21 +28,21 @@
 		<header>
 		  <div class="container">
 	        <div class="header-center">
-	        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
 	        </div>
 	        <div class="header-right">
 	        <a href="ItemList.html" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
-	        	<a href="UserManager.html" class="list_btn btn"><i class="fas fa-users"></i></a>
-				<a href="MyPage.html" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-				<a href="Cart.html" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-				<a href="Logout.html" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
+	        	<a href="UserManager" class="list_btn btn"><i class="fas fa-users"></i></a>
+				<a href="MyPage" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<a href="Cart" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+				<a href="Logout" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
 			</div>
 	      </div>
 		</header>
 		<div class="top-wrapper">
 			<div class="container">
 				<div class="a">
-					<a href="TopPage.html" class="return">>戻る</a>
+					<a href="TopPage" class="return">>戻る</a>
 				</div>
 				<div class="container_out">
 					<div class="container-left w_container">
@@ -81,8 +81,8 @@
 		</div>
 		<div class="bot_wrapper">
 			<div class="container">
-				<a href="ItemDetail.html" class="go">編集</a>
-				<a href="ItemDelete.html" class="go">削除</a>
+				<a href="ItemDetail" class="go">編集</a>
+				<a href="ItemDelete" class="go">削除</a>
 			</div>
 		</div>
 		<footer>

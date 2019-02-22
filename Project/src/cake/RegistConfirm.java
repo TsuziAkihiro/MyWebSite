@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.UserDataBeans;
 import dao.UserDAO;
+import dao.UserDao;
 
 /**
  * Servlet implementation class RegistConfirm
@@ -45,6 +47,9 @@ public class RegistConfirm extends HttpServlet {
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
 
+			UserDao userDao = new UserDao();
+			List<User> userList = userDao.findAll();
+
 			String validationMessage = "";
 
 			// 入力されているパスワードが確認用と等しいか
@@ -66,7 +71,7 @@ public class RegistConfirm extends HttpServlet {
 			if (validationMessage.length() == 0) {
 				request.setAttribute("udb", udb);
 			       // フォワード
-		        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registConfirm.jsp");
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registconfirm.jsp");
 		        dispatcher.forward(request, response);
 			} else {
 				session.setAttribute("udb", udb);

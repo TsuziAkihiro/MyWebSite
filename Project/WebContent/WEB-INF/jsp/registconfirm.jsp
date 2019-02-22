@@ -14,39 +14,39 @@
 	<header>
 	  <div class="container">
         <div class="header-center">
-        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
         </div>
         <div class="header-right">
-			<a href="Login.html" class="login_btn btn">ログイン</a>
-			<a href="Regist.html" class="signup_btn btn">新規登録</a>
+			<a href="Login" class="login_btn btn">ログイン</a>
+			<a href="Regist" class="signup_btn btn">新規登録</a>
 		</div>
       </div>
 	</header>
 		<div class="form-wrapper">
 	  <h1>入力内容確認</h1>
-	  <form>
+	  <form action="RegistResult" method="POST">
 	    <div class="form-item">
 	      <label for="email"></label>
-	      <input type="text" name="email" placeholder="Cake ID" value="######" readonly></input>
+	      <input type="text" name="email" placeholder="Cake ID" value="${udb.loginId}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="password" placeholder="名前" value="######" readonly></input>
+	      <input type="text" name="password" placeholder="名前" value="${udb.name}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="password" placeholder="メールアドレス" value="######" readonly></input>
+	      <input type="text" name="password" placeholder="メールアドレス" value="${udb.mailAddress}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所" value="######" readonly></input>
+	      <input type="text" name="address" placeholder="住所" value="${udb.postalCode}${udb.prefecture}${udb.address}" readonly></input>
 	    </div>
 	    <div class="confirm_text">この内容で登録しますか？</div>
 	    <div class="button-panel">
-	      <input type="submit" class="button" title="Sign In" value="修正"></input>
+	      <input type="submit" class="button" title="Sign In" value="修正" name="confirm_button"></input>
 	    </div>
 	    <div class="button-panel">
-	      <input type="submit" class="button regist_btn" title="Sign In" value="登録"></input>
+	      <input type="submit" class="button regist_btn" title="Sign In" value="登録" name="confirm_button"></input>
 	    </div>
 	  </form>
 	</div>
