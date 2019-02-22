@@ -1,7 +1,6 @@
 package cake;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import beans.UserDataBeans;
 import dao.UserDAO;
-import dao.UserDao;
 
 /**
  * Servlet implementation class RegistConfirm
@@ -46,9 +44,6 @@ public class RegistConfirm extends HttpServlet {
 			udb.setPrefecture(inputUserPrefecture);
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
-
-			UserDao userDao = new UserDao();
-			List<User> userList = userDao.findAll();
 
 			String validationMessage = "";
 
