@@ -51,6 +51,37 @@ public class UserDAO {
         }
     }
 
+	public static boolean isOverlapLoginId(String loginId, int userId) throws SQLException {
+		// 重複しているかどうか表す変数
+		boolean isOverlap = false;
+		Connection con = null;
+		PreparedStatement st = null;
+
+		try {
+			con = DBManager.getConnection();
+			// 入力されたlogin_idが存在するか調べる
+			st = con.prepareStatement("SELECT login_id FROM t_user WHERE login_id = ? AND id != ?");
+			st.setString(1, loginId);
+			st.setInt(2, userId);
+			ResultSet rs = st.executeQuery();
+
+			System.out.println("searching loginId by inputLoginId has been completed");
+
+			if (rs.next()) {
+				isOverlap = true;
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+
+		System.out.println("overlap check has been completed");
+		return isOverlap;
+	}
 
 
 }

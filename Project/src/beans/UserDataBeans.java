@@ -19,6 +19,17 @@ public class UserDataBeans implements Serializable{
 
 	private int id;
 
+	// コンストラクタ
+	public UserDataBeans() {
+		this.loginId = "";
+		this.name = "";
+		this.mailAddress = "";
+		this.postalCode = "";
+		this.prefecture = "";
+		this.address = "";
+		this.password = "";
+	}
+
 	public UserDataBeans(String loginId, String name) {
 		this.loginId = loginId;
 		this.name = name;
