@@ -29,21 +29,21 @@
 	  <form>
 	  <p class="address">Cake IDを入力してください</p>
 	      <label for="email"></label>
-	      <input type="text" name="email" class="input_txt"></input>
+	      <input type="text" name="login_id" class="input_txt"></input>
 	  <p class="address">名前を入力してください</p>
 	      <label for="email"></label>
-	      <input type="text" name="email" class="input_txt"></input>
+	      <input type="text" name="name" class="input_txt"></input>
 	  <p class="address">メールアドレス</p>
 	      <label for="password"></label>
-	      <input type="email" name="password" class="input_txt"></input>
+	      <input type="email" name="mail_address" class="input_txt"></input>
 	    <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
 		  <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 			 <div class="h-adr">
 				<span class="p-country-name" style="display:none;">Japan</span>
 				<p class="address">郵便番号</p>
-				〒<input type="text" class="p-postal-code input_address" size="8" maxlength="8"><br>
+				〒<input type="text" class="p-postal-code input_address" size="8" maxlength="8" name="postal_code"><br>
 				<p class="address address_txt">住所</p>
-				<select class="p-region-id input_address">
+				<select name="prefecture" class="p-region-id input_address">
 				<option value="">--</option>
 				<option value="1">北海道</option>
 				<option value="2">青森県</option>
