@@ -58,7 +58,7 @@ public class Login extends HttpServlet {
 			String password = request.getParameter("password");
 
 			// リクエストパラメータの入力項目を引数に渡して、Daoのメソッドを実行
-			UserDAO userDao = new UserDAO();
+			UserDAO userDAO = new UserDAO();
 			//ハッシュを生成したい元の文字列
 			String source = password;
 			//ハッシュ生成前にバイト配列に置き換える際のCharset
@@ -77,7 +77,7 @@ public class Login extends HttpServlet {
 			//標準出力
 			System.out.println(result);
 
-			UserDataBeans user = userDao.findByLogin(loginId, result);
+			UserDataBeans user = userDAO.findByLogin(loginId, result);
 
 		/** テーブルに該当のデータが見つからなかった場合 **/
 		if (user == null) {
@@ -94,7 +94,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("userInfo", user);
 
-		// ユーザ一覧のサーブレットにリダイレクト
+		// マイページのサーブレットにリダイレクト
 		response.sendRedirect("MyPage");
 	}
 

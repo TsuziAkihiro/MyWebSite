@@ -19,21 +19,21 @@
 		<header>
 		  <div class="container">
 	        <div class="header-center">
-	        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
 	        </div>
 	        <div class="header-right">
-	        	<a href="ItemList.html" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
-	        	<a href="UserManager.html" class="list_btn btn"><i class="fas fa-users"></i></a>
-				<a href="MyPage.html" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-				<a href="Cart.html" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-				<a href="Logout.html" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
+	        	<a href="ItemList" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
+	        	<a href="UserManager" class="list_btn btn"><i class="fas fa-users"></i></a>
+				<a href="MyPage" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<a href="Cart" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+				<a href="Logout" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
 			</div>
 	      </div>
 		</header>
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-				<a href="TopPage.html" class="return">>Topへ</a>
+				<a href="TopPage" class="return">>Topへ</a>
 				</div>
 			</div>
 			<div class="profile_wrapper">
@@ -46,8 +46,8 @@
 						<p>${user.name}</p>
 					</div>
 					<div class="update">
-						<a href="Update.html" class="go go_update">更新へ</a>
-						<a href="Delete.html" class="go go_delete">退会へ</a>
+						<a href="Update" class="go go_update">更新へ</a>
+						<a href="Delete" class="go go_delete">退会へ</a>
 					</div>
 				</div>
 			</div>

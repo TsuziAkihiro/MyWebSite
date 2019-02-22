@@ -18,7 +18,7 @@ public class UserDAO {
             conn = DBManager.getConnection();
 
             // SELECT文を準備
-            String sql = "SELECT * FROM user WHERE login_id = ? and password = ?";
+            String sql = "SELECT * FROM t_user WHERE login_id = ? and login_password = ?";
 
              // SELECTを実行し、結果表を取得
             PreparedStatement pStmt = conn.prepareStatement(sql);
