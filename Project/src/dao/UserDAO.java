@@ -11,7 +11,7 @@ import beans.UserDataBeans;
 
 public class UserDAO {
 
-    public UserDataBeans findByLoginInfo(String loginId, String password) {
+    public UserDataBeans findByLogin(String loginId, String password) {
         Connection conn = null;
         try {
             // データベースへ接続

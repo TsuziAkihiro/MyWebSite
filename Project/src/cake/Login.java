@@ -77,7 +77,7 @@ public class Login extends HttpServlet {
 			//標準出力
 			System.out.println(result);
 
-			UserDataBeans user = userDao.findByLoginInfo(loginId, result);
+			UserDataBeans user = userDao.findByLogin(loginId, result);
 
 		/** テーブルに該当のデータが見つからなかった場合 **/
 		if (user == null) {
@@ -85,7 +85,7 @@ public class Login extends HttpServlet {
 			request.setAttribute("errMsg", "ログインIDまたはパスワードが異なります。");
 
 			// ログインjspにフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}

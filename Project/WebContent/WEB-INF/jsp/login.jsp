@@ -26,8 +26,8 @@
 	  <h1>ログイン</h1>
 	  <form action="Login" method="POST">
 	    <div class="form-item">
-	      <label for="email"></label>
-	      <input type="email" name="email" placeholder="Cake ID"></input>
+	      <label for="text"></label>
+	      <input type="text" name="loginId" placeholder="Cake ID"></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
