@@ -24,7 +24,7 @@
 	</header>
 		<div class="form-wrapper">
 	  <h1>ログイン</h1>
-	  <form>
+	  <form action="Login" method="POST">
 	    <div class="form-item">
 	      <label for="email"></label>
 	      <input type="email" name="email" placeholder="Cake ID"></input>
@@ -39,7 +39,7 @@
 	  </form>
 	  <ul class="accounts">
 		  <li class="account">アカウントをお持ちでないですか？</li>
-		  <li class="account"><a href="Regist.html">　新規登録</a></li>
+		  <li class="account"><a href="Regist">　新規登録</a></li>
 	  </ul>
 	</div>
 	</body>

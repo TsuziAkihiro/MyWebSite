@@ -19,6 +19,10 @@ public class UserDataBeans implements Serializable{
 
 	private int id;
 
+	public UserDataBeans(String loginId, String name) {
+		this.loginId = loginId;
+		this.name = name;
+	}
 
 	public String getLoginId() {
 		return loginId;
