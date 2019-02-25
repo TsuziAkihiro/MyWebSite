@@ -2,6 +2,7 @@ package cake;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +46,6 @@ public class RegistResult extends HttpServlet {
 			String inputUserPrefecture = request.getParameter("prefecture");
 			String inputUserAddress = request.getParameter("address");
 			String inputPassword = request.getParameter("password");
-			String inputConfirmPassword = request.getParameter("confirm_password");
 
 			UserDataBeans udb = new UserDataBeans();
 			udb.setLoginId(inputLoginId);
@@ -59,17 +59,17 @@ public class RegistResult extends HttpServlet {
 			// 登録が確定されたかどうか確認するための変数
 			String confirmed = request.getParameter("confirm_button");
 
-			switch (confirmed) {
-			case "cancel":
+			//修正
+			if(confirmed.isEmpty()){
 				session.setAttribute("udb", udb);
 				response.sendRedirect("Regist");
-				break;
-
-			case "regist":
+			//登録
+			}else {
 				UserDAO.insertUser(udb);
 				request.setAttribute("udb", udb);
-				request.getRequestDispatcher(EcHelper.REGIST_RESULT_PAGE).forward(request, response);
-				break;
+			       // フォワード
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registresult.jsp");
+		        dispatcher.forward(request, response);
 			}
 
 		} catch (Exception e) {

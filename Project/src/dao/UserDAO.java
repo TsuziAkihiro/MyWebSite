@@ -1,9 +1,15 @@
 package dao;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.xml.bind.DatatypeConverter;
 
 import base.DBManager;
 import beans.UserDataBeans;
@@ -83,5 +89,48 @@ public class UserDAO {
 		return isOverlap;
 	}
 
+	public static void insertUser(UserDataBeans udb) throws SQLException {
+		Connection con = null;
+		PreparedStatement st = null;
+
+		//ハッシュを生成したい元の文字列
+		String source = udb.getPassword();
+		//ハッシュ生成前にバイト配列に置き換える際のCharset
+		Charset charset = StandardCharsets.UTF_8;
+		//ハッシュアルゴリズム
+		String algorithm = "MD5";
+
+		//ハッシュ生成処理
+		byte[] bytes = null;
+		try {
+			bytes = MessageDigest.getInstance(algorithm).digest(source.getBytes(charset));
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		String result = DatatypeConverter.printHexBinary(bytes);
+		//標準出力
+		System.out.println(result);
+
+		try {
+			con = DBManager.getConnection();
+			st = con.prepareStatement("INSERT INTO t_user(login_id,name,mail_address,postal_code,prefecture,address,login_password,create_date,update_date) VALUES(?,?,?,?,?,?,?,now(),now())");
+			st.setString(1, udb.getLoginId());
+			st.setString(2, udb.getName());
+			st.setString(3, udb.getMailAddress());
+			st.setString(4, udb.getPostalCode());
+			st.setString(5, udb.getPrefecture());
+			st.setString(6, udb.getAddress());
+			st.setString(7,result);
+			st.executeUpdate();
+			System.out.println("inserting user has been completed");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+	}
 
 }

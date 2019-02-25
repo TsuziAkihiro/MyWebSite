@@ -99,7 +99,7 @@
 					    <tr>
 					    	<td></td>
 					    	<td></td>
-					    	<td><a href="Favorite.html" class="go">お気に入り商品へ</a></td>
+					    	<td><a href="Favorite" class="go">お気に入り商品へ</a></td>
 					    	<td></td>
 					    	<td></td>
 					    	<td></td>

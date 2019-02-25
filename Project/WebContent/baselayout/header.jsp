@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-	<div class="nav-wrapper container">
-		<a id="logo-container" href="Index" class="brand-logo">EC</a>
-		<ul class="right">
+<header>
+	  <div class="container">
+        <div class="header-center">
+        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
+        </div>
 			<% boolean isLogin = session.getAttribute("isLogin")!=null?(boolean) session.getAttribute("isLogin"):false; %>
-
+        <div class="header-right">
 			<%if(isLogin){ %>
-			<li><a href="UserData"><i class="material-icons">account_circle</i></a></li>
+			<a href="UserData"><i class="material-icons">account_circle</i></a>
 			<%}else{ %>
-			<li><a href="Regist"><i class="material-icons">add</i></a></li>
+			<a href="Login" class="login_btn btn">ログイン</a>
 			<%} %>
 
-			<li><a href="Cart"><i class="material-icons">shopping_cart</i></a></li>
-
 			<%if(isLogin){ %>
-			<li><a href="Logout"><i class="material-icons">exit_to_app</i></a></li>
+			<a href="Logout"><i class="material-icons">exit_to_app</i></a>
 			<%}else{ %>
-			<li><a href="Login"><i class="material-icons">vpn_key</i></a></li>
+			<a href="Regist" class="signup_btn btn">新規登録</a>
 			<%} %>
-		</ul>
-	</div>
+		</div>
+      </div>
+	</header>

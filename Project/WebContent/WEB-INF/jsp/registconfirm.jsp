@@ -27,7 +27,7 @@
 	  <form action="RegistResult" method="POST">
 	    <div class="form-item">
 	      <label for="email"></label>
-	      <input type="text" name="user_id" placeholder="Cake ID" value="${udb.loginId}" readonly></input>
+	      <input type="text" name="login_id" placeholder="Cake ID" value="${udb.loginId}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
@@ -35,15 +35,27 @@
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="mailword" placeholder="メールアドレス" value="${udb.mailAddress}" readonly></input>
+	      <input type="text" name="mail_address" placeholder="メールアドレス" value="${udb.mailAddress}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所" value="〒${udb.postalCode}　${udb.prefecture}${udb.address}" readonly></input>
+	      <input type="text" name="postal_code" placeholder="住所" value="${udb.postalCode}" readonly></input>
+	    </div>
+	    <div class="form-item">
+	      <label for="password"></label>
+	      <input type="text" name="prefecture" placeholder="住所" value="${udb.prefecture}" readonly></input>
+	    </div>
+		<div class="form-item">
+	      <label for="password"></label>
+	      <input type="text" name="address" placeholder="住所" value="${udb.address}" readonly></input>
+	    </div>
+	    <div class="form-item">
+	      <label for="password"></label>
+	      <input type="password" name="password" placeholder="パスワード" value="${udb.password}" readonly></input>
 	    </div>
 	    <div class="confirm_text">この内容で登録しますか？</div>
 	    <div class="button-panel">
-	      <input type="submit" class="button" title="Sign In" value="修正" name="confirm_button"></input>
+	      <input type="submit" class="button" title="Sign In" value="修正" name="default_button"></input>
 	    </div>
 	    <div class="button-panel">
 	      <input type="submit" class="button regist_btn" title="Sign In" value="登録" name="confirm_button"></input>

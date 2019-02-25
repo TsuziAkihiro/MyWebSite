@@ -19,8 +19,8 @@
         <div class="header-right">
 			<a href="Login" class="login_btn btn">ログイン</a>
 			<a href="Regist" class="signup_btn btn">新規登録</a>
-		</div>
-      </div>
+		</div>      </div>
+
 	</header>
 	<div class="top-wrapper">
 		<div class="container">
