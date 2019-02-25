@@ -43,7 +43,7 @@
 					    <tr>
 					      <th scope="col" style="width:50px;"></th>
 					      <th scope="col" style="width:50px;"></th>
-					      <th scope="col" style="width:50px;">ID</th>
+					      <th scope="col" style="width:50px;"></th>
 					      <th scope="col" style="width:100px;">ログインID</th>
 					      <th scope="col"style="width:100px;">名前</th>
 					      <th scope="col"style="width:100px;"></th>
@@ -53,6 +53,7 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+					  <c:forEach var="user" items="${userList}" >
 					    <tr>
 					      <th scope="row"></th>
 					      <td><img src="img/a1e0f003ecb29b57d6392a532d17da6d (1).png" width="40" height="30" alt=""></td>
@@ -60,10 +61,11 @@
 					      <td>abcde</td>
 					      <td>〇〇さん</td>
 					      <td></td>
-					      <td><a href="Update.html" class="go">編集</a></td>
-					      <td><a href="UserDelete.html" class="delete">削除</a></td>
+					      <td><a href="Update" class="go">編集</a></td>
+					      <td><a href="UserDelete" class="delete">削除</a></td>
 					      <td></td>
 					    </tr>
+					   </c:forEach>
 					    <tr>
 					      <th scope="row"></th>
 					      <td><img src="img/gahag-0114507215.jpg" width="40" height="30" alt=""></td>
@@ -71,41 +73,8 @@
 					      <td>abcde</td>
 					      <td>〇〇さん</td>
 					      <td></td>
-					      <td><a href="Update.html" class="go">編集</a></td>
-					      <td><a href="UserDelete.html" class="delete">削除</a></td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td><img src="img/76769.jpg" width="40" height="30" alt=""></td>
-					      <td>3</td>
-					      <td>abcde</td>
-					      <td>〇〇さん</td>
-					      <td></td>
-					      <td><a href="Update.html" class="go">編集</a></td>
-					      <td><a href="UserDelete.html" class="delete">削除</a></td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td><img src="img/merusi14.jpg" width="40" height="30" alt=""></td>
-					      <td>4</td>
-					      <td>abcde</td>
-					      <td>〇〇さん</td>
-					      <td></td>
-					      <td><a href="Update.html" class="go">編集</a></td>
-					      <td><a href="UserDelete.html" class="delete">削除</a></td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td><img src="img/873aad49a96e34e28397b7b3723791a7_s.jpg" width="40" height="30" alt=""></td>
-					      <td>5</td>
-					      <td>abcde</td>
-					      <td>〇〇さん</td>
-					      <td></td>
-					      <td><a href="Update.html" class="go">編集</a></td>
-					      <td><a href="UserDelete.html" class="delete">削除</a></td>
+					      <td><a href="Update" class="go">編集</a></td>
+					      <td><a href="UserDelete" class="delete">削除</a></td>
 					      <td></td>
 					    </tr>
 					  </tbody>

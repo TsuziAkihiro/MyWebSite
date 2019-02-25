@@ -16,20 +16,7 @@
 
 </head>
 	<body>
-		<header>
-		  <div class="container">
-	        <div class="header-center">
-	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
-	        </div>
-	        <div class="header-right">
-	        	<a href="ItemList" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
-	        	<a href="UserManager" class="list_btn btn"><i class="fas fa-users"></i></a>
-				<a href="MyPage" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-				<a href="Cart" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-				<a href="Logout" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
-			</div>
-	      </div>
-		</header>
+		<jsp:include page="../../baselayout/header.jsp" />
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
@@ -115,19 +102,5 @@
 				<div class="text">Cake</div>
 			</div>
 		</footer>
-	<script type="text/javascript" src="./js/MyPage.js"></script>
-	<script type="text/javascript">
-   $(function(){
-      // ▼マウスが載ったらサブメニューを表示
-      $("ul.ddmenu li").mouseenter(function(){
-         $(this).siblings().find("ul").hide();  // 兄弟要素に含まれるサブメニューを全部消す。
-         $(this).children().slideDown(150);     // 自分のサブメニューを表示する。
-      });
-      // ▼どこかがクリックされたらサブメニューを消す
-      $('html').click(function() {
-         $('ul.ddmenu ul').slideUp(150);
-      });
-   });
-</script>
 	</body>
 </html>
