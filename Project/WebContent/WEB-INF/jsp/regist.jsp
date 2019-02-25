@@ -48,12 +48,12 @@
 				<p class="address address_txt">住所</p>
 				<select name="prefecture" class="p-region-id input_address">
 					<option value="">--</option>
-						<c:forEach var="postal" items="${itemList}">
-							<option value="${ddb.locationId}"
-								<c:if test="${udb.prefecture == ddb.postalCode}">
+						<c:forEach var="ddb" items="${ddbList}">
+							<option value="${ddb.id}"
+								<c:if test="${ddb.prefecture == udb.postalCode}">
 								  selected
 								</c:if>
-							>${ddb.postalCode}</option>
+							>${ddb.prefecture}</option>
 						</c:forEach>
 				</select>
 				<input type="text"  name="address" value="${udb.address}" class="p-locality p-street-address p-extended-address input_address_txt"/><br>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <!DOCTYPE html>
 <html>
 	<head>
@@ -27,19 +27,19 @@
 	  <form action="RegistResult" method="POST">
 	    <div class="form-item">
 	      <label for="email"></label>
-	      <input type="text" name="email" placeholder="Cake ID" value="${udb.loginId}" readonly></input>
+	      <input type="text" name="user_id" placeholder="Cake ID" value="${udb.loginId}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="password" placeholder="名前" value="${udb.name}" readonly></input>
+	      <input type="text" name="name" placeholder="名前" value="${udb.name}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="password" placeholder="メールアドレス" value="${udb.mailAddress}" readonly></input>
+	      <input type="text" name="mailword" placeholder="メールアドレス" value="${udb.mailAddress}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所" value="${udb.postalCode}${udb.prefecture}${udb.address}" readonly></input>
+	      <input type="text" name="address" placeholder="住所" value="〒${udb.postalCode}　${udb.prefecture}${udb.address}" readonly></input>
 	    </div>
 	    <div class="confirm_text">この内容で登録しますか？</div>
 	    <div class="button-panel">

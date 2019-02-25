@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<nav class="cake" role="navigation">
 	<div class="nav-wrapper container">
 		<a id="logo-container" href="Index" class="brand-logo">EC</a>
 		<ul class="right">
@@ -21,4 +20,3 @@
 			<%} %>
 		</ul>
 	</div>
-</nav>
