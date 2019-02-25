@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.DeliveryDataBeans;
 import beans.UserDataBeans;
+import dao.DeliveryDAO;
 import dao.UserDAO;
 
 /**
@@ -45,7 +48,15 @@ public class RegistConfirm extends HttpServlet {
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
 
+			// 都道府県一覧情報を取得
+			DeliveryDAO deliveryDao = new DeliveryDAO();
+			List<DeliveryDataBeans> ddbList = deliveryDao.findAll();
+
 			String validationMessage = "";
+
+			// リクエストスコープに配送情報をセット
+			request.setAttribute("ddbList", ddbList);
+
 
 			// 入力されているパスワードが確認用と等しいか
 			if (!inputPassword.equals(inputConfirmPassword)) {

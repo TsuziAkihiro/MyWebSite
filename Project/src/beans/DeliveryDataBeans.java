@@ -12,6 +12,12 @@ public class DeliveryDataBeans implements Serializable{
 	private String prefecture;
 	private String fee;
 
+	public DeliveryDataBeans(int id, String prefecture, String fee) {
+		this.id = id;
+		this.prefecture = prefecture;
+		this.fee = fee;
+	}
+
 
 	public int getId() {
 		return id;
