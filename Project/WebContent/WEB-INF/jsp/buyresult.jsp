@@ -94,7 +94,7 @@
 			</div>
 		</div>
 		<div class="go_container">
-				<a href="TopPage.html" class="go">トップページへ</a>
+				<a href="TopPage" class="go">トップページへ</a>
 		</div>
 		<footer>
 			<div class="container">

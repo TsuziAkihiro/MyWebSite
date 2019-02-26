@@ -46,16 +46,10 @@ header .container{
 	line-height:65px;
 	float:right;
 }
-.btn{
-	padding:10px;
-	font-size:30px;
-	color:#808080;
-}
 
 .btn:hover{
 	background-color:#4682b4;
 }
-
 
 .main{
 	padding-top:30px;

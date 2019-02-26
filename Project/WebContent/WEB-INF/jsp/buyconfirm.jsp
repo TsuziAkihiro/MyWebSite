@@ -30,7 +30,7 @@
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-				<a href="Cart" class="return">>戻る</a>
+					<button type="button" class="btn btn-secondary">>戻る</button>
 				</div>
 			</div>
 			<div class="container">
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 		<div class="go_container">
-			<a href="Buyresult.html" class="go">購入します。</a>
+			<a href="BuyResult" class="go">購入します。</a>
 		</div>
 		<footer>
 			<div class="container">

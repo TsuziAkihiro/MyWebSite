@@ -49,9 +49,8 @@ header .container{
 	padding-right:10px;
 	float:right;
 }
-.btn{
-	padding:10px;
-	background-color:white;
+.btn:hover{
+	background-color:#4682b4;
 }
 
 .login_btn{
@@ -191,4 +190,14 @@ footer .container{
 	color:white;
 	text-align:center;
 	line-height:40px;
+}
+
+.page-link{
+	display:inline;
+}
+.page-link1{
+	margin-right:8.7px;
+}
+.page-link6{
+	margin-right:0;
 }

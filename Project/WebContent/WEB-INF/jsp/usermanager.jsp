@@ -30,7 +30,7 @@
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-				<a href="MyPage" class="return">>マイページへ</a>
+					<a href="MyPage" class="return">>マイページへ</a>
 				</div>
 			</div>
 			<div class="item_wrapper">

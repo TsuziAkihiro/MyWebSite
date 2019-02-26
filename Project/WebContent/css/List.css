@@ -191,3 +191,13 @@ footer .container{
 	text-align:center;
 	line-height:40px;
 }
+
+.page-link{
+	display:inline;
+}
+.page-link1{
+	margin-right:8.7px;
+}
+.page-link6{
+	margin-right:0;
+}

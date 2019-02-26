@@ -30,7 +30,7 @@
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-				<a href="TopPage" class="return">>戻る</a>
+					<button type="button" class="btn btn-secondary">>戻る</button>
 				</div>
 			</div>
 			<div class="container">
@@ -117,7 +117,7 @@
 				    <tr>
 				    	<td></td>
 				    	<td></td>
-				    	<td><a href="BuyConfirm.html" class="go">購入確認</a></td>
+				    	<td><a href="BuyConfirm" class="go">購入確認</a></td>
 				    	<td></td>
 				    	<td></td>
 				    	<td></td>

@@ -45,15 +45,7 @@ header .container{
 	line-height:65px;
 	float:right;
 }
-.btn{
-	padding:10px;
-	font-size:30px;
-	color:#808080;
-}
 
-.btn:hover{
-	background-color:#4682b4;
-}
 .return_wrapper{
 	width:80%;
 	height:60px;
@@ -91,6 +83,10 @@ header .container{
 
 .cart_title{
 	padding-left:40px;
+}
+
+.btn:hover{
+	background-color:#4682b4;
 }
 
 .go_container{

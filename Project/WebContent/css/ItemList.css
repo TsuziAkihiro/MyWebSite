@@ -76,7 +76,7 @@ header .container{
 }
 
 .main{
-	height:1500px;
+	height:2100px;
 	width:100%;
 	margin-bottom:100px;
 }
@@ -134,7 +134,7 @@ header .container{
 
 .goods{
 	float:left;
-	width:20%;
+	width:33%;
 	margin-bottom:5px;
 	transition:box-shadow 0.2s;
 }
@@ -230,4 +230,14 @@ footer .container{
 	color:white;
 	text-align:center;
 	line-height:40px;
+}
+
+.page-link{
+	display:inline;
+}
+.page-link1{
+	margin-right:8.7px;
+}
+.page-link6{
+	margin-right:0;
 }

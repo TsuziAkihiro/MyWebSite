@@ -113,14 +113,14 @@
 	</div>
 	<div class="page_wrapper">
 		<div class="container">
-			<a class="page-link" href="#">
+			<a class="page-link page-link1" href="#">
 				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 			</a>
 			<a class="page-link" href="#">1</a>
 			<a class="page-link" href="#">2</a>
 			<a class="page-link" href="#">3</a>
 			<a class="page-link" href="#">4</a>
-			<a class="page-link" href="#">5</a>
+			<a class="page-link page-link6" href="#">5</a>
 			<a class="page-link" href="#">
 				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 			</a>

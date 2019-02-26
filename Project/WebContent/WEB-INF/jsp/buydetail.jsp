@@ -100,7 +100,7 @@
 					      <td>15</td>
 					      <td>11111</td>
 					      <td>12345</td>
-					      <td><a href="item.html" class="detail_btn">>商品ページ</a></td>
+					      <td><a href="item" class="detail_btn">>商品ページ</a></td>
 					    </tr>
 					    <tr>
 					      <th scope="row"></th>
@@ -109,7 +109,7 @@
 					      <td>15</td>
 					      <td>11111</td>
 					      <td>12345</td>
-					      <td><a href="item.html" class="detail_btn">>商品ページ</a></td>
+					      <td><a href="item" class="detail_btn">>商品ページ</a></td>
 					    </tr>
 					  </tbody>
 					</table>

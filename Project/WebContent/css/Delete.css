@@ -115,6 +115,10 @@ li{
   color:white;
 }
 
+.btn:hover{
+	background-color:#4682b4;
+}
+
 .form-footer {
   font-size: 1em;
   padding: 2em 0;

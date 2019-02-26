@@ -15,11 +15,11 @@
 	<header>
 	  <div class="container">
         <div class="header-center">
-        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
         </div>
         <div class="header-right">
-			<a href="Login.html" class="login_btn btn">ログイン</a>
-			<a href="Regist.html" class="signup_btn btn">新規登録</a>
+			<a href="Login" class="login_btn btn">ログイン</a>
+			<a href="Regist" class="signup_btn btn">新規登録</a>
 		</div>
       </div>
 	</header>
@@ -178,35 +178,19 @@
 						<a href="ItemDelete.html" class="delete">削除</a>
 					</div>
 				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
 	<div class="page_wrapper">
 		<div class="container">
-			<a class="page-link" href="#">
+			<a class="page-link page-link1" href="#">
 				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 			</a>
 			<a class="page-link" href="#">1</a>
 			<a class="page-link" href="#">2</a>
 			<a class="page-link" href="#">3</a>
 			<a class="page-link" href="#">4</a>
-			<a class="page-link" href="#">5</a>
+			<a class="page-link page-link6" href="#">5</a>
 			<a class="page-link" href="#">
 				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 			</a>
