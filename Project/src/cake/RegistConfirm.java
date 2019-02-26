@@ -52,10 +52,11 @@ public class RegistConfirm extends HttpServlet {
 			DeliveryDAO deliveryDao = new DeliveryDAO();
 			List<DeliveryDataBeans> ddbList = deliveryDao.findAll();
 
+
+			request.setAttribute("ddbList", ddbList);
+
 			String validationMessage = "";
 
-			// リクエストスコープに配送情報をセット
-			request.setAttribute("ddbList", ddbList);
 
 
 			// 入力されているパスワードが確認用と等しいか
@@ -76,11 +77,13 @@ public class RegistConfirm extends HttpServlet {
 			// バリデーションエラーメッセージがないなら確認画面へ
 			if (validationMessage.length() == 0) {
 				request.setAttribute("udb", udb);
+
 			       // フォワード
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registconfirm.jsp");
 		        dispatcher.forward(request, response);
 			} else {
 				session.setAttribute("udb", udb);
+
 				session.setAttribute("validationMessage", validationMessage);
 				response.sendRedirect("Regist");
 			}

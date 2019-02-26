@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.DeliveryDataBeans;
 import beans.UserDataBeans;
+import dao.DeliveryDAO;
 import dao.UserDAO;
 
 /**
@@ -47,20 +49,26 @@ public class RegistResult extends HttpServlet {
 			String inputUserAddress = request.getParameter("address");
 			String inputPassword = request.getParameter("password");
 
+			DeliveryDataBeans ddb = new DeliveryDataBeans();
+			DeliveryDAO delivery = new DeliveryDAO();
+			ddb = delivery.findPf(inputUserPrefecture);
+
+
 			UserDataBeans udb = new UserDataBeans();
 			udb.setLoginId(inputLoginId);
 			udb.setName(inputUserName);
 			udb.setMailAddress(inputUserMailAddress);
 			udb.setPostalCode(inputUserPostalCode);
-			udb.setPrefecture(inputUserPrefecture);
+			udb.setPrefecture(ddb.getPrefecture());
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
 
 			// 登録が確定されたかどうか確認するための変数
 			String confirmed = request.getParameter("confirm_button");
 
+
 			//修正
-			if(confirmed.isEmpty()){
+			if(confirmed == null){
 				session.setAttribute("udb", udb);
 				response.sendRedirect("Regist");
 			//登録

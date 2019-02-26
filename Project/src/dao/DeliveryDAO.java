@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -54,5 +55,44 @@ public class DeliveryDAO {
         return ddbList;
     }
 
+    public DeliveryDataBeans findPf(String id) {
+        Connection conn = null;
+        try {
+            // データベースへ接続
+            conn = DBManager.getConnection();
+
+            // SELECT文を準備
+            String sql = "SELECT * FROM m_location_id WHERE location_id = ?";
+
+             // SELECTを実行し、結果表を取得
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, id);
+            ResultSet rs = pStmt.executeQuery();
+
+            // 主キーに紐づくレコードは1件のみなので、rs.next()は1回だけ行う
+           if (!rs.next()) {
+               return null;
+           }
+
+           int location_id = rs.getInt("location_id");
+           String prefecture = rs.getString("prefecture");
+           String fee = rs.getString("delivery_fee");
+           return new DeliveryDataBeans(location_id, prefecture, fee);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
+    }
 
 }

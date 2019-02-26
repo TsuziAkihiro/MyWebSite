@@ -39,11 +39,11 @@
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="postal_code" placeholder="住所" value="${udb.postalCode}" readonly></input>
+	      <input type="text" name="postal_code" placeholder="郵便番号" value="${udb.postalCode}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="prefecture" placeholder="住所" value="${udb.prefecture}" readonly></input>
+	      <input type="text" name="prefecture" placeholder="都道府県" value="${udb.prefecture}" readonly></input>
 	    </div>
 		<div class="form-item">
 	      <label for="password"></label>
