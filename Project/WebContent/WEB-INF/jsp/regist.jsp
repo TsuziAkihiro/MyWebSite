@@ -28,7 +28,9 @@
 		<div class="form-wrapper">
 	  <h1>新規会員登録</h1>
 	  <c:if test="${validationMessage != null}">
-	  		<FONT color="#ff0000">${validationMessage}</FONT>
+	  		<div class="alert alert-danger" role="alert">
+	  			<FONT color="#ff0000">${validationMessage}</FONT>
+	  		</div>
 	  </c:if>
 	  <form action="RegistConfirm" method="POST">
 	  <p class="address">Cake IDを入力してください</p>

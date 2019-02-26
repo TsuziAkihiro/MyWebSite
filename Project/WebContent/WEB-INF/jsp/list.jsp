@@ -108,14 +108,6 @@
 					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
 					<p class="price">¥3,000</p>
 				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-				</div>
 			</div>
 		</div>
 	</div>

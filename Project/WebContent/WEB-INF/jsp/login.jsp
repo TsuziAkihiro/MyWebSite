@@ -44,8 +44,8 @@
 	    </div>
 	  </form>
 	  <ul class="accounts">
-		  <li class="account">アカウントをお持ちでないですか？</li>
-		  <li class="account"><a href="Regist">　新規登録</a></li>
+		  <li class="account">アカウントをお持ちでないですか？&emsp;</li>
+		  <li class="account"><a href="Regist">新規登録</a></li>
 	  </ul>
 	</div>
 	</body>
