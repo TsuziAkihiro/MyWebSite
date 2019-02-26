@@ -32,6 +32,7 @@
 		<div class="wrapper">
 			<h1>豊富な商品ラインナップ</h1>
 		</div>
+	</div>
 	<footer>
 		<div class="container">
 			<div class="text">Cake</div>

@@ -33,7 +33,7 @@
 	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
 	        </div>
 	        <div class="header-right">
-	        <a href="ItemList.html" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
+	        <a href="ItemList" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
 	        	<a href="UserManager" class="list_btn btn"><i class="fas fa-users"></i></a>
 				<a href="MyPage" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
 				<a href="Cart" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>

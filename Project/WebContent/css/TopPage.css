@@ -78,7 +78,7 @@ header .container{
 }
 
 .text_wrapper{
-	padding:100px;
+	padding:200px;
 	font-size:50px;
 	text-align:center;
 }
@@ -148,8 +148,14 @@ header .container{
 	text-align:center;
 }
 
+.wrapper{
+	padding-top:130px;
+}
+.lesson-wrapper h1{
+	font-size:1.2rem;
+}
+
 .lesson-wrapper .wrapper, .lesson-wrapper .container{
-	padding:0;
 	float:left;
 	width:25%;
 	height:300px;
