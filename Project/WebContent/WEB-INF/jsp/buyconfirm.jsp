@@ -6,31 +6,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>購入確認 - Cake</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/BuyConfirm.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 
 </head>
 	<body>
 		<header>
 		  <div class="container">
 	        <div class="header-center">
-	        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
+	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
 	        </div>
 	        <div class="header-right">
-	     	    <a href="ItemList.html" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
-	        	<a href="UserManager.html" class="list_btn btn"><i class="fas fa-users"></i></a>
-				<a href="MyPage.html" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-				<a href="Cart.html" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-				<a href="Logout.html" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
+	     	    <a href="ItemList" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
+	        	<a href="UserManager" class="list_btn btn"><i class="fas fa-users"></i></a>
+				<a href="MyPage" class="login_btn btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<a href="Cart" class="signup_btn btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+				<a href="Logout" class="logout_btn btn"><i class="fas fa-sign-out-alt"></i></a>
 			</div>
 	      </div>
 		</header>
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-				<a href="Cart.html" class="return">>戻る</a>
+				<a href="Cart" class="return">>戻る</a>
 				</div>
 			</div>
 			<div class="container">

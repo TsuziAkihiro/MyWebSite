@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>商品編集 - Cake</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/ItemDetail.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
@@ -54,17 +55,13 @@
 									<div class="price">
 										<label for="price2">値段</label>
 										<input type="text" class="detail">
-									</div>
-								</div>
-						</div>
-						<div class="container-right w_container">
-							<div class="container-right_in">
-								<label for="item_name detail">商品名</label>
+										<label for="item_name detail">商品名</label>
 								<input type="text" class="detail" value="#####">
 								<label for="item_detail detail">商品情報</label>
 								<textarea class="detail itemDetail">12345</textarea>
 								<button class="cart_btn" type="submit" name="action">更新</button>
-							</div>
+									</div>
+								</div>
 						</div>
 					</div>
 				</div>
