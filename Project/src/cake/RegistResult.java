@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.DeliveryDataBeans;
 import beans.UserDataBeans;
-import dao.DeliveryDAO;
 import dao.UserDAO;
 
 /**
@@ -49,17 +47,12 @@ public class RegistResult extends HttpServlet {
 			String inputUserAddress = request.getParameter("address");
 			String inputPassword = request.getParameter("password");
 
-			DeliveryDataBeans ddb = new DeliveryDataBeans();
-			DeliveryDAO delivery = new DeliveryDAO();
-			ddb = delivery.findPf(inputUserPrefecture);
-
-
 			UserDataBeans udb = new UserDataBeans();
 			udb.setLoginId(inputLoginId);
 			udb.setName(inputUserName);
 			udb.setMailAddress(inputUserMailAddress);
 			udb.setPostalCode(inputUserPostalCode);
-			udb.setPrefecture(ddb.getPrefecture());
+			udb.setPrefecture(inputUserPrefecture);
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
 

@@ -39,12 +39,16 @@ public class RegistConfirm extends HttpServlet {
 			String inputPassword = request.getParameter("password");
 			String inputConfirmPassword = request.getParameter("confirm_password");
 
+			DeliveryDataBeans ddb = new DeliveryDataBeans();
+			DeliveryDAO delivery = new DeliveryDAO();
+			ddb = delivery.findPf(inputUserPrefecture);
+
 			UserDataBeans udb = new UserDataBeans();
 			udb.setLoginId(inputLoginId);
 			udb.setName(inputUserName);
 			udb.setMailAddress(inputUserMailAddress);
 			udb.setPostalCode(inputUserPostalCode);
-			udb.setPrefecture(inputUserPrefecture);
+			udb.setPrefecture(ddb.getPrefecture());
 			udb.setAddress(inputUserAddress);
 			udb.setPassword(inputPassword);
 
