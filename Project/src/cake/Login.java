@@ -50,52 +50,60 @@ public class Login extends HttpServlet {
 	 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
-	        // リクエストパラメータの文字コードを指定
-	        request.setCharacterEncoding("UTF-8");
 
-			// リクエストパラメータの入力項目を取得
-			String loginId = request.getParameter("loginId");
-			String password = request.getParameter("password");
+			/*文字化け対策*/
+			request.setCharacterEncoding("UTF-8");
 
-			// リクエストパラメータの入力項目を引数に渡して、Daoのメソッドを実行
-			UserDAO userDAO = new UserDAO();
-			//ハッシュを生成したい元の文字列
-			String source = password;
-			//ハッシュ生成前にバイト配列に置き換える際のCharset
-			Charset charset = StandardCharsets.UTF_8;
-			//ハッシュアルゴリズム
-			String algorithm = "MD5";
-
-			//ハッシュ生成処理
-			byte[] bytes = null;
+			HttpSession session = request.getSession();
 			try {
-				bytes = MessageDigest.getInstance(algorithm).digest(source.getBytes(charset));
-			} catch (NoSuchAlgorithmException e) {
+
+				//パラメーターから取得
+				String loginId = request.getParameter("loginId");
+				String password = request.getParameter("password");
+
+				//ハッシュを生成したい元の文字列
+				String source = password;
+				//ハッシュ生成前にバイト配列に置き換える際のCharset
+				Charset charset = StandardCharsets.UTF_8;
+				//ハッシュアルゴリズム
+				String algorithm = "MD5";
+
+				//ハッシュ生成処理
+				byte[] bytes = null;
+				try {
+					bytes = MessageDigest.getInstance(algorithm).digest(source.getBytes(charset));
+				} catch (NoSuchAlgorithmException e) {
+					e.printStackTrace();
+				}
+				String result = DatatypeConverter.printHexBinary(bytes);
+				//標準出力
+				System.out.println(result);
+
+				// リクエストパラメータの入力項目を引数に渡して、ユーザー情報を取得
+				UserDAO userDAO = new UserDAO();
+
+				UserDataBeans user = userDAO.findByLogin(loginId, result);
+
+				//ユーザーIDが取得できたなら
+				if (user != null) {
+					session.setAttribute("isLogin", true);
+					session.setAttribute("user", user);
+
+					// マイページのサーブレットにリダイレクト
+					response.sendRedirect("MyPage");
+				} else {
+					// リクエストスコープにエラーメッセージをセット
+					request.setAttribute("errMsg", "ログインIDまたはパスワードが異なります。");
+					session.setAttribute("loginId", loginId);
+					// ログインjspにフォワード
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+			} catch (Exception e) {
 				e.printStackTrace();
+				session.setAttribute("errorMessage", e.toString());
+				response.sendRedirect("Error");
 			}
-			String result = DatatypeConverter.printHexBinary(bytes);
-			//標準出力
-			System.out.println(result);
-
-			UserDataBeans user = userDAO.findByLogin(loginId, result);
-
-		/** テーブルに該当のデータが見つからなかった場合 **/
-		if (user == null) {
-			// リクエストスコープにエラーメッセージをセット
-			request.setAttribute("errMsg", "ログインIDまたはパスワードが異なります。");
-
-			// ログインjspにフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-			dispatcher.forward(request, response);
-			return;
 		}
-		/** テーブルに該当のデータが見つかった場合 **/
-		// セッションにユーザの情報をセット
-		HttpSession session = request.getSession();
-		session.setAttribute("userInfo", user);
-
-		// マイページのサーブレットにリダイレクト
-		response.sendRedirect("MyPage");
-	}
-
 }
