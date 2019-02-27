@@ -16,7 +16,7 @@
 		<header>
 		  <div class="container">
 	        <div class="header-center">
-	        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
+	        	<a href="TopPage" class="title"></a>
 	        </div>
 	        <div class="header-right">
 	        	<a href="ItemList" class="list_btn btn"><i class="fas fa-list-ul"></i></a>
@@ -30,7 +30,7 @@
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-					<button type="button" class="btn btn-secondary">>戻る</button>
+					<button type="button" class="btn btn-secondary" onclick="location.href='MyPage'">>Myページへ</button>
 				</div>
 			</div>
 			<div class="container">
