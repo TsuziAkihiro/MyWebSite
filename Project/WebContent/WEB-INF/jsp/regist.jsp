@@ -11,7 +11,6 @@
 		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 		<link rel="icon" type="image/png" href="img/ice_cream.png">
 		<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-
 	</head>
 	<body>
 		<jsp:include page="../../baselayout/header.jsp" />

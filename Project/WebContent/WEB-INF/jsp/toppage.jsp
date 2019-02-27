@@ -16,10 +16,10 @@
 	<div class="top-wrapper">
 		<div class="container">
 			<h1>さがしてみる。</h1>
-			<form>
+			<form id="form" action="List" method="POST">
 				<div class="inputs">
 					<input class="eatText" type="text" placeholder="食べ物を入力">
-					<a href="#" class="search"><i class="fas fa-search"></i></a>
+					<button class="eat_input"><i class="fas fa-search"></i></button>
 				</div>
 			</form>
 		</div>

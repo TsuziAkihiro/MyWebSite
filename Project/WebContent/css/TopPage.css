@@ -9,6 +9,10 @@ body {
 a {
   text-decoration: none;
 }
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 li{
 	display:inline-block;
 }
@@ -82,8 +86,12 @@ header ul{
 	float:left;
 
 }
+
+#form{
+	position:relative;
+}
+
 .eatText{
-	 position:relative;
 	 height:45px;
 	 width:250px;
 	 font-size:20px;
@@ -94,16 +102,15 @@ header ul{
 	 bottom:9.9px;
 
 }
-.search{
-	 font-size:45px;
-	 top:50;
-	 opacity: 0.5;
-	 background-color:white;
-}
 
-.search:hover{
-	background-color:red;
-	color:white;
+.eat_input{
+	top:10px;
+	left:215px;
+	position:absolute;
+	background:none;
+	border:none;
+	outline: none !important;
+    box-shadow: none !important;
 }
 
 .top-wrapper .container{
@@ -146,11 +153,7 @@ header ul{
 	box-shadow:0 0 1px gray;
 }
 
-.container {
-	overflow: hidden;	/*拡大時にはみ出た部分を隠す*/
-	width: 320px;	/*画像の幅*/
-	height: 180px;	/*画像の高さ*/
-}
+
 .container img {
 	display: block;
 	transition-duration: 0.3s;	/*変化に掛かる時間*/

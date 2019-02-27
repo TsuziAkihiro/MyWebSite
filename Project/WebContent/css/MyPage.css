@@ -9,7 +9,10 @@ body {
 a {
   text-decoration: none;
 }
-
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 h3{
 	text-align:center;
 	font-size:30px;

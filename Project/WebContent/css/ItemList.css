@@ -9,6 +9,17 @@ body {
 a {
   text-decoration: none;
 }
+.btn:focus, .btn:active{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus, input:active{
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom:1.5px groove #cccccc;
+}
+
 li{
 	display:inline-block;
 }

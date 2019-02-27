@@ -6,7 +6,10 @@
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 /* Simple Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -36,13 +39,16 @@ footer .text{
   margin: 3em auto;
   max-width: 600px;
   box-shadow:0 0 1px gray;
-  padding-bottom:25px;
+  padding-bottom:5px;
+}
+.form-wrapper h1{
+	font-size:2rem;
 }
 
 h1 {
   text-align:left;
   background-color:#dcdcdc;
-  padding: 1em 0 1em 30px;
+  padding: 0.5em 0 0.5em 30px;
 }
 
 a {
@@ -131,11 +137,14 @@ li{
 	display:inline-block;
 }
 
-ul{
+header ul{
 	display:inline-block;
 	margin:10px;;
 }
 
+.accounts{
+	text-align:center;
+}
 /* ヘッダー */
 
 header{

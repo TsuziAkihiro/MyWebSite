@@ -6,7 +6,10 @@
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 /* Simple Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 

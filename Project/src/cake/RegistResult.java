@@ -1,6 +1,10 @@
 package cake;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.bind.DatatypeConverter;
 
 import beans.UserDataBeans;
 import dao.UserDAO;
@@ -68,6 +73,29 @@ public class RegistResult extends HttpServlet {
 			}else {
 				UserDAO.insertUser(udb);
 				request.setAttribute("udb", udb);
+
+				//ハッシュを生成したい元の文字列
+				String source = inputPassword;
+				//ハッシュ生成前にバイト配列に置き換える際のCharset
+				Charset charset = StandardCharsets.UTF_8;
+				//ハッシュアルゴリズム
+				String algorithm = "MD5";
+
+				//ハッシュ生成処理
+				byte[] bytes = null;
+				try {
+					bytes = MessageDigest.getInstance(algorithm).digest(source.getBytes(charset));
+				} catch (NoSuchAlgorithmException e) {
+					e.printStackTrace();
+				}
+
+				String result = DatatypeConverter.printHexBinary(bytes);
+				UserDAO userDAO = new UserDAO();
+
+				UserDataBeans user = userDAO.findByLogin(inputLoginId, result);
+				session.setAttribute("isLogin", true);
+				session.setAttribute("user", user);
+
 			       // フォワード
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registresult.jsp");
 		        dispatcher.forward(request, response);

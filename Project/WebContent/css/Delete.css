@@ -9,6 +9,11 @@
 
 /* Simple Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 li{
 	display:inline-block;
 }

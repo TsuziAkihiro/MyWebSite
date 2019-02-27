@@ -18,7 +18,10 @@ h3{
 img{
 	border-radius:3px;
 }
-
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 li{
 	display:inline-block;

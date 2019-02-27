@@ -6,7 +6,13 @@
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+p{
+	margin-bottom:0;
+}
 /* Simple Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -24,10 +30,14 @@ body {
   box-shadow:0 0 1px gray;
 }
 
+.form-wrapper h1{
+	font-size:2rem;
+}
+
 h1 {
   text-align:left;
   background-color:#dcdcdc;
-  padding: 0.8em 0 0.8em 30px;
+  padding: 0.5em 0 0.5em 30px;
 }
 
 a {
