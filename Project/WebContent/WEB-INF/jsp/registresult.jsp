@@ -13,17 +13,7 @@
 		<meta http-equiv="Refresh" content="3;TopPage">
 	</head>
 	<body>
-	<header>
-	  <div class="container">
-        <div class="header-center">
-        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
-        </div>
-        <div class="header-right">
-			<a href="Login.html" class="login_btn btn">ログイン</a>
-			<a href="Regist.html" class="signup_btn btn">新規登録</a>
-		</div>
-      </div>
-	</header>
+		<jsp:include page="../../baselayout/header.jsp" />
 		<div class="form-wrapper">
 	  <h1>入力内容確認</h1>
 	  <form>

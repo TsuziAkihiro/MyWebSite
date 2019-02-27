@@ -10,20 +10,10 @@
 		<link rel="stylesheet" href="css/UpdateResult.css">
 		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 		<link rel="icon" type="image/png" href="img/ice_cream.png">
-		<meta http-equiv="Refresh" content="3;MyPage.html">
+		<meta http-equiv="Refresh" content="3;MyPage">
 	</head>
 	<body>
-	<header>
-	  <div class="container">
-        <div class="header-center">
-        	<a href="TopPage.html" class="title"><i class="fas fa-coffee"></i> Cake</a>
-        </div>
-        <div class="header-right">
-			<a href="Login.html" class="login_btn btn">ログイン</a>
-			<a href="Regist.html" class="signup_btn btn">新規登録</a>
-		</div>
-      </div>
-	</header>
+		<jsp:include page="../../baselayout/header.jsp" />
 		<div class="form-wrapper">
 	  <h1>内容確認</h1>
 	  <form>

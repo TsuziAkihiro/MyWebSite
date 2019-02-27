@@ -12,17 +12,7 @@
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
 </head>
 <body>
-	<header>
-	  <div class="container">
-        <div class="header-center">
-        	<a href="TopPage" class="title"><i class="fas fa-coffee"></i> Cake</a>
-        </div>
-        <div class="header-right">
-			<a href="Login" class="login_btn btn">ログイン</a>
-			<a href="Regist" class="signup_btn btn">新規登録</a>
-		</div>
-      </div>
-	</header>
+	<jsp:include page="../../baselayout/header.jsp" />
 	<div class="main">
 		<div class="container">
 			<form>

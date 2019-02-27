@@ -12,7 +12,7 @@
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
 </head>
 <body>
-
+	<jsp:include page="../../baselayout/header.jsp" />
 	<div class="top-wrapper">
 		<div class="container">
 			<h1>さがしてみる。</h1>
