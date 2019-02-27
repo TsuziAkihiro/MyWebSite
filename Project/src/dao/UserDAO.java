@@ -39,6 +39,7 @@ public class UserDAO {
 
             String loginIdData = rs.getString("login_id");
             String nameData = rs.getString("name");
+
             return new UserDataBeans(loginIdData, nameData);
 
         } catch (SQLException e) {
