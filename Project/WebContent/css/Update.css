@@ -18,7 +18,9 @@ body {
   background: #e9e9e9;
   color: #5e5e5e;
 }
-
+p{
+	margin-bottom:0;
+}
 /* Form Layout */
 .form-wrapper {
   background: #fafafa;
@@ -27,10 +29,14 @@ body {
   box-shadow:0 0 1px gray;
 }
 
+.form-wrapper h1{
+	font-size:2rem;
+}
+
 h1 {
   text-align:left;
   background-color:#dcdcdc;
-  padding: 1em 0 1em 30px;
+  padding: 0.5em 0 0.5em 30px;
 }
 
 a {
