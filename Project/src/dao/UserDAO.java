@@ -189,7 +189,7 @@ public class UserDAO {
     	 try {
              // データベースへ接続
              conn = DBManager.getConnection();
-             String sql = "DELETE FROM user WHERE id = ?";
+             String sql = "DELETE FROM t_user WHERE id = ?";
              // SELECTを実行し、結果表を取得
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);

@@ -63,7 +63,7 @@
 					      <td></td>
 					      <td></td>
 					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show">詳細</button></td>
+					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=1'">詳細</button></td>
 					    </tr>
 					    <tr>
 					      <th scope="row"></th>
@@ -72,7 +72,7 @@
 					      <td></td>
 					      <td></td>
 					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show">詳細</button></td>
+					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=2'">詳細</button></td>
 					    </tr>
 					    <tr>
 					      <th scope="row"></th>
@@ -81,7 +81,7 @@
 					      <td></td>
 					      <td></td>
 					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show">詳細</button></td>
+					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=2'">詳細</button></td>
 					    </tr>
 					    <tr>
 					    	<td></td>
