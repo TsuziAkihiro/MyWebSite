@@ -22,7 +22,7 @@
 	 	<p class="lead">・注文の詳細が確認できる履歴は、退会と同時に閲覧ができなくなります。
 	 	<br>
 	 					　ご了承ください。</p>
-	 <form action="Delete" method="POST">
+	 <form action="DeleteResult" method="POST">
 	    <div class="button-panel">
 	      <input type="submit" class="button" title="Sign In" value="退会する"></input>
 	    </div>

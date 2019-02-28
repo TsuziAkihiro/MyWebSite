@@ -35,6 +35,12 @@ public class UserDataBeans implements Serializable{
 		this.name = name;
 	}
 
+	public UserDataBeans(int id, String loginId, String name) {
+		this.loginId = loginId;
+		this.name = name;
+		this.id = id;
+	}
+
 	public String getLoginId() {
 		return loginId;
 	}

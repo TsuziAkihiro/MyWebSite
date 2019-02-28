@@ -27,7 +27,7 @@
 			</div>
 			<div class="goods_wrapper">
 				<div class="goods">
-					<a href="item"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
+					<a href="sida.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
 					<p class="name">苺パンケーキ生クリームを添えて</p>
 					<p class="price">¥3,000 </p>
 					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>

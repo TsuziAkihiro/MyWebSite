@@ -8,6 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -37,10 +40,11 @@ public class UserDAO {
                 return null;
             }
 
+            int idData = rs.getInt("id");
             String loginIdData = rs.getString("login_id");
             String nameData = rs.getString("name");
 
-            return new UserDataBeans(loginIdData, nameData);
+            return new UserDataBeans(idData, loginIdData, nameData);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,6 +138,79 @@ public class UserDAO {
 		}
 	}
 
+    public List<UserDataBeans> findAll() {
+        Connection conn = null;
+        List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
+
+        try {
+            // データベースへ接続
+            conn = DBManager.getConnection();
+
+            // SELECT文を準備
+            // TODO: 未実装：管理者以外を取得するようSQLを変更する
+            String sql = "SELECT * FROM t_user WHERE 2 <= id";
+
+             // SELECTを実行し、結果表を取得
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            // 結果表に格納されたレコードの内容を
+            // Userインスタンスに設定し、ArrayListインスタンスに追加
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String loginId = rs.getString("login_id");
+                String name = rs.getString("name");
+                UserDataBeans user = new UserDataBeans(id, loginId, name);
+
+                userList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
+        return userList;
+    }
+
+    /**
+     * 消去
+     */
+    public void deleteDao(int id){
+    	Connection conn = null;
+    	 try {
+             // データベースへ接続
+             conn = DBManager.getConnection();
+             String sql = "DELETE FROM user WHERE id = ?";
+             // SELECTを実行し、結果表を取得
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int result = stmt.executeUpdate();
+            // 追加された行数を出力
+            System.out.println(result);
+            stmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 }

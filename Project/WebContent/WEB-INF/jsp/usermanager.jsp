@@ -42,27 +42,16 @@
 					  <c:forEach var="user" items="${userList}" >
 					    <tr>
 					      <th scope="row"></th>
-					      <td><img src="img/a1e0f003ecb29b57d6392a532d17da6d (1).png" width="40" height="30" alt=""></td>
-					      <td>1</td>
-					      <td>abcde</td>
-					      <td>〇〇さん</td>
+					      <td><img src="img/873aad49a96e34e28397b7b3723791a7_s.jpg" width="40" height="30" alt=""></td>
 					      <td></td>
-					      <td><a href="Update" class="go">編集</a></td>
-					      <td><a href="UserDelete" class="delete">削除</a></td>
+					      <td>${user.loginId}</td>
+					      <td>${user.name}</td>
+					      <td></td>
+					      <td><a href="Update?id=${user.id}" class="go">編集</a></td>
+					      <td><a href="UserDelete?id=${user.id}" class="delete">削除</a></td>
 					      <td></td>
 					    </tr>
 					   </c:forEach>
-					    <tr>
-					      <th scope="row"></th>
-					      <td><img src="img/gahag-0114507215.jpg" width="40" height="30" alt=""></td>
-					      <td>2</td>
-					      <td>abcde</td>
-					      <td>〇〇さん</td>
-					      <td></td>
-					      <td><a href="Update" class="go">編集</a></td>
-					      <td><a href="UserDelete" class="delete">削除</a></td>
-					      <td></td>
-					    </tr>
 					  </tbody>
 					</table>
 				</div>
