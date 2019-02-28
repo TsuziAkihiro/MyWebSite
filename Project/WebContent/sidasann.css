@@ -49,13 +49,8 @@ a {
   padding: 8px 24px;
   color: white;
   display: inline-block;
-  opacity: 0.8;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 1;
 }
 
 .fa {
@@ -211,8 +206,7 @@ header {
 
 .message:active {
   position: relative;
-  top: 7px;
-  box-shadow: none;
+
 }
 
 footer img {
