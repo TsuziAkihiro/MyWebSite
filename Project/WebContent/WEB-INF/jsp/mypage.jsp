@@ -30,11 +30,22 @@
 							<input type="file">
 					</div>
 					<div class="name profile_con">
-						<p>${user.name}</p>
+						<p>
+							<c:choose>
+								<c:when test="${user.id == 1}">
+									管理人
+								</c:when>
+								<c:otherwise>
+									${user.name}
+								</c:otherwise>
+							</c:choose>
+						</p>
 					</div>
 					<div class="update">
 						<a href="Update" class="go go_update">更新へ</a>
-						<a href="Delete" class="go go_delete">退会へ</a>
+						<c:if test="${user.id != 1}">
+							<a href="Delete" class="go go_delete">退会へ</a>
+						</c:if>
 					</div>
 				</div>
 			</div>

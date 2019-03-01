@@ -151,7 +151,10 @@ header ul{
 }
 
 .go_update{
-	margin-right:100px;
+	margin-right:50px;
+}
+.go_delete{
+	margin-left:50px;
 }
 
 .item_wrapper .container{

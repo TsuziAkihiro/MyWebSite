@@ -17,7 +17,7 @@
 		<div class="main">
 			<div class="return_wrapper">
 				<div class="a">
-					<button type="button" class="btn btn-secondary" onclick="location.href='MyPage'">>Myページへ</button>
+					<button type="button" class="btn btn-secondary" onclick="location.href='TopPage'">&emsp;>Topへ&emsp;</button>
 				</div>
 			</div>
 			<div class="container">
