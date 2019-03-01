@@ -94,6 +94,9 @@ public class UserDAO {
 		return isOverlap;
 	}
 
+    /**
+     * 新規登録
+     */
 	public static void insertUser(UserDataBeans udb) throws SQLException {
 		Connection con = null;
 		PreparedStatement st = null;
@@ -138,6 +141,9 @@ public class UserDAO {
 		}
 	}
 
+    /**
+     * 全取得
+     */
     public List<UserDataBeans> findAll() {
         Connection conn = null;
         List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
@@ -179,6 +185,54 @@ public class UserDAO {
             }
         }
         return userList;
+    }
+
+    /**
+     * 取得
+     */
+    public UserDataBeans find(int Id, String loginId) {
+        Connection conn = null;
+        try {
+            // データベースへ接続
+            conn = DBManager.getConnection();
+
+            // SELECT文を準備
+            String sql = "SELECT * FROM t_user WHERE id = ? and login_id = ?";
+
+             // SELECTを実行し、結果表を取得
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setInt(1, Id);
+            pStmt.setString(2, loginId);
+            ResultSet rs = pStmt.executeQuery();
+
+             // 主キーに紐づくレコードは1件のみなので、rs.next()は1回だけ行う
+            if (!rs.next()) {
+                return null;
+            }
+
+            int idData = rs.getInt("id");
+            String loginIdData = rs.getString("login_id");
+            String nameData = rs.getString("name");
+            String mailAddressData = rs.getString("mail_address");
+            String postalData = rs.getString("postal_code");
+            String prefectureData = rs.getString("prefecture");
+            String AddressData = rs.getString("address");
+            return new UserDataBeans(idData,loginIdData, nameData,mailAddressData,postalData,prefectureData,AddressData);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
     }
 
     /**
