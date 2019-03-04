@@ -15,16 +15,21 @@
 		<jsp:include page="../../baselayout/header.jsp" />
 		<div class="form-wrapper">
 	  <h1>情報更新</h1>
+	  <c:if test="${validationMessage != null}">
+	  		<div class="alert alert-danger" role="alert">
+	  			<FONT color="#ff0000">${validationMessage}</FONT>
+	  		</div>
+	  </c:if>
 	  <form action="UpdateResult" method="POST">
 	  <p class="address">Cake ID</p>
 	      <label for="email"></label>
-	      <input type="text" name="loginId" class="input_txt" value="${udb.loginId}"></input>
+	      <input type="text" name="login_id" class="input_txt" value="${udb.loginId}"></input>
 	  <p class="address">名前を入力してください</p>
 	      <label for="email"></label>
 	      <input type="text" name="name" class="input_txt" value="${udb.name}"></input>
 	  <p class="address">メールアドレス</p>
 	      <label for="password"></label>
-	      <input type="email" name="mailAddress" class="input_txt"value="${udb.mailAddress}"></input>
+	      <input type="email" name="mail_address" class="input_txt"value="${udb.mailAddress}"></input>
 	    <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
 		  <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 			 <div class="h-adr">
@@ -32,7 +37,7 @@
 				<p class="address">郵便番号</p>
 				〒<input type="text" name="postal_code" value="${udb.postalCode}" class="p-postal-code input_address" size="8" maxlength="8"><br>
 				<p class="address address_txt">住所</p>
-				<select class="p-region-id input_address">
+				<select name="prefecture" class="p-region-id input_address">
 					<option value="">--</option>
 						<c:forEach var="ddb" items="${ddbList}">
 							<option value="${ddb.id}"

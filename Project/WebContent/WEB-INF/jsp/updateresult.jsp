@@ -19,19 +19,19 @@
 	  <form>
 	    <div class="form-item">
 	      <label for="email"></label>
-	      <input type="text" name="email" value="######" readonly></input>
+	      <input type="text" name="login_id" value="${udb.loginId}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="email"></label>
-	      <input type="text" name="email" value="######" readonly></input>
+	      <input type="text" name="name" value="${udb.name}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="address" name="password" value="######" readonly></input>
+	      <input type="address" name="mail_address" value="${udb.mailAddress}" readonly></input>
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="address" value="######" readonly></input>
+	      <input type="text" name="address" value="〒${udb.postalCode}${udb.prefecture}${udb.address}" readonly></input>
 	    </div>
 	    <div class="confirm_text">上記の内容で更新しました。</div>
 	  </form>

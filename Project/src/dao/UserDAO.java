@@ -265,6 +265,39 @@ public class UserDAO {
             }
         }
     }
+ /**
+ * 更新
+ */
+    public void updateUserDao (UserDataBeans udb){
+    	Connection con= null;
+    	PreparedStatement st = null;
+
+		try {
+			con = DBManager.getConnection();
+			st = con.prepareStatement("UPDATE t_user SET login_id = ?,name = ?,mail_address = ?,postal_code = ?,prefecture = ?,address = ?,update_date = now() WHERE id = ?");
+			st.setString(1, udb.getLoginId());
+			st.setString(2, udb.getName());
+			st.setString(3, udb.getMailAddress());
+			st.setString(4, udb.getPostalCode());
+			st.setString(5, udb.getPrefecture());
+			st.setString(6, udb.getAddress());
+			st.setInt(7,udb.getId());
+			st.executeUpdate();
+			System.out.println("updating user has been completed");
+
+	      } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            // データベース切断
+	            if (con != null) {
+	                try {
+	                    con.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	    }
 
 
 }
