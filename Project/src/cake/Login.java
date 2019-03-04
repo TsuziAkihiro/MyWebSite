@@ -89,6 +89,7 @@ public class Login extends HttpServlet {
 					session.setAttribute("isLogin", true);
 					session.setAttribute("user", user);
 
+
 					// マイページのサーブレットにリダイレクト
 					response.sendRedirect("MyPage");
 				} else {

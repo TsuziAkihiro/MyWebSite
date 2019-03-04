@@ -21,7 +21,7 @@
 				</div>
 			</form>
 			<div class="text_wrapper">
-				<h1>20件登録されています</h1>
+				<h1>全商品リスト</h1>
 			</div>
 			<div class="goods_wrapper">
 				<div class="goods">

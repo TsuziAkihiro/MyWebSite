@@ -22,7 +22,8 @@ public class LogoutResult extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		session.setAttribute("isLogin", false);
-		session.removeAttribute("userInfo");
+		session.removeAttribute("user");
+		session.removeAttribute("udb");
 
 		response.sendRedirect("TopPage");
 	}
