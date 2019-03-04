@@ -36,7 +36,7 @@
 					<option value="">--</option>
 						<c:forEach var="ddb" items="${ddbList}">
 							<option value="${ddb.id}"
-								<c:if test="${ddb.prefecture == udb.postalCode}">
+								<c:if test="${ddb.prefecture == udb.prefecture}">
 								  selected
 								</c:if>
 							>${ddb.prefecture}</option>
