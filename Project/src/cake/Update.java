@@ -37,7 +37,12 @@ public class Update extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 
+
 		HttpSession session = request.getSession();
+
+		String validationMessage = (String) CakeHelper.cutSessionAttribute(session, "validationMessage");
+		request.setAttribute("validationMessage",validationMessage);
+
 	    // セッションスコープからインスタンスを取得
 	    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
 

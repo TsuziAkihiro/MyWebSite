@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.DeliveryDataBeans;
 import dao.DeliveryDAO;
@@ -33,6 +34,12 @@ public class Regist extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+
+		HttpSession session = request.getSession();
+
+		String validationMessage = (String) CakeHelper.cutSessionAttribute(session, "validationMessage");
+		request.setAttribute("validationMessage",validationMessage);
 
 		// 都道府県一覧情報を取得
 		DeliveryDAO deliveryDao = new DeliveryDAO();

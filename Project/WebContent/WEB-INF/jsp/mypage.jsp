@@ -36,7 +36,7 @@
 									管理人
 								</c:when>
 								<c:otherwise>
-									${user.name}
+									${user.loginId}
 								</c:otherwise>
 							</c:choose>
 						</p>

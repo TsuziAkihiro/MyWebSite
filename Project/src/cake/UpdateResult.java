@@ -92,6 +92,8 @@ public class UpdateResult extends HttpServlet {
 
 					UserDAO dao = new UserDAO();
 					dao.updateUserDao(udb);
+					user.setLoginId(udb.getLoginId());
+					session.setAttribute("user", user);
 
 				       // フォワード
 			        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/updateresult.jsp");
@@ -99,7 +101,7 @@ public class UpdateResult extends HttpServlet {
 				} else {
 					session.setAttribute("udb", udb);
 
-					session.setAttribute("validationMessage", validationMessage);
+					request.setAttribute("validationMessage", validationMessage);
 					response.sendRedirect("Regist");
 				}
 			}

@@ -1,6 +1,6 @@
 package cake;
 
-
+import javax.servlet.http.HttpSession;
 
 /**
  * 定数保持、処理及び表示簡略化ヘルパークラス
@@ -21,5 +21,11 @@ public class CakeHelper {
 
 	}
 
+	public static Object cutSessionAttribute(HttpSession session, String str) {
+		Object test = session.getAttribute(str);
+		session.removeAttribute(str);
+
+		return test;
+	}
 
 }
