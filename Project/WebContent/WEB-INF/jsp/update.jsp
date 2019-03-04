@@ -51,10 +51,10 @@
 				</div>
    <div class="confirm_text">この内容で更新しますか？</div>
 	    <div class="button-panel">
-	      <input type="submit" class="button" title="Sign In" value="戻る"></input>
+	      <input type="submit" class="button" title="Sign In" value="戻る" name="return_button"></input>
 	    </div>
 	    <div class="button-panel regist_btn_panel">
-	      <input type="submit" class="button regist_btn" title="Sign In" value="更新"></input>
+	      <input type="submit" class="button regist_btn" title="Sign In" value="更新" name="confirm_button"></input>
 	    </div>
 	  </form>
 	</div>

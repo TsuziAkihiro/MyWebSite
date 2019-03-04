@@ -72,6 +72,15 @@ public class UpdateResult extends HttpServlet {
 
 				String validationMessage = "";
 
+				// 登録が確定されたかどうか確認するための変数
+				String confirmed = request.getParameter("confirm_button");
+
+				//修正
+				if(confirmed == null){
+					response.sendRedirect("MyPage");
+
+				//登録
+				}else {
 				// ログインIDの入力規則チェック 英数字 ハイフン アンダースコアのみ入力可能
 				if (!CakeHelper.isLoginIdValidation(udb.getLoginId())) {
 					validationMessage += "半角英数とハイフン、アンダースコアのみ入力できます";
@@ -93,6 +102,7 @@ public class UpdateResult extends HttpServlet {
 					session.setAttribute("validationMessage", validationMessage);
 					response.sendRedirect("Regist");
 				}
+			}
 
 			} catch (Exception e) {
 				e.printStackTrace();
