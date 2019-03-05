@@ -16,7 +16,7 @@
 		<div class="form-wrapper">
 	  <h1>この商品を削除しますか？</h1>
 		<div class="item">
-			<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="200" height="150" alt="">
+			<img src="img/${item.fileName}" width="200" height="150" alt="">
 		    <label for="aaa" class="aaa">${aaaa}</label>
 		    <form action="Delete" method="POST">
 			    <div class="button-panel">

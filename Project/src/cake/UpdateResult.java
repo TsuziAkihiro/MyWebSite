@@ -36,8 +36,15 @@ public class UpdateResult extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		//ログインセッションがない場合、トップ画面にリダイレクトさせる
+		HttpSession session = request.getSession();
+
+		if(session.getAttribute("user") == null) {
+		// ユーザ一覧のサーブレットにリダイレクト
+			response.sendRedirect("TopPage");
+			return;
+		}
 			request.setCharacterEncoding("UTF-8");
-			HttpSession session = request.getSession();
 			try {
 				String inputLoginId = request.getParameter("login_id");
 				String inputUserName = request.getParameter("name");

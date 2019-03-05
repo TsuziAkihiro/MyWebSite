@@ -31,17 +31,17 @@
 			<div class="top-wrapper">
 				<div class="container">
 					<div class="a">
-						<a href="Item" class="return">>戻る</a>
+						<a href="Item?item_id=${item.id}" class="return">>戻る</a>
 					</div>
 					<div class="container_out">
 						<div class="container-left w_container">
-								<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375" alt="">
+								<img src="img/${item.fileName}" width="500" height="375" alt="">
 								<input type="hidden" name="item_id" value="${item.id}">
 								<div class="container_in">
 									<input type="file">
 									<div class="price">
 										<label for="item_name detail">商品名</label>
-										<input type="text" class="detail" value="#####">
+										<input type="text" class="detail" value="${item.name}">
 										<label for="price2">値段</label>
 										<input type="text" class="detail">
 										<label for="item_detail detail">商品情報</label>

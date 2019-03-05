@@ -153,6 +153,7 @@ header ul{
 
 .imgWrap {
 	overflow: hidden;	/*拡大時にはみ出た部分を隠す*/
+	border-radius: 2px;
 }
 .imgWrap img {
 	display: block;

@@ -24,6 +24,9 @@ ul{
 	margin:10px;;
 }
 
+img{
+	border-radius: 2px;
+}
 /* ヘッダー */
 
 header{
@@ -141,7 +144,7 @@ h2{
 }
 
 .item_name{
-	font-size:65px;
+	font-size:40px;
 	font-weight:bold;
 }
 

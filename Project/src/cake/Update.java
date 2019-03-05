@@ -37,8 +37,14 @@ public class Update extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 
-
+		//ログインセッションがない場合、トップ画面にリダイレクトさせる
 		HttpSession session = request.getSession();
+
+		if(session.getAttribute("user") == null) {
+		// ユーザ一覧のサーブレットにリダイレクト
+			response.sendRedirect("TopPage");
+			return;
+		}
 
 		String validationMessage = (String) CakeHelper.cutSessionAttribute(session, "validationMessage");
 		request.setAttribute("validationMessage",validationMessage);

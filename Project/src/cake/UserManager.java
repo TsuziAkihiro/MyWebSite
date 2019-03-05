@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.UserDataBeans;
 import dao.UserDAO;
@@ -33,6 +34,15 @@ public class UserManager extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
+
+		//ログインセッションがない場合、トップ画面にリダイレクトさせる
+		HttpSession session = request.getSession();
+
+		if(session.getAttribute("user") == null) {
+		// ユーザ一覧のサーブレットにリダイレクト
+			response.sendRedirect("TopPage");
+			return;
+		}
 
 		// ユーザ一覧情報を取得
 		UserDAO userDao = new UserDAO();
