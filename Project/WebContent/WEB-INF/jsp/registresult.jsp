@@ -31,7 +31,7 @@
 	    </div>
 	    <div class="form-item">
 	      <label for="password"></label>
-	      <input type="text" name="address" placeholder="住所" value="〒${udb.postalCode}${udb.prefecture}${udb.address}" readonly></input>
+	      <input type="text" name="address" placeholder="住所" value="〒${udb.postalCode}&emsp;${udb.prefecture}&emsp;${udb.address}" readonly></input>
 	    </div>
 	    <div class="confirm_text">上記の内容で登録しました。</div>
 	  </form>
