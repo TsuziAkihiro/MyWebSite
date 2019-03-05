@@ -98,6 +98,8 @@ h2{
 }
 .return:hover{
 	background-color:rgba(128,128,128,1);
+	color:white;
+	text-decoration:none;
 }
 
 .a{
