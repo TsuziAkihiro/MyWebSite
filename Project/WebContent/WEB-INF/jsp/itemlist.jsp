@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,150 +25,21 @@
 				<h1>全商品リスト</h1>
 			</div>
 			<div class="goods_wrapper">
+				<c:forEach var="item" items="${itemList}" >
 				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
-					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
+					<a href="Item?item_id=${item.id}"><img src="img/${item.fileName}" width="280" height="210" alt=""></a>
+					<p class="name">${item.name}</p>
+					<p class="price">
+						<fmt:formatNumber value="${item.price}"
+	                    type="currency" currencySymbol="¥"
+	                    maxFractionDigits="0"/>
+					</p>
 					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
+						<a href="ItemDetail?item_id=${item.id}" class="go">編集</a>
+						<a href="ItemDelete?item_id=${item.id}" class="delete">削除</a>
 					</div>
 				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
-					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-										<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-
-				</div>
-								<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>					<div class="item">
-						<a href="ItemDetail.html" class="go">編集</a>
-						<a href="ItemDelete.html" class="delete">削除</a>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

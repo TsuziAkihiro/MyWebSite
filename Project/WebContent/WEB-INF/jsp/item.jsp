@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +40,9 @@
 						<form action="ItemAdd" method="POST">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<div class="container_in">
-								<h2>¥${item.price}&emsp;
+								<h2><fmt:formatNumber value="${item.price}"
+					                    type="currency" currencySymbol="¥"
+					                    maxFractionDigits="0"/>&emsp;
 									<select name="cnt" class="cnt_name">
 										<option value="1" selected>1</option>
 										<option value="2">2</option>
