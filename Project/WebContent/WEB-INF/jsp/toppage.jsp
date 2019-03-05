@@ -32,41 +32,13 @@
 		<div class="wrapper">
 			<h1>豊富な商品ラインナップ</h1>
 		</div>
+		<c:forEach var="item" items="${itemList}" >
 		<div class="wrapper">
 			<div class="imgWrap">
-				<a href="Item"><img src="img/76769.jpg" width="438.75px" height="300px" alt=""></a>
+				<a href="Item?id=${item.id}"><img src="img/${item.fileName}" width="438.75px" height="300px" alt=""></a>
 			</div>
 		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/merusi14.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/a11b4bb3ba448d1fa402ac3dc62cc91f.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/FCFS_chokokakekukki_TP_V.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/873aad49a96e34e28397b7b3723791a7_s.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/76769.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="imgWrap">
-				<a href="Item"><img src="img/76769.jpg" width="438.75px" height="300px" alt=""></a>
-			</div>
-		</div>
+		</c:forEach>
 	</div>
 	<footer>
 		<div class="container">

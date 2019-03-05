@@ -37,7 +37,7 @@ public class TopPage extends HttpServlet {
 		try {
 
 		//商品情報をランダムに5つ取得
-		ArrayList<ItemDataBeans>itemList = ItemDAO.getRandItem(5);
+		ArrayList<ItemDataBeans>itemList = ItemDAO.getRandItem(7);
 
 		//リクエストスコープにセット
 		request.setAttribute("itemList", itemList);
