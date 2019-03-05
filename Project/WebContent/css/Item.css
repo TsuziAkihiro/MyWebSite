@@ -103,6 +103,7 @@ h2{
 
 .w_container{
 	float:left;
+	width:600px;
 }
 .container-left{
 	width:500px;
@@ -128,7 +129,7 @@ h2{
 
 .container_in{
 	width:500px;
-	margin:0 100px;
+	margin:50px 100px 0;
 }
 
 .container_out{

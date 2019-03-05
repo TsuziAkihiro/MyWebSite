@@ -126,6 +126,41 @@ public class ItemDAO {
 			}
 		}
 	}
+    /**
+     * IDをもとにアイテム情報を取得
+     */
+	public static ItemDataBeans getItemByItemID(int itemId) throws SQLException {
+		Connection con = null;
+		PreparedStatement st = null;
+		try {
+			con = DBManager.getConnection();
+
+			st = con.prepareStatement("SELECT * FROM t_item WHERE id = ?");
+			st.setInt(1, itemId);
+
+			ResultSet rs = st.executeQuery();
+
+			ItemDataBeans item = new ItemDataBeans();
+			if (rs.next()) {
+				item.setId(rs.getInt("id"));
+				item.setName(rs.getString("name"));
+				item.setDetail(rs.getString("detail"));
+				item.setPrice(rs.getInt("price"));
+				item.setFileName(rs.getString("file_name"));
+			}
+
+			System.out.println("searching item by itemID has been completed");
+
+			return item;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+	}
 
 
 }

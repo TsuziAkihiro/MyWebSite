@@ -35,7 +35,7 @@
 		<c:forEach var="item" items="${itemList}" >
 		<div class="wrapper">
 			<div class="imgWrap">
-				<a href="Item?id=${item.id}"><img src="img/${item.fileName}" width="438.75px" height="300px" alt=""></a>
+				<a href="Item?item_id=${item.id}"><img src="img/${item.fileName}" width="438.75px" height="300px" alt=""></a>
 			</div>
 		</div>
 		</c:forEach>

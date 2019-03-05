@@ -35,11 +35,11 @@
 				</div>
 				<div class="container_out">
 					<div class="container-left w_container">
-							<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="500" height="375" alt="">
+							<img src="img/${item.fileName}" width="500" height="375" alt="">
 						<form action="ItemAdd" method="POST">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<div class="container_in">
-								<h2>¥$item.price　
+								<h2>¥${item.price}&emsp;
 									<select name="cnt" class="cnt_name">
 										<option value="1" selected>1</option>
 										<option value="2">2</option>
@@ -59,8 +59,8 @@
 					<div class="container-right w_container">
 						<form action="ItemAdd" method="POST">
 						<div class="container-right_in">
-							<p class="item_name">$item.name</p>
-							<p class="item_detail">$item.detail</p>
+							<p class="item_name">${item.name}</p>
+							<p class="item_detail">${item.detail}</p>
 							<button class="cart_btn" type="submit" name="action">お気に入り</button>
 						</div>
 						</form>
@@ -68,12 +68,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="bot_wrapper">
-			<div class="container">
-				<a href="ItemDetail" class="go">編集</a>
-				<a href="ItemDelete" class="go">削除</a>
+		<c:if test="${user.id == 1}">
+			<div class="bot_wrapper">
+				<div class="container">
+					<a href="ItemDetail?item_id=${item.id}" class="go">編集</a>
+					<a href="ItemDelete?item_id=${item.id}" class="go">削除</a>
+				</div>
 			</div>
-		</div>
+		</c:if>
 		<footer>
 			<div class="container">
 				<div class="text">Cake</div>
