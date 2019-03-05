@@ -40,13 +40,13 @@
 								<div class="container_in">
 									<input type="file">
 									<div class="price">
+										<label for="item_name detail">商品名</label>
+										<input type="text" class="detail" value="#####">
 										<label for="price2">値段</label>
 										<input type="text" class="detail">
-										<label for="item_name detail">商品名</label>
-								<input type="text" class="detail" value="#####">
-								<label for="item_detail detail">商品情報</label>
-								<textarea class="detail itemDetail">12345</textarea>
-								<button class="cart_btn" type="submit" name="action">更新</button>
+										<label for="item_detail detail">商品情報</label>
+										<textarea class="detail itemDetail">12345</textarea>
+										<button class="cart_btn" type="submit" name="action">更新</button>
 									</div>
 								</div>
 						</div>

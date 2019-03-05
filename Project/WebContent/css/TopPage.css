@@ -133,11 +133,9 @@ header ul{
 	text-align:center;
 }
 
-.wrapper{
-	padding-top:130px;
-}
 .lesson-wrapper h1{
 	font-size:1.2rem;
+	margin-top:140px;
 }
 
 .lesson-wrapper .wrapper, .lesson-wrapper .container{
@@ -153,15 +151,18 @@ header ul{
 	box-shadow:0 0 1px gray;
 }
 
-
-.container img {
+.imgWrap {
+	overflow: hidden;	/*拡大時にはみ出た部分を隠す*/
+}
+.imgWrap img {
 	display: block;
 	transition-duration: 0.3s;	/*変化に掛かる時間*/
 }
-.container img:hover {
+.imgWrap img:hover {
 	transform: scale(1.1);	/*画像の拡大率*/
 	transition-duration: 0.3s;	/*変化に掛かる時間*/
 }
+
 
 footer{
 	height:40px;
