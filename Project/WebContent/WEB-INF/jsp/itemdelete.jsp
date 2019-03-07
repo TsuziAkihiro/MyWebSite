@@ -18,9 +18,10 @@
 		<div class="item">
 			<img src="img/${item.fileName}" width="200" height="150" alt="">
 		    <label for="aaa" class="aaa">&emsp;&emsp;${item.name}</label>
-		    <form action="Delete" method="POST">
+		    <form action="ItemDelete" method="POST">
+		   	    <input type="hidden" value="${item.id}" name="item_id">
 			    <div class="button-panel">
-			      <input type="submit" class="button" title="Sign In" value="削除する"></input>
+			      <input type="submit" class="button" title="Sign In" value="削除する" onclick='return confirm("本当に「${item.id}」を削除しますか？");'></input>
 			    </div>
 		    </form>
 		</div>

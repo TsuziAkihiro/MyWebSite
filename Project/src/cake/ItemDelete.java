@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,6 +38,12 @@ public class ItemDelete extends HttpServlet {
 		HttpSession session = request.getSession();
 		try {
 
+		if(session.getAttribute("user") == null) {
+				// ユーザ一覧のサーブレットにリダイレクト
+					response.sendRedirect("TopPage");
+					return;
+		}
+
 		//選択された商品のIDを型変換し利用
 		int id = Integer.parseInt(request.getParameter("item_id"));
 
@@ -56,12 +63,23 @@ public class ItemDelete extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		//選択された商品のIDを型変換し利用
+		int id = Integer.parseInt(request.getParameter("item_id"));
+
+		ItemDAO itemDao = new ItemDAO();
+		itemDao.deleteDao(id);
+
+		List<ItemDataBeans> itemList = itemDao.findAll();
+
+		//リクエストスコープにセット
+		request.setAttribute("itemList", itemList);
+
+        // フォワード
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/itemlist.jsp");
+        dispatcher.forward(request, response);
 	}
 
 }

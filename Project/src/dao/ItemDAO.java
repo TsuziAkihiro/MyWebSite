@@ -161,6 +161,36 @@ public class ItemDAO {
 			}
 		}
 	}
+    /**
+     * 消去
+     */
+    public void deleteDao(int id){
+    	Connection conn = null;
+    	 try {
+             // データベースへ接続
+             conn = DBManager.getConnection();
+             String sql = "DELETE FROM t_item WHERE id = ?";
+             // SELECTを実行し、結果表を取得
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int result = stmt.executeUpdate();
+            // 追加された行数を出力
+            System.out.println(result);
+            stmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 }
