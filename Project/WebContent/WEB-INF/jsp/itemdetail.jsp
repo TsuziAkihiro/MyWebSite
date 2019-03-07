@@ -31,7 +31,7 @@
 			<div class="top-wrapper">
 				<div class="container">
 					<div class="a">
-						<a href="Item?item_id=${item.id}" class="return">>戻る</a>
+						<a href="Item?item_id=${item.id}" class="return">>商品ページ</a>
 					</div>
 					<div class="container_out">
 						<div class="container-left w_container">

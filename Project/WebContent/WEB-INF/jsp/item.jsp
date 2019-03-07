@@ -64,7 +64,9 @@
 						<div class="container-right_in">
 							<p class="item_name">${item.name}</p>
 							<p class="item_detail">${item.detail}</p>
-							<button class="cart_btn" type="submit" name="action">お気に入り</button>
+							<div class="submit_btn">
+								<button class="favorite_btn" type="submit" name="action">お気に入り</button>
+							</div>
 						</div>
 						</form>
 					</div>

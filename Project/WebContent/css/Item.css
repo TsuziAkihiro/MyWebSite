@@ -70,7 +70,7 @@ header ul{
 /* body */
 
 .top-wrapper{
-	height:800px;
+	height:auto;
 	padding-top:0px;
 }
 
@@ -82,6 +82,8 @@ h1{
 
 h2{
 	font-size:30px;
+	text-align:center;
+	margin-bottom: 1rem;
 }
 
 .return{
@@ -113,10 +115,16 @@ h2{
 }
 .container-left{
 	width:500px;
-	height:650px;
+	height:580px;
 	margin:30px 0;
 	box-shadow:0 0 8px gray;
 	border-radius:5px
+}
+
+.submit_btn{
+	text-align: center;
+ 	padding: 174px 0 0 0;
+    height: 295px;
 }
 
 .cart_btn{
@@ -130,16 +138,31 @@ h2{
 }
 
 .cart_btn:hover{
-	background-color:#cc2949
+	background-color:#cc2949;
+}
+
+.favorite_btn{
+	height:80px;
+	width:300px;
+	font-size:30px;
+	color:white;
+	background-color:#ffb3d9;
+	border-radius:4px;
+	cursor:pointer;
+	border:none;
+}
+
+.favorite_btn:hover{
+	background-color:#ff99cc;
 }
 
 .container_in{
 	width:300px;
-	margin:60px 100px 0;
+	margin:30px 100px 0;
 }
 
 .container_out{
-	height:700px;
+	height:650px;
 }
 
 .container-right_in{
@@ -158,6 +181,7 @@ h2{
 .cnt_name{
 	width:50px;
 	height:40px;
+	font-size: 27px;
 }
 .heart {
   width: 100px;
