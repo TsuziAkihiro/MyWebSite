@@ -69,7 +69,7 @@ public class FavoriteDAO {
     }
 
     /**
-     * 新規登録
+     * お気に入りに追加
      */
 	public void insertFavorite(int user_id, int item_id) throws SQLException {
 		Connection con = null;
@@ -92,6 +92,37 @@ public class FavoriteDAO {
 			}
 		}
 	}
+    /**
+     * お気に入りから削除
+     */
+    public void deleteFavorite(int user_id, int item_id){
+    	Connection conn = null;
+    	 try {
+             // データベースへ接続
+             conn = DBManager.getConnection();
+             String sql = "DELETE FROM t_favorite WHERE user_id = ? and item_id = ?";
+             // SELECTを実行し、結果表を取得
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, user_id);
+            stmt.setInt(2, item_id);
+            int result = stmt.executeUpdate();
+            // 追加された行数を出力
+            System.out.println(result);
+            stmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 }
