@@ -72,15 +72,14 @@ header ul{
 /* body */
 
 .main{
-	height:2100px;
+	height:auto;
 	width:100%;
-	margin-bottom:100px;
 }
 
 .main .container{
 	margin:0 auto;
 	height:100%;
-	padding:0 50px 50px 50px;
+	padding:0 50px 30px 50px;
 }
 
 .refer{
@@ -124,15 +123,14 @@ header ul{
 }
 
 .goods_wrapper{
-	text-align:center;
 	height:100%;
 }
 
 .goods{
-	float:left;
-	width:33%;
-	margin-bottom:5px;
+	display: inline-block;
 	transition:box-shadow 0.2s;
+	padding: 30px;
+	text-align: center;
 }
 
 .goods:hover{

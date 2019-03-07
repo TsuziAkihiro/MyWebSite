@@ -73,9 +73,9 @@ header ul{
 /* body */
 
 .main{
-	height:2000px;
+	height:auto;
 	width:100%;
-	margin-bottom:100px;
+	margin-bottom:40px;
 }
 
 .main .container{
@@ -125,16 +125,14 @@ header ul{
 }
 
 .goods_wrapper{
-	text-align:center;
 	height:100%;
 }
 
 .goods{
-	float:left;
-	width:33%;
-	margin-bottom:5px;
+	display: inline-block;
 	transition:box-shadow 0.2s;
-
+	padding: 30px;
+	text-align: center;
 }
 
 .goods:hover{
@@ -155,7 +153,7 @@ header ul{
 }
 
 .price{
-	margin:0 0 5px 0;
+	margin:0 0 15px 0;
 }
 
 .up_icon{
