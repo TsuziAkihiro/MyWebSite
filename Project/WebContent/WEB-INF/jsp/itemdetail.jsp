@@ -35,17 +35,21 @@
 					</div>
 					<div class="container_out">
 						<div class="container-left w_container">
+						<div class="item_picture">
 								<img src="img/${item.fileName}" width="500" height="375" alt="">
+									<div class="good_title">
+										<label for="item_name detail" class="item_detail">商品名</label>
+										<input type="text" class="detail" value="${item.name}">
+									</div>
+								</div>
+								<input type="file" class="file">
 								<input type="hidden" name="item_id" value="${item.id}">
 								<div class="container_in">
-									<input type="file">
 									<div class="price">
-										<label for="item_name detail">商品名</label>
-										<input type="text" class="detail" value="${item.name}">
 										<label for="price2">値段</label>
-										<input type="text" class="detail">
-										<label for="item_detail detail">商品情報</label>
-										<textarea class="detail itemDetail">12345</textarea>
+										<input type="text" class="detail" value="${item.price}">
+										<label for="item_detail detail">詳細</label>
+										<textarea class="detail itemDetail">${item.detail}</textarea>
 										<button class="cart_btn" type="submit" name="action">更新</button>
 									</div>
 								</div>

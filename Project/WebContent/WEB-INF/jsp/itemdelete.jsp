@@ -17,7 +17,7 @@
 	  <h1>この商品を削除しますか？</h1>
 		<div class="item">
 			<img src="img/${item.fileName}" width="200" height="150" alt="">
-		    <label for="aaa" class="aaa">${aaaa}</label>
+		    <label for="aaa" class="aaa">&emsp;&emsp;${item.name}</label>
 		    <form action="Delete" method="POST">
 			    <div class="button-panel">
 			      <input type="submit" class="button" title="Sign In" value="削除する"></input>
