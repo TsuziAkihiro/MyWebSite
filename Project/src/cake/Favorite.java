@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.FavoriteDataBeans;
+import beans.UserDataBeans;
+import dao.FavoriteDAO;
 
 /**
  * Servlet implementation class Favorite
@@ -30,18 +36,41 @@ public class Favorite extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 
-	   // フォワード
-	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/favorite.jsp");
-	   dispatcher.forward(request, response);
+		try {
 
+		//ログインセッションがない場合、トップ画面にリダイレクトさせる
+		HttpSession session = request.getSession();
+
+		if(session.getAttribute("user") == null) {
+
+		// ユーザ一覧のサーブレットにリダイレクト
+			response.sendRedirect("TopPage");
+			return;
+		}
+
+		UserDataBeans user = (UserDataBeans)session.getAttribute("user");
+
+		//商品情報を全取得
+		FavoriteDAO favoriteDao = new FavoriteDAO();
+		List<FavoriteDataBeans> favoriteList = favoriteDao.findAll(user.getId());
+
+		//リクエストスコープにセット
+		request.setAttribute("favoriteList", favoriteList);
+
+        // フォワード
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/favorite.jsp");
+        dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("TopPage");
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+
 	}
 
 }

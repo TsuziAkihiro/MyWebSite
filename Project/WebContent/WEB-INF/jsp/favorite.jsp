@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,98 +27,18 @@
 				<h1>お気に入りリスト</h1>
 			</div>
 			<div class="goods_wrapper">
+			<c:forEach var="favorite" items="${favoriteList}" >
 				<div class="goods">
-					<a href="Item"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
-					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000 </p>
+					<a href="Item"><img src="./img/${favorite.fileName}" width="280" height="210" alt=""></a>
+					<p class="name">
+						<fmt:formatNumber value="${favorite.name}"
+	                    type="currency" currencySymbol="¥"
+	                    maxFractionDigits="0"/>
+					</p>
+					<p class="price">${favorite.price}</p>
 					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
 				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>
-					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
-				<div class="goods">
-					<a href="item.html"><img src="./img/76769.jpg" width="280" height="210" alt=""></a>					<p class="name">苺パンケーキ生クリームを添えて</p>
-					<p class="price">¥3,000</p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
-				</div>
+			</c:forEach>
 			</div>
 		</div>
 	</div>

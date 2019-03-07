@@ -60,8 +60,9 @@
 						</form>
 					</div>
 					<div class="container-right w_container">
-						<form action="ItemAdd" method="POST">
+						<form action="FavoriteAdd" method="POST">
 						<div class="container-right_in">
+							<input type="hidden" name="item_id" value="${item.id}">
 							<p class="item_name">${item.name}</p>
 							<p class="item_detail">${item.detail}</p>
 							<div class="submit_btn">
