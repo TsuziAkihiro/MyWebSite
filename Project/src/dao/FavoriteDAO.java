@@ -26,7 +26,10 @@ public class FavoriteDAO {
 
             // SELECT文を準備
             // 自分のIDで取得する
-            String sql = "SELECT * FROM t_favorite  WHERE user_id = ?";
+            String sql = "SELECT * FROM t_favorite " +
+            		"INNER JOIN t_item " +
+            		"ON t_favorite.item_id = t_item.id " +
+            		"WHERE t_favorite.user_id = ?";
 
             // SELECTを実行し、結果表を取得
            PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -40,10 +43,11 @@ public class FavoriteDAO {
                 int userId = rs.getInt("user_id");
                 int itemId = rs.getInt("item_id");
                 Date createDate = rs.getDate("create_date");
+                String name = rs.getString("name");
                 int price = rs.getInt("price");
-                String fileName = rs.getString("fileName");
+                String fileName = rs.getString("file_name");
 
-                FavoriteDataBeans favorite = new FavoriteDataBeans(id, userId, itemId, createDate, price, fileName);
+                FavoriteDataBeans favorite = new FavoriteDataBeans(id, userId, itemId, createDate, name, price, fileName);
 
                 favoriteList.add(favorite);
             }

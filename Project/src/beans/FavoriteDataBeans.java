@@ -14,19 +14,22 @@ public class FavoriteDataBeans implements Serializable{
 	private int itemId;
 	private Date createDate;
 
+	private String name;
 	private int price;
 	private String fileName;
+
 
 	public FavoriteDataBeans() {
 
 	}
 
-	public FavoriteDataBeans(int id, int userId,int itemId, Date createDate, int price, String fileName) {
+	public FavoriteDataBeans(int id, int userId,int itemId, Date createDate, String name, int price, String fileName) {
 		this.id = id;
 		this.userId = userId;
 		this.itemId = itemId;
 		this.createDate = createDate;
 
+		this.name = name;
 		this.price = price;
 		this.fileName = fileName;
 	}
@@ -56,7 +59,12 @@ public class FavoriteDataBeans implements Serializable{
 		this.createDate = createDate;
 	}
 
-
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getPrice() {
 		return price;
 	}

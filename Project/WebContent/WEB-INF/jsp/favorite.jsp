@@ -29,13 +29,13 @@
 			<div class="goods_wrapper">
 			<c:forEach var="favorite" items="${favoriteList}" >
 				<div class="goods">
-					<a href="Item"><img src="./img/${favorite.fileName}" width="280" height="210" alt=""></a>
-					<p class="name">
-						<fmt:formatNumber value="${favorite.name}"
+					<a href="Item?item_id=${favorite.itemId}"><img src="./img/${favorite.fileName}" width="280" height="210" alt=""></a>
+					<p class="name">${favorite.name}</p>
+					<p class="price">
+						<fmt:formatNumber value="${favorite.price}"
 	                    type="currency" currencySymbol="¥"
 	                    maxFractionDigits="0"/>
-					</p>
-					<p class="price">${favorite.price}</p>
+	                </p>
 					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
 				</div>
 			</c:forEach>
