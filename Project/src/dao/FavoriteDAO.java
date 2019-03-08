@@ -10,6 +10,7 @@ import java.util.List;
 
 import base.DBManager;
 import beans.FavoriteDataBeans;
+import beans.ItemDataBeans;
 
 public class FavoriteDAO {
 
@@ -170,6 +171,84 @@ public class FavoriteDAO {
      }
      return null;
  }
+ /**
+ * 商品検索
+ */
+public static ArrayList<ItemDataBeans> getItemsByItemName(int user_id, String searchWord, int pageNum, int pageMaxItemCount) throws SQLException {
+	Connection con = null;
+	PreparedStatement st = null;
+	try {
+		int startiItemNum = (pageNum - 1) * pageMaxItemCount;
+		con = DBManager.getConnection();
+
+		if (searchWord.length() == 0) {
+			// 全検索
+			st = con.prepareStatement("SELECT * FROM t_favorite "
+					+ "INNER JOIN t_item "
+					+ "ON t_favorite.item_id = t_item.id "
+					+ "WHERE user_id = ? "
+					+ "ORDER BY id ASC LIMIT ?,? ");
+			st.setInt(1, user_id);
+			st.setInt(2, startiItemNum);
+			st.setInt(3, pageMaxItemCount);
+		} else {
+			// 商品名検索
+			st = con.prepareStatement("SELECT * FROM t_favorite WHERE name LIKE ? ORDER BY id ASC LIMIT ?,? ");
+			st.setString(1,"%"+searchWord+"%");
+			st.setInt(2, startiItemNum);
+			st.setInt(3, pageMaxItemCount);
+		}
+
+		ResultSet rs = st.executeQuery();
+		ArrayList<ItemDataBeans> itemList = new ArrayList<ItemDataBeans>();
+
+		while (rs.next()) {
+			ItemDataBeans item = new ItemDataBeans();
+			item.setId(rs.getInt("item_id"));
+			item.setName(rs.getString("name"));
+			item.setDetail(rs.getString("detail"));
+			item.setPrice(rs.getInt("price"));
+			item.setFileName(rs.getString("file_name"));
+			itemList.add(item);
+		}
+		System.out.println("get Items by itemName has been completed");
+		return itemList;
+	} catch (SQLException e) {
+		System.out.println(e.getMessage());
+		throw new SQLException(e);
+	} finally {
+		if (con != null) {
+			con.close();
+		}
+	}
+}
+/**
+ * 商品総数を取得
+ *
+ */
+public static double getItemCount(int user_id, String searchWord) throws SQLException {
+	Connection con = null;
+	PreparedStatement st = null;
+	try {
+		con = DBManager.getConnection();
+		st = con.prepareStatement("select count(*) as cnt from t_favorite where name like ? and user_id = ?");
+		st.setString(1, "%" + searchWord + "%");
+		st.setInt(2, user_id);
+		ResultSet rs = st.executeQuery();
+		double coung = 0.0;
+		while (rs.next()) {
+			coung = Double.parseDouble(rs.getString("cnt"));
+		}
+		return coung;
+	} catch (Exception e) {
+		System.out.println(e.getMessage());
+		throw new SQLException(e);
+	} finally {
+		if (con != null) {
+			con.close();
+		}
+	}
+}
 
 
 }

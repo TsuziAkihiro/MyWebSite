@@ -18,7 +18,7 @@
 		<div class="container">
 			<form>
 				<div class="refer">
-					<input class="eat_text" type="text" placeholder="商品をさがす">
+					<input class="eat_text" type="text" placeholder="商品をさがす" name="search_word">
 				</div>
 			</form>
 			<div class="text_wrapper">

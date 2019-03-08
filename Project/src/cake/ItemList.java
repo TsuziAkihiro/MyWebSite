@@ -1,9 +1,8 @@
 package cake;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.ItemDataBeans;
-import dao.ItemDAO;
+import beans.UserDataBeans;
+import dao.FavoriteDAO;
 
 /**
  * Servlet implementation class ItemList
@@ -21,6 +21,8 @@ import dao.ItemDAO;
 public class ItemList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	//1ページに表示する商品数
+	final static int PAGE_MAX_ITEM_COUNT = 9;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -35,34 +37,42 @@ public class ItemList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
 		try {
 
-		//ログインセッションがない場合、トップ画面にリダイレクトさせる
-		HttpSession session = request.getSession();
+		    // セッションスコープからインスタンスを取得
+		    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
 
-		if(session.getAttribute("user") == null) {
+		    String searchWord = "";
+			searchWord = request.getParameter("search_word");
+			//表示ページ番号 未指定の場合 1ページ目を表示
+			int pageNum = Integer.parseInt(request.getParameter("page_num") == null ? "1" : request.getParameter("page_num"));
+			// 新たに検索されたキーワードをセッションに格納する
+			session.setAttribute("searchWord", searchWord);
 
-		// ユーザ一覧のサーブレットにリダイレクト
-			response.sendRedirect("TopPage");
-			return;
-		}
+			// 商品リストを取得 ページ表示分のみ
+			ArrayList<ItemDataBeans> searchResultItemList = FavoriteDAO.getItemsByItemName(user.getId(), searchWord, pageNum, PAGE_MAX_ITEM_COUNT);
 
-		//商品情報を全取得
-		ItemDAO itemDao = new ItemDAO();
-		List<ItemDataBeans> itemList = itemDao.findAll();
+			// 検索ワードに対しての総ページ数を取得
+			double itemCount = FavoriteDAO.getItemCount(user.getId(),searchWord);
+			int pageMax = (int) Math.ceil(itemCount / PAGE_MAX_ITEM_COUNT);
 
-		//リクエストスコープにセット
-		request.setAttribute("itemList", itemList);
+			//総アイテム数
+			request.setAttribute("itemCount", (int) itemCount);
+			// 総ページ数
+			request.setAttribute("pageMax", pageMax);
+			// 表示ページ
+			request.setAttribute("pageNum", pageNum);
+			request.setAttribute("itemList", searchResultItemList);
 
-        // フォワード
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/itemlist.jsp");
-        dispatcher.forward(request, response);
-
+			request.getRequestDispatcher("/WEB-INF/jsp/itemlist.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.sendRedirect("TopPage");
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("Error");
 		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
