@@ -26,31 +26,34 @@
 				<div class="row">
 					<h3 class="cart_title">カート内容</h3>
 				</div>
+			<form action="Cart" method="POST">
 			<table class="table">
 				  <thead>
 				    <tr>
 				      <th scope="col" style="width:75px;"></th>
-				      <th scope="col" style="width:325px;">商品名</th>
-				      <th scope="col" style="width:125px;"></th>
+				      <th scope="col" style="width:50px;"></th>
+				      <th scope="col" style="width:280px;">商品名</th>
+				      <th scope="col"style="width:100px;"></th>
+				      <td scope="col"style="width:100px;"></td>
 				      <th scope="col"style="width:100px;">価格</th>
 				      <th scope="col"style="width:100px;">個数</th>
-				      <th scope="col"style="width:100px;">小計</th>
 				      <th scope="col"style="width:100px;"></th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				  <c:forEach var="item" items="${cart}" varStatus="status">
+				  <c:forEach var="item" items="${cart}">
 				    <tr>
 				      <th scope="row"></th>
+				      <td><img src="img/${item.fileName}" width="40" height="30" alt=""></td>
 				      <td>${item.name}</td>
 				      <td></td>
-				      <td id="price">
+				      <td></td>
+				      <td>
 				      	<fmt:formatNumber value="${item.price}"
 	                    type="currency" currencySymbol="¥"
-	                    maxFractionDigits="0"/>
-				      </td>
+	                    maxFractionDigits="0"/></td>
 				      <td>
-			      		<select name="cnt" class="cnt_name" id="number">
+				      	<select name="cnt" class="cnt_name" id="number">
 							<option value="1" selected>1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -61,16 +64,15 @@
 							<option value="8">8</option>
 							<option value="9">9</option>
 						</select>
-					  </td>
-				      <td>12345</td>
-
-				      <td><button type="button" class="btn btn-danger">削除</button></td>
+				      </td>
+				      <td><label for="${status.index}"><button type="submit" class="btn btn-danger" name="delete_item_id_list"  value="${item.id}" >削除</button></label></td>
 				    </tr>
 				    </c:forEach>
 				    <tr>
 				    	<td></td>
 				    	<td></td>
-				    	<td><a href="BuyConfirm" class="go">購入確認</a></td>
+				    	<td></td>
+				    	<td><a href="BuyConfirm" class="go">購入</a></td>
 				    	<td></td>
 				    	<td></td>
 				    	<td></td>
@@ -78,6 +80,7 @@
 				    </tr>
 				  </tbody>
 				</table>
+				</form>
 			</div>
 		</div>
 		<footer>
@@ -85,5 +88,12 @@
 				<div class="text">Cake</div>
 			</div>
 		</footer>
+		<script>
+			$(function(){
+				$("#number").change(function(){
+
+				});
+			});
+		</script>
 	</body>
 </html>

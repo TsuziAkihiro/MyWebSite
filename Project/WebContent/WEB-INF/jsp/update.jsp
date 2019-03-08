@@ -23,19 +23,19 @@
 	  <form action="UpdateResult" method="POST">
 	  <p class="address">Cake ID</p>
 	      <label for="email"></label>
-	      <input type="text" name="login_id" class="input_txt" value="${udb.loginId}"></input>
+	      <input type="text" name="login_id" class="input_txt" value="${udb.loginId}"required></input>
 	  <p class="address">名前を入力してください</p>
 	      <label for="email"></label>
-	      <input type="text" name="name" class="input_txt" value="${udb.name}"></input>
+	      <input type="text" name="name" class="input_txt" value="${udb.name}" required></input>
 	  <p class="address">メールアドレス</p>
 	      <label for="password"></label>
-	      <input type="email" name="mail_address" class="input_txt"value="${udb.mailAddress}"></input>
+	      <input type="email" name="mail_address" class="input_txt"value="${udb.mailAddress}" required></input>
 	    <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
 		  <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 			 <div class="h-adr">
 				<span class="p-country-name" style="display:none;">Japan</span>
 				<p class="address">郵便番号</p>
-				〒<input type="text" name="postal_code" value="${udb.postalCode}" class="p-postal-code input_address" size="8" maxlength="8"><br>
+				〒<input type="text" name="postal_code" value="${udb.postalCode}" class="p-postal-code input_address" size="8" maxlength="8" required><br>
 				<p class="address address_txt">住所</p>
 				<select name="prefecture" class="p-region-id input_address">
 					<option value="">--</option>
@@ -47,7 +47,7 @@
 							>${ddb.prefecture}</option>
 						</c:forEach>
 				</select>
-				<input type="text" name="address" value="${udb.address}" class="p-locality p-street-address p-extended-address input_address_txt"/><br>
+				<input type="text" name="address" value="${udb.address}" class="p-locality p-street-address p-extended-address input_address_txt" required/><br>
 				</div>
    <div class="confirm_text">この内容で更新しますか？</div>
 	    <div class="button-panel">

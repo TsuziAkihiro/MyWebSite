@@ -15,6 +15,7 @@ public class UserDataBeans implements Serializable{
 	private String prefecture;
 	private String address;
 	private String password;
+	private String fileName;
 
 
 	private int id;
@@ -35,10 +36,11 @@ public class UserDataBeans implements Serializable{
 		this.name = name;
 	}
 
-	public UserDataBeans(int id, String loginId, String name) {
+	public UserDataBeans(int id, String loginId, String name, String fileName) {
 		this.loginId = loginId;
 		this.name = name;
 		this.id = id;
+		this.fileName = fileName;
 	}
 
 	public UserDataBeans(int id, String loginId, String name, String mailAddress, String postalCode, String prefecture, String address) {
@@ -112,6 +114,15 @@ public class UserDataBeans implements Serializable{
 		this.address = address;
 	}
 
+
+	public String getFileName() {
+		return fileName;
+	}
+
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
 	public String getPassword() {
 		return password;

@@ -26,8 +26,11 @@
 			<div class="profile_wrapper">
 				<div class="container">
 					<div class="icon profile_con">
-							<img src="img/TOMcatDSC01768_TP_V.jpg">
-							<input type="file">
+							<img src="img/${user.fileName}">
+							<form action="MyPage" method="POST">
+								<input type="submit" value="送信"></input>
+								<input type="file" name="file_name">
+							</form>
 					</div>
 					<div class="name profile_con">
 						<p>

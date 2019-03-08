@@ -43,8 +43,9 @@ public class UserDAO {
             int idData = rs.getInt("id");
             String loginIdData = rs.getString("login_id");
             String nameData = rs.getString("name");
+            String fileName = rs.getString("file_name");
 
-            return new UserDataBeans(idData, loginIdData, nameData);
+            return new UserDataBeans(idData, loginIdData, nameData, fileName);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -121,7 +122,7 @@ public class UserDAO {
 
 		try {
 			con = DBManager.getConnection();
-			st = con.prepareStatement("INSERT INTO t_user(login_id,name,mail_address,postal_code,prefecture,address,login_password,create_date,update_date) VALUES(?,?,?,?,?,?,?,now(),now())");
+			st = con.prepareStatement("INSERT INTO t_user(login_id,name,mail_address,postal_code,prefecture,address,login_password,file_name,create_date,update_date) VALUES(?,?,?,?,?,?,?,'images.png',now(),now())");
 			st.setString(1, udb.getLoginId());
 			st.setString(2, udb.getName());
 			st.setString(3, udb.getMailAddress());
@@ -166,7 +167,8 @@ public class UserDAO {
                 int id = rs.getInt("id");
                 String loginId = rs.getString("login_id");
                 String name = rs.getString("name");
-                UserDataBeans user = new UserDataBeans(id, loginId, name);
+                String fileName = rs.getString("file_name");
+                UserDataBeans user = new UserDataBeans(id, loginId, name, fileName);
 
                 userList.add(user);
             }

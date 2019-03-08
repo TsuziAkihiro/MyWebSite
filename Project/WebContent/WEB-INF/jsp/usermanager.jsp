@@ -42,7 +42,7 @@
 					  <c:forEach var="user" items="${userList}" >
 					    <tr>
 					      <th scope="row"></th>
-					      <td><img src="img/873aad49a96e34e28397b7b3723791a7_s.jpg" width="40" height="30" alt=""></td>
+					      <td><img src="img/${user.fileName}" width="40" height="30" alt=""></td>
 					      <td></td>
 					      <td>${user.loginId}</td>
 					      <td>${user.name}</td>

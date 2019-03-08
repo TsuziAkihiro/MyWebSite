@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,27 +37,19 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  <c:forEach var="item" items="${cart}" varStatus="status">
 				    <tr>
 				      <th scope="row"></th>
-				      <td>サンプル名</td>
-				      <td>12345</td>
+				      <td>${item.name}</td>
+				      <td>
+				      	<fmt:formatNumber value="${item.price}"
+	                    type="currency" currencySymbol="¥"
+	                    maxFractionDigits="0"/>
+				      </td>
 				      <td>1</td>
 				      <td>98765円</td>
 				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル名</td>
-				      <td>12345</td>
-				      <td>1</td>
-				      <td>98765円</td>
-				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル名</td>
-				      <td>12345</td>
-				      <td>1</td>
-				      <td>98765円</td>
-				    </tr>
+				   </c:forEach>
 				    <tr>
 				    	<td></td>
 				    	<td></td>
