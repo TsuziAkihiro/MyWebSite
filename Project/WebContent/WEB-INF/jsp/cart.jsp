@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +38,16 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  <c:forEach var="item" items="${cart}" varStatus="status">
 				    <tr>
 				      <th scope="row"></th>
-				      <td>サンプル</td>
+				      <td>${item.name}</td>
 				      <td></td>
-				      <td>22222</td>
+				      <td>
+				      	<fmt:formatNumber value="${item.price}"
+	                    type="currency" currencySymbol="¥"
+	                    maxFractionDigits="0"/>
+				      </td>
 				      <td>
 			      		<select name="cnt" class="cnt_name">
 							<option value="1" selected>1</option>
@@ -58,49 +64,7 @@
 				      <td>12345</td>
 				      <td><button type="button" class="btn btn-danger">削除</button></td>
 				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル</td>
-				      <td></td>
-				      <td>22222</td>
-				      <td>
-			      		<select name="cnt" class="cnt_name">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-					  </td>
-				      <td>12345</td>
-				      <td><button type="button" class="btn btn-danger">削除</button></td>
-				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル</td>
-				      <td></td>
-				      <td>22222</td>
-				      <td>
-			      		<select name="cnt" class="cnt_name">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-
-						</select>
-					  </td>
-				      <td>12345</td>
-				      <td><button type="button" class="btn btn-danger">削除</button></td>
-				    </tr>
+				    </c:forEach>
 				    <tr>
 				    	<td></td>
 				    	<td></td>
