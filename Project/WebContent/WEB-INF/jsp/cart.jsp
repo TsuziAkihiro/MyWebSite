@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/Cart.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
 
 </head>
@@ -43,13 +44,13 @@
 				      <th scope="row"></th>
 				      <td>${item.name}</td>
 				      <td></td>
-				      <td>
+				      <td id="price">
 				      	<fmt:formatNumber value="${item.price}"
 	                    type="currency" currencySymbol="¥"
 	                    maxFractionDigits="0"/>
 				      </td>
 				      <td>
-			      		<select name="cnt" class="cnt_name">
+			      		<select name="cnt" class="cnt_name" id="number">
 							<option value="1" selected>1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -62,6 +63,7 @@
 						</select>
 					  </td>
 				      <td>12345</td>
+
 				      <td><button type="button" class="btn btn-danger">削除</button></td>
 				    </tr>
 				    </c:forEach>

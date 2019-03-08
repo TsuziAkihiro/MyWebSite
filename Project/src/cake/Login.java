@@ -5,6 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,6 +39,15 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		//ログインセッションがある場合、マイページ画面にリダイレクトさせる
+		HttpSession session = request.getSession();
+
+		if(Objects.equals(session.getAttribute("isLogin"), true)) {
+		// ユーザ一覧のサーブレットにリダイレクト
+			response.sendRedirect("MyPage");
+			return;
+		}
 
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");

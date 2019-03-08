@@ -38,6 +38,7 @@ public class ItemAdd extends HttpServlet {
 		try {
 			//選択された商品のIDを型変換し利用
 			int id = Integer.parseInt(request.getParameter("item_id"));
+
 			//対象のアイテム情報を取得
 			ItemDataBeans item = ItemDAO.getItemByItemID(id);
 
