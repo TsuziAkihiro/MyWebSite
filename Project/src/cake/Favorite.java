@@ -70,7 +70,33 @@ public class Favorite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
 
+		try {
+			//選択された商品のIDを型変換し利用
+			int itemId = Integer.parseInt(request.getParameter("item_id"));
+
+		    // セッションスコープからインスタンスを取得
+		    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
+
+			FavoriteDAO favoriteDao = new FavoriteDAO();
+
+			if(itemId != 0) {
+				favoriteDao.deleteFavorite(user.getId(),itemId);
+			}
+
+			List<FavoriteDataBeans> favoriteList = favoriteDao.findAll(user.getId());
+
+			//リクエストスコープにセット
+			request.setAttribute("favoriteList", favoriteList);
+
+	        // フォワード
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/favorite.jsp");
+	        dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("TopPage");
+		}
 	}
-
 }

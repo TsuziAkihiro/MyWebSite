@@ -18,21 +18,20 @@ import dao.ItemDAO;
 /**
  * Servlet implementation class FavoriteAdd
  */
-@WebServlet("/FavoriteAdd")
-public class FavoriteAdd extends HttpServlet {
+@WebServlet("/FavoriteChange")
+public class FavoriteChange extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FavoriteAdd() {
+    public FavoriteChange() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 
 		HttpSession session = request.getSession();
 
@@ -43,9 +42,20 @@ public class FavoriteAdd extends HttpServlet {
 		    // セッションスコープからインスタンスを取得
 		    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
 
-		    //データベースにお気に入り登録
 			FavoriteDAO favoriteDao = new FavoriteDAO();
-			favoriteDao.insertFavorite(user.getId(),itemId);
+
+//			お気に入り情報がなければ情報を作成し、メッセージを入れ、
+//			情報があればお気に入り情報を削除する
+
+			if(user != null) {
+				if(favoriteDao.find(user.getId(),itemId) == null) {
+					favoriteDao.insertFavorite(user.getId(),itemId);
+					request.setAttribute("Msg",  "お気に入り中");
+				}else {
+					favoriteDao.deleteFavorite(user.getId(),itemId);
+					request.setAttribute("Msg", "お気に入りにする");
+				}
+			}
 
 			//対象のアイテム情報を取得
 			ItemDataBeans item = ItemDAO.getItemByItemID(itemId);

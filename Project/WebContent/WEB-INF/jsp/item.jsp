@@ -60,14 +60,16 @@
 						</form>
 					</div>
 					<div class="container-right w_container">
-						<form action="FavoriteAdd" method="POST">
+						<form action="FavoriteChange" method="POST">
 						<div class="container-right_in">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<p class="item_name">${item.name}</p>
 							<p class="item_detail">${item.detail}</p>
-							<div class="submit_btn">
-								<button class="favorite_btn" type="submit" name="action">お気に入り</button>
-							</div>
+							<c:if test="${user != null}" >
+								<div class="submit_btn">
+									<button class="favorite_btn" type="submit" name="action">${Msg}</button>
+								</div>
+							</c:if>
 						</div>
 						</form>
 					</div>

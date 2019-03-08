@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.ItemDataBeans;
+import beans.UserDataBeans;
+import dao.FavoriteDAO;
 import dao.ItemDAO;
 
 /**
@@ -38,14 +40,27 @@ public class Item extends HttpServlet {
 		try {
 
 		//選択された商品のIDを型変換し利用
-		int id = Integer.parseInt(request.getParameter("item_id"));
+		int itemId = Integer.parseInt(request.getParameter("item_id"));
+
+	    // セッションスコープからインスタンスを取得
+	    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
 
 		//対象のアイテム情報を取得
-		ItemDataBeans item = ItemDAO.getItemByItemID(id);
+		ItemDataBeans item = ItemDAO.getItemByItemID(itemId);
 
 		//リクエストパラメーターにセット
 		request.setAttribute("item", item);
 
+		FavoriteDAO favoriteDao = new FavoriteDAO();
+		//ユーザー情報があればお気に入りボタンを表示し、メッセージを入れる
+
+		if(user != null) {
+			if(favoriteDao.find(user.getId(),itemId) == null) {
+				request.setAttribute("Msg", "お気に入りにする");
+			}else {
+				request.setAttribute("Msg",  "お気に入り中");
+			}
+		}
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/item.jsp");
         dispatcher.forward(request, response);

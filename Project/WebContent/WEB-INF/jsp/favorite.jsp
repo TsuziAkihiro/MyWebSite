@@ -27,6 +27,7 @@
 				<h1>お気に入りリスト</h1>
 			</div>
 			<div class="goods_wrapper">
+			<form action="Favorite" method="POST">
 			<c:forEach var="favorite" items="${favoriteList}" >
 				<div class="goods">
 					<a href="Item?item_id=${favorite.itemId}"><img src="./img/${favorite.fileName}" width="280" height="210" alt=""></a>
@@ -36,9 +37,10 @@
 	                    type="currency" currencySymbol="¥"
 	                    maxFractionDigits="0"/>
 	                </p>
-					<button class="cart_btn" type="submit" name="action">お気に入りから外す</button>
+					<button class="cart_btn" type="submit" name="item_id" value="${favorite.itemId}">お気に入りから外す</button>
 				</div>
 			</c:forEach>
+			</form>
 			</div>
 		</div>
 	</div>
