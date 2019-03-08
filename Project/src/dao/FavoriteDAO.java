@@ -123,6 +123,53 @@ public class FavoriteDAO {
             }
         }
     }
+	/**
+	 * item_idとuseridから情報を取得する
+	 *
+	 */
+ public FavoriteDataBeans find(int user_id, int item_id) {
+     Connection conn = null;
+
+     try {
+         // データベースへ接続
+         conn = DBManager.getConnection();
+
+         // SELECT文を準備
+         // 自分のIDで取得する
+         String sql = "SELECT * FROM t_favorite WHERE user_id = ? and item_id = ? ";
+
+         // SELECTを実行し、結果表を取得
+        PreparedStatement pStmt = conn.prepareStatement(sql);
+        pStmt.setInt(1, user_id);
+        pStmt.setInt(2, item_id);
+        ResultSet rs = pStmt.executeQuery();
+
+         // 結果表に格納されたレコードの内容を
+         // Userインスタンスに設定し、ArrayListインスタンスに追加
+         while (rs.next()) {
+         	int id = rs.getInt("id");
+             int userId = rs.getInt("user_id");
+             int itemId = rs.getInt("item_id");
+             Date createDate = rs.getDate("create_date");
+
+             return new FavoriteDataBeans(id, userId, itemId, createDate);
+         }
+     } catch (SQLException e) {
+         e.printStackTrace();
+         return null;
+     } finally {
+         // データベース切断
+         if (conn != null) {
+             try {
+                 conn.close();
+             } catch (SQLException e) {
+                 e.printStackTrace();
+                 return null;
+             }
+         }
+     }
+     return null;
+ }
 
 
 }

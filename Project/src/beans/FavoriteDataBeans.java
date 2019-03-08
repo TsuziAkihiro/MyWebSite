@@ -23,6 +23,14 @@ public class FavoriteDataBeans implements Serializable{
 
 	}
 
+	public FavoriteDataBeans(int id, int userId,int itemId, Date createDate) {
+		this.id = id;
+		this.userId = userId;
+		this.itemId = itemId;
+		this.createDate = createDate;
+	}
+
+
 	public FavoriteDataBeans(int id, int userId,int itemId, Date createDate, String name, int price, String fileName) {
 		this.id = id;
 		this.userId = userId;
