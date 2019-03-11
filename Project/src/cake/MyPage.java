@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import beans.BuyDataBeans;
+import beans.UserDataBeans;
+import dao.BuyDAO;
 
 /**
  * Servlet implementation class MyPage
@@ -34,15 +39,31 @@ public class MyPage extends HttpServlet {
 		//ログインセッションがない場合、トップ画面にリダイレクトさせる
 		HttpSession session = request.getSession();
 
-		if(session.getAttribute("user") == null) {
+	    // セッションスコープからインスタンスを取得
+	    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
+
+		if(user == null) {
 		// ユーザ一覧のサーブレットにリダイレクト
 			response.sendRedirect("TopPage");
 			return;
 		}
+		try {
+
+			// 購入一覧情報を取得
+			BuyDAO buyDao = new BuyDAO();
+			List<BuyDataBeans> buyList = buyDao.findById(user.getId());
+
+			// リクエストスコープにユーザ一覧情報をセット
+			request.setAttribute("buyList", buyList);
 
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
         dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("TopPage");
+		}
     }
 
 

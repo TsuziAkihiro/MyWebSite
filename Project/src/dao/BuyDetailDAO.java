@@ -96,9 +96,7 @@ public class BuyDetailDAO {
 			con = DBManager.getConnection();
 
 			st = con.prepareStatement(
-					"SELECT t_item.id,"
-					+ " t_item.name,"
-					+ " t_item.price"
+					"SELECT * "
 					+ " FROM t_buy_detail"
 					+ " JOIN t_item"
 					+ " ON t_buy_detail.item_id = t_item.id"
@@ -114,6 +112,8 @@ public class BuyDetailDAO {
 				idb.setName(rs.getString("name"));
 				idb.setPrice(rs.getInt("price"));
 				idb.setNumber(rs.getInt("number"));
+				idb.setFileName(rs.getString("file_name"));
+				idb.setSubtotal(rs.getInt("number") * rs.getInt("price"));
 
 
 				buyDetailItemList.add(idb);

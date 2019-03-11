@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import base.DBManager;
 import beans.BuyDataBeans;
@@ -91,6 +94,53 @@ public class BuyDAO {
 			}
 		}
 	}
+    /**
+     * IDをもとに全ての購入情報を取得する
+     * @return
+     */
+    public List<BuyDataBeans> findById(int userId) {
+		Connection conn = null;
+		PreparedStatement st = null;
+        List<BuyDataBeans> buyList = new ArrayList<BuyDataBeans>();
 
+        try {
+            // データベースへ接続
+            conn = DBManager.getConnection();
+
+            // SELECT文を準備
+            st = conn.prepareStatement(
+            		"SELECT * FROM t_buy WHERE user_id = ?");
+
+             // SELECTを実行し、結果表を取得
+			st.setInt(1,userId);
+			ResultSet rs = st.executeQuery();
+
+            // 結果表に格納されたレコードの内容を
+            // Userインスタンスに設定し、ArrayListインスタンスに追加
+            while (rs.next()) {
+            	BuyDataBeans buy = new BuyDataBeans();
+            	buy.setId(rs.getInt("id"));
+				buy.setTotalPrice(rs.getInt("total_price"));
+				buy.setBuyDate(rs.getTimestamp("create_date"));
+				buy.setUserId(rs.getInt("user_id"));
+					buyList.add(buy);
+                }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
+        Collections.reverse(buyList);
+        return buyList;
+    }
 
 }

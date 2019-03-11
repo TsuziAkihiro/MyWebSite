@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,14 +33,22 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				  <c:forEach var="item" items="${cart}" varStatus="status">
+				  <c:forEach var="buyIDB" items="${buyIDBList}" >
 				    <tr>
 				      <th scope="row"></th>
-				      <td>${item.name}</td>
-				      <td></td>
-				      <td>22222</td>
-				      <td>1</td>
-				      <td>12345</td>
+				      <td><img src="img/${buyIDB.fileName}" width="40" height="30" alt=""></td>
+				      <td>${buyIDB.name}</td>
+				      <td>
+					      <fmt:formatNumber value="${buyIDB.price}"
+					      type="currency" currencySymbol="¥"
+			              maxFractionDigits="0"/>
+				      </td>
+				      <td>${buyIDB.number}</td>
+				      <td>
+				          <fmt:formatNumber value="${buyIDB.subtotal}"
+				      	  type="currency" currencySymbol="¥"
+			              maxFractionDigits="0"/>
+				      </td>
 				      <td></td>
 				    </tr>
 				  </c:forEach>
@@ -49,7 +58,11 @@
 				    	<td></td>
 				    	<td></td>
 				    	<td>配送料</td>
-				    	<td>500円</td>
+				    	<td>
+				    	  <fmt:formatNumber value="${resultBDB.deliveryMethodPrice}"
+				       	  type="currency" currencySymbol="¥"
+		                  maxFractionDigits="0"/>
+				    	</td>
 				    	<td></td>
 				    </tr>
 				    <tr>
@@ -58,7 +71,11 @@
 				    	<td></td>
 				    	<td></td>
 				    	<td>合計</td>
-				    	<td>500円</td>
+				    	<td>
+				    	  <fmt:formatNumber value="${resultBDB.totalPrice}"
+				    	  type="currency" currencySymbol="¥"
+		                  maxFractionDigits="0"/>
+				    	</td>
 				    	<td></td>
 				    </tr>
 				  </tbody>

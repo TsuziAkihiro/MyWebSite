@@ -62,7 +62,11 @@
 				    	<td></td>
 				    	<td></td>
 				    	<td>配送料</td>
-				    	<td>${bdb.deliveryMethodPrice}円</td>
+				    	<td>
+				    	<fmt:formatNumber value="${bdb.deliveryMethodPrice}"
+				    	type="currency" currencySymbol="¥"
+		                  maxFractionDigits="0"/>
+				    	</td>
 				    </tr>
 				    <tr>
 				    	<td></td>

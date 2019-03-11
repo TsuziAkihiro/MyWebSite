@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,33 +72,21 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+					  <c:forEach var="bdb" items="${buyList}" >
 					    <tr>
 					      <th scope="row"></th>
-					      <td>2018年12月34日56時78分</td>
-					      <td>12345</td>
+					      <td><fmt:formatDate value="${bdb.buyDate}" type="BOTH" dateStyle="FULL" /></td>
+					      <td>
+						      <fmt:formatNumber value="${bdb.totalPrice}"
+						      type="currency" currencySymbol="¥"
+		                      maxFractionDigits="0"/>
+					      </td>
 					      <td></td>
 					      <td></td>
 					      <td></td>
 					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=1'">詳細</button></td>
 					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td>2018年12月34日56時78分</td>
-					      <td>12345</td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=2'">詳細</button></td>
-					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td>2018年12月34日56時78分</td>
-					      <td>12345</td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=2'">詳細</button></td>
-					    </tr>
+					   </c:forEach>
 					    <tr>
 					    	<td></td>
 					    	<td></td>

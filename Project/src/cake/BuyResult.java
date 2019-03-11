@@ -41,6 +41,8 @@ public class BuyResult extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
+		try {
+
 			// セッションからカート情報を取得
 			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) CakeHelper.cutSessionAttribute(session, "cart");
 
@@ -71,6 +73,11 @@ public class BuyResult extends HttpServlet {
 		       RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buyresult.jsp");
 		        dispatcher.forward(request, response);
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("TopPage");
+		}
 	}
 
 }
