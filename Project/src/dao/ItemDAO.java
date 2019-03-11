@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.cj.util.StringUtils;
+
 import base.DBManager;
 import beans.ItemDataBeans;
 
@@ -201,17 +203,24 @@ public class ItemDAO {
 			int startiItemNum = (pageNum - 1) * pageMaxItemCount;
 			con = DBManager.getConnection();
 
-			if (searchWord.length() == 0) {
+			if(StringUtils.isNullOrEmpty(searchWord)) {
 				// 全検索
 				st = con.prepareStatement("SELECT * FROM t_item ORDER BY id ASC LIMIT ?,? ");
 				st.setInt(1, startiItemNum);
 				st.setInt(2, pageMaxItemCount);
-			} else {
-				// 商品名検索
-				st = con.prepareStatement("SELECT * FROM t_item WHERE name LIKE ? ORDER BY id ASC LIMIT ?,? ");
-				st.setString(1,"%"+searchWord+"%");
-				st.setInt(2, startiItemNum);
-				st.setInt(3, pageMaxItemCount);
+			}else {
+				if (searchWord.length() == 0) {
+					// 全検索
+					st = con.prepareStatement("SELECT * FROM t_item ORDER BY id ASC LIMIT ?,? ");
+					st.setInt(1, startiItemNum);
+					st.setInt(2, pageMaxItemCount);
+				} else {
+					// 商品名検索
+					st = con.prepareStatement("SELECT * FROM t_item WHERE name LIKE ? ORDER BY id ASC LIMIT ?,? ");
+					st.setString(1,"%"+searchWord+"%");
+					st.setInt(2, startiItemNum);
+					st.setInt(3, pageMaxItemCount);
+				}
 			}
 
 			ResultSet rs = st.executeQuery();

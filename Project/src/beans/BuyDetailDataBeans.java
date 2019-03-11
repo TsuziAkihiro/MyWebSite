@@ -10,9 +10,9 @@ public class BuyDetailDataBeans implements Serializable{
 
 	private int id;
 	private int buyId;
-	private String itemId;
+	private int itemId;
 	private int number;
-	private String buyPrice;
+	private int buyPrice;
 
 
 	public int getId() {
@@ -27,10 +27,10 @@ public class BuyDetailDataBeans implements Serializable{
 	public void setBuyId(int buyId) {
 		this.buyId = buyId;
 	}
-	public String getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 	public int getNumber() {
@@ -39,10 +39,10 @@ public class BuyDetailDataBeans implements Serializable{
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	public String getBuyPrice() {
+	public int getBuyPrice() {
 		return buyPrice;
 	}
-	public void setBuyPrice(String buyPrice) {
+	public void setBuyPrice(int buyPrice) {
 		this.buyPrice = buyPrice;
 	}
 

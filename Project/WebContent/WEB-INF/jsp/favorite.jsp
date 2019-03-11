@@ -18,11 +18,6 @@
 	<jsp:include page="../../baselayout/header.jsp" />
 	<div class="main">
 		<div class="container">
-			<form>
-				<div class="refer">
-					<input class="eat_text" type="text" placeholder="お気に入りをさがす">
-				</div>
-			</form>
 			<div class="text_wrapper">
 				<h1>お気に入りリスト</h1>
 			</div>
@@ -42,21 +37,6 @@
 			</c:forEach>
 			</form>
 			</div>
-		</div>
-	</div>
-	<div class="page_wrapper">
-		<div class="container">
-			<a class="page-link page-link1" href="#">
-				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-			</a>
-			<a class="page-link" href="#">1</a>
-			<a class="page-link" href="#">2</a>
-			<a class="page-link" href="#">3</a>
-			<a class="page-link" href="#">4</a>
-			<a class="page-link page-link6" href="#">5</a>
-			<a class="page-link" href="#">
-				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-			</a>
 		</div>
 	</div>
 	<div class="up_icon">

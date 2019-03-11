@@ -29,7 +29,8 @@
 			<table class="table">
 				  <thead>
 				    <tr>
-				      <th scope="col" style="width:30px;"></th>
+				      <th scope="col" style="width:50px;"></th>
+				      <th scope="col" style="width:50px;"></th>
 				      <th scope="col" style="width:150px;">商品名</th>
 				      <th scope="col" style="width:50px;">価格</th>
 				      <th scope="col" style="width:50px;">個数</th>
@@ -39,30 +40,41 @@
 				  <tbody>
 				  <c:forEach var="item" items="${cart}" varStatus="status">
 				    <tr>
-				      <th scope="row"></th>
+				      <td></td>
+				      <th scope="row"><img src="img/${item.fileName}" width="40" height="30" alt=""></th>
 				      <td>${item.name}</td>
 				      <td>
 				      	<fmt:formatNumber value="${item.price}"
 	                    type="currency" currencySymbol="¥"
 	                    maxFractionDigits="0"/>
 				      </td>
-				      <td>1</td>
-				      <td>98765円</td>
+				      <td>${item.number}</td>
+				      <td>
+					      <fmt:formatNumber value="${item.subtotal}"
+					      type="currency" currencySymbol="¥"
+		                  maxFractionDigits="0"/>
+				      </td>
 				    </tr>
 				   </c:forEach>
 				    <tr>
+				        <td></td>
 				    	<td></td>
 				    	<td></td>
 				    	<td></td>
 				    	<td>配送料</td>
-				    	<td>500円</td>
+				    	<td>${bdb.deliveryMethodPrice}円</td>
 				    </tr>
 				    <tr>
 				    	<td></td>
 				    	<td></td>
 				    	<td></td>
+				    	<td></td>
 				    	<td>合計</td>
-				    	<td>12345円</td>
+				    	<td>
+			   	       	<fmt:formatNumber value="${bdb.totalPrice}"
+					      type="currency" currencySymbol="¥"
+		                  maxFractionDigits="0"/>
+				    	</td>
 				    </tr>
 				  </tbody>
 				</table>

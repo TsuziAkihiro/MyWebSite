@@ -1,6 +1,10 @@
 package cake;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
+
+import beans.ItemDataBeans;
 
 /**
  * 定数保持、処理及び表示簡略化ヘルパークラス
@@ -28,4 +32,11 @@ public class CakeHelper {
 		return test;
 	}
 
+	public static int getTotalItemPrice(ArrayList<ItemDataBeans> items) {
+		int total = 0;
+		for (ItemDataBeans item : items) {
+			total += item.getPrice() * item.getNumber();
+		}
+		return total;
+	}
 }

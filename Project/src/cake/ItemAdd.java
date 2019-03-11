@@ -38,9 +38,12 @@ public class ItemAdd extends HttpServlet {
 		try {
 			//選択された商品のIDを型変換し利用
 			int id = Integer.parseInt(request.getParameter("item_id"));
+			int number = Integer.parseInt(request.getParameter("cnt"));
 
 			//対象のアイテム情報を取得
 			ItemDataBeans item = ItemDAO.getItemByItemID(id);
+			item.setNumber(number);
+			item.setSubtotal(number * item.getPrice());
 
 			//追加した商品を表示するためリクエストパラメーターにセット
 			request.setAttribute("item", item);

@@ -52,19 +52,7 @@
 				      	<fmt:formatNumber value="${item.price}"
 	                    type="currency" currencySymbol="¥"
 	                    maxFractionDigits="0"/></td>
-				      <td>
-				      	<select name="cnt" class="cnt_name" id="number">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-				      </td>
+				      <td>${item.number}</td>
 				      <td><label for="${status.index}"><button type="submit" class="btn btn-danger" name="delete_item_id_list"  value="${item.id}" >削除</button></label></td>
 				    </tr>
 				    </c:forEach>

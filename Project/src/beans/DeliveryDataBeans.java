@@ -10,13 +10,13 @@ public class DeliveryDataBeans implements Serializable{
 
 	private int id;
 	private String prefecture;
-	private String fee;
+	private int fee;
 
 
 	public DeliveryDataBeans(){
 
 	}
-	public DeliveryDataBeans(int id, String prefecture, String fee) {
+	public DeliveryDataBeans(int id, String prefecture, int fee) {
 		this.id = id;
 		this.prefecture = prefecture;
 		this.fee = fee;
@@ -35,10 +35,10 @@ public class DeliveryDataBeans implements Serializable{
 	public void setPrefecture(String prefecture) {
 		this.prefecture = prefecture;
 	}
-	public String getFee() {
+	public int getFee() {
 		return fee;
 	}
-	public void setFee(String fee) {
+	public void setFee(int fee) {
 		this.fee = fee;
 	}
 

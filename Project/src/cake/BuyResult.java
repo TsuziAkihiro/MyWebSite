@@ -1,6 +1,7 @@
 package cake;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.BuyDataBeans;
+import beans.BuyDetailDataBeans;
+import beans.ItemDataBeans;
+import dao.BuyDAO;
+import dao.BuyDetailDAO;
 
 /**
  * Servlet implementation class BuyResult
@@ -30,16 +38,39 @@ public class BuyResult extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	       RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buyresult.jsp");
-	        dispatcher.forward(request, response);
-	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		HttpSession session = request.getSession();
+
+			// セッションからカート情報を取得
+			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) CakeHelper.cutSessionAttribute(session, "cart");
+
+			BuyDataBeans bdb = (BuyDataBeans) CakeHelper.cutSessionAttribute(session, "bdb");
+
+			// 購入情報を登録
+			int buyId = BuyDAO.insertBuy(bdb);
+			// 購入詳細情報を購入情報IDに紐づけして登録
+			for (ItemDataBeans cartInItem : cart) {
+				BuyDetailDataBeans bddb = new BuyDetailDataBeans();
+				bddb.setBuyId(buyId);
+				bddb.setItemId(cartInItem.getId());
+				bddb.setNumber(cartInItem.getNumber());
+				bddb.setBuyPrice(cartInItem.getPrice());
+				BuyDetailDAO.insertBuyDetail(bddb);
+			}
+
+
+			/* ====購入完了ページ表示用==== */
+			BuyDataBeans resultBDB = BuyDAO.getBuyDataBeansByBuyId(buyId);
+			request.setAttribute("resultBDB", resultBDB);
+
+			// 購入アイテム情報
+			ArrayList<ItemDataBeans> buyIDBList = BuyDetailDAO.getItemDataBeansListByBuyId(buyId);
+			request.setAttribute("buyIDBList", buyIDBList);
+
+			// 購入完了ページ
+		       RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buyresult.jsp");
+		        dispatcher.forward(request, response);
+
 	}
 
 }

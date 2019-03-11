@@ -23,8 +23,8 @@
 				  <thead>
 				    <tr>
 				      <th scope="col" style="width:50px;"></th>
+				      <th scope="col" style="width:50px;"></th>
 				      <th scope="col" style="width:325px;">商品名</th>
-				      <th scope="col" style="width:125px;"></th>
 				      <th scope="col"style="width:100px;">価格</th>
 				      <th scope="col"style="width:100px;">個数</th>
 				      <th scope="col"style="width:100px;">小計</th>
@@ -32,33 +32,17 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  <c:forEach var="item" items="${cart}" varStatus="status">
 				    <tr>
 				      <th scope="row"></th>
-				      <td>サンプル</td>
+				      <td>${item.name}</td>
 				      <td></td>
 				      <td>22222</td>
 				      <td>1</td>
 				      <td>12345</td>
 				      <td></td>
 				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル</td>
-				      <td></td>
-				      <td>22222</td>
-				      <td>1</td>
-				      <td>12345</td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row"></th>
-				      <td>サンプル</td>
-				      <td></td>
-				      <td>22222</td>
-				      <td>1</td>
-				      <td>12345</td>
-				      <td></td>
-				    </tr>
+				  </c:forEach>
 				    <tr>
 				    	<td></td>
 				    	<td></td>

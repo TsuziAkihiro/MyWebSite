@@ -16,9 +16,9 @@
 	<jsp:include page="../../baselayout/header.jsp" />
 	<div class="main">
 		<div class="container">
-			<form>
+			<form action="Index" method="POST">
 				<div class="refer">
-					<input class="eat_text" type="text" placeholder="食べ物をさがす">
+					<input class="eat_text" type="text" placeholder="食べ物をさがす"  name="search_word">
 				</div>
 			</form>
 			<div class="text_wrapper">
@@ -59,7 +59,7 @@
 					<!-- 1ページ送るボタン -->
 					<c:choose>
 						<c:when test="${pageNum == pageMax || pageMax == 0}">
-							<a class="page-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+							<a><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 						</c:when>
 						<c:otherwise>
 							<a href="Index?search_word=${searchWord}&page_num=${pageNum + 1}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>

@@ -14,6 +14,9 @@ public class ItemDataBeans implements Serializable{
 	private int price;
 	private String fileName;
 
+	private int number;
+	private int subtotal;
+
 	// コンストラクタ
 	public ItemDataBeans() {
 
@@ -59,6 +62,18 @@ public class ItemDataBeans implements Serializable{
 		this.fileName = fileName;
 	}
 
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
 
+	public int getSubtotal() {
+		return subtotal;
+	}
+	public void setSubtotal(int subtotal) {
+		this.subtotal = subtotal;
+	}
 
 }
