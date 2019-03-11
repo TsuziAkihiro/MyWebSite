@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,11 +41,19 @@
 					  <tbody>
 					    <tr>
 					      <th scope="row"></th>
-					      <td>2018年12月34日56時78分</td>
+					      <td><fmt:formatDate value="${resultBDB.buyDate}" type="BOTH" dateStyle="FULL" /></td>
 					      <td></td>
-					      <td>500円</td>
+					      <td>
+						      <fmt:formatNumber value="${resultBDB.deliveryMethodPrice}"
+					       	  type="currency" currencySymbol="¥"
+			                  maxFractionDigits="0"/>
+		                  </td>
 					      <td></td>
-					      <td>12345</td>
+					      <td>
+					      	  <fmt:formatNumber value="${resultBDB.totalPrice}"
+					       	  type="currency" currencySymbol="¥"
+			                  maxFractionDigits="0"/>
+					      </td>
 					      <td></td>
 					    </tr>
 					  </tbody>
@@ -62,8 +71,8 @@
 					  <thead>
 					    <tr>
 					      <th scope="col" style="width:75px;"></th>
-					      <th scope="col" style="width:325px;">商品名</th>
 					      <th scope="col" style="width:100px;"></th>
+					      <th scope="col" style="width:325px;">商品名</th>
 					      <th scope="col"style="width:100px;">個数</th>
 					      <th scope="col"style="width:100px;">単価</th>
 					      <th scope="col"style="width:100px;">小計</th>
@@ -71,38 +80,29 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+					  <c:forEach var="buyIDB" items="${buyIDBList}" >
 					    <tr>
 					      <th scope="row"></th>
-					      <td>濃厚ガトーのフォルダンショコラ</td>
-					      <td></td>
-					      <td>15</td>
-					      <td>11111</td>
-					      <td>12345</td>
-					      <td><a href="item.html" class="detail_btn">>商品ページ</a></td>
+					      <td><img src="img/${buyIDB.fileName}" width="40" height="30" alt=""></td>
+					      <td>${buyIDB.name}</td>
+					      <td>${buyIDB.number}</td>
+					      <td>
+						      <fmt:formatNumber value="${buyIDB.price}"
+						      type="currency" currencySymbol="¥"
+				              maxFractionDigits="0"/>
+				          </td>
+					      <td>
+					          <fmt:formatNumber value="${buyIDB.subtotal}"
+					      	  type="currency" currencySymbol="¥"
+				              maxFractionDigits="0"/>
+				          </td>
+					      <td><a href="Item?item_id=${buyIDB.id}" class="detail_btn">>商品ページ</a></td>
 					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td>グルテンフリークッキー</td>
-					      <td></td>
-					      <td>15</td>
-					      <td>11111</td>
-					      <td>12345</td>
-					      <td><a href="item" class="detail_btn">>商品ページ</a></td>
-					    </tr>
-					    <tr>
-					      <th scope="row"></th>
-					      <td>ヘーゼルシフォンケーキ</td>
-					      <td></td>
-					      <td>15</td>
-					      <td>11111</td>
-					      <td>12345</td>
-					      <td><a href="item" class="detail_btn">>商品ページ</a></td>
-					    </tr>
+					   </c:forEach>
 					  </tbody>
 					</table>
 				</div>
 			</div>
-		</div>
 		<footer>
 			<div class="container">
 				<div class="text">Cake</div>

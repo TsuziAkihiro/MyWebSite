@@ -84,7 +84,7 @@
 					      <td></td>
 					      <td></td>
 					      <td></td>
-					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?id=1'">詳細</button></td>
+					      <td><button type="button" class="btn btn-info" id="detail-show" onclick="location.href='BuyDetail?buyId=${bdb.id}'">詳細</button></td>
 					    </tr>
 					   </c:forEach>
 					    <tr>

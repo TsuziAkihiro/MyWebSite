@@ -108,7 +108,7 @@ public class BuyDetailDAO {
 
 			while (rs.next()) {
 				ItemDataBeans idb = new ItemDataBeans();
-				idb.setId(rs.getInt("id"));
+				idb.setId(rs.getInt("item_id"));
 				idb.setName(rs.getString("name"));
 				idb.setPrice(rs.getInt("price"));
 				idb.setNumber(rs.getInt("number"));
