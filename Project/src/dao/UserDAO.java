@@ -192,19 +192,18 @@ public class UserDAO {
     /**
      * 取得
      */
-    public UserDataBeans find(int Id, String loginId) {
+    public UserDataBeans find(int Id) {
         Connection conn = null;
         try {
             // データベースへ接続
             conn = DBManager.getConnection();
 
             // SELECT文を準備
-            String sql = "SELECT * FROM t_user WHERE id = ? and login_id = ?";
+            String sql = "SELECT * FROM t_user WHERE id = ?";
 
              // SELECTを実行し、結果表を取得
             PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setInt(1, Id);
-            pStmt.setString(2, loginId);
             ResultSet rs = pStmt.executeQuery();
 
              // 主キーに紐づくレコードは1件のみなので、rs.next()は1回だけ行う

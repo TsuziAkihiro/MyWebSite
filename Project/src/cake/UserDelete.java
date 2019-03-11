@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.UserDataBeans;
+import dao.UserDAO;
+
 /**
  * Servlet implementation class UserDelete
  */
@@ -39,6 +42,15 @@ public class UserDelete extends HttpServlet {
 			response.sendRedirect("TopPage");
 			return;
 		}
+
+		//選択された商品のIDを型変換し利用
+		int userId = Integer.parseInt(request.getParameter("id"));
+
+		UserDAO userDao = new UserDAO();
+		UserDataBeans deleteUser = userDao.find(userId);
+
+
+		request.setAttribute("deleteUser", deleteUser);
 
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp");

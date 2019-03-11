@@ -53,7 +53,7 @@ public class Update extends HttpServlet {
 	    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
 
 		UserDAO userDao = new UserDAO();
-		UserDataBeans udb = userDao.find(user.getId(),user.getLoginId());
+		UserDataBeans udb = userDao.find(user.getId());
 
 		// 都道府県一覧情報を取得
 		DeliveryDAO deliveryDao = new DeliveryDAO();

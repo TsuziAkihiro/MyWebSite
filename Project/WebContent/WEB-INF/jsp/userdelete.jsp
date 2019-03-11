@@ -16,8 +16,8 @@
 		<div class="form-wrapper">
 	  <h1>このユーザーを削除しますか？</h1>
 		<div class="item">
-			<img src="img/MAX76_gjmax20140531_TP_V4.jpg" width="200" height="150" alt="">
-		    <label for="name" class="name">&emsp;&emsp;${user.name}</label>
+			<img src="img/${deleteUser.fileName}" width="200" height="150" alt="">
+		    <label for="name" class="name">&emsp;&emsp;${deleteUser.name}</label>
 		    <form action="Delete" method="POST">
 			    <div class="button-panel">
 			      <input type="submit" class="button" title="Sign In" value="削除する"></input>

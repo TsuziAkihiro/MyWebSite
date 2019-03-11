@@ -50,7 +50,7 @@ public class BuyConfirm extends HttpServlet {
 		}
 
 		UserDAO userDao = new UserDAO();
-		user = userDao.find(user.getId(), user.getLoginId());
+		user = userDao.find(user.getId());
 
 		//カートを取得
 		ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
