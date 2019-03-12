@@ -102,6 +102,13 @@ public class MyPage extends HttpServlet {
 		// リクエストスコープにユーザ一覧情報をセット
 		request.setAttribute("buyList", buyList);
 
+		// 画像の反映待ち
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
         dispatcher.forward(request, response);

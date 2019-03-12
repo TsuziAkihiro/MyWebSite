@@ -47,7 +47,7 @@
 						<a><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
 					</c:when>
 					<c:otherwise>
-						<a class="page-link page-link1" href="Index?search_word=${searchWord}&page_num=${pageNum - 1}">
+						<a href="Index?search_word=${searchWord}&page_num=${pageNum - 1}">
 							<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 						</a>
 					</c:otherwise>
