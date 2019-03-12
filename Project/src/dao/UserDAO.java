@@ -301,5 +301,33 @@ public class UserDAO {
 	        }
 	    }
 
+    /**
+     * 画像の更新
+     */
+        public void updateImgDao (int id, String fileName){
+        	Connection con= null;
+        	PreparedStatement st = null;
+
+    		try {
+    			con = DBManager.getConnection();
+    			st = con.prepareStatement("UPDATE t_user SET file_name = ?,update_date = now() WHERE id = ?");
+    			st.setString(1, fileName);
+    			st.setInt(2,id);
+    			st.executeUpdate();
+    			System.out.println("updating user img has been completed");
+
+    	      } catch (SQLException e) {
+    	            e.printStackTrace();
+    	        } finally {
+    	            // データベース切断
+    	            if (con != null) {
+    	                try {
+    	                    con.close();
+    	                } catch (SQLException e) {
+    	                    e.printStackTrace();
+    	                }
+    	            }
+    	        }
+    	    }
 
 }

@@ -273,4 +273,37 @@ public class ItemDAO {
 		}
 	}
 
+	 /**
+	 * 商品の更新
+	 */
+	    public void updateItemDao (String name,int price, String detail,String fileName, int id){
+	    	Connection con= null;
+	    	PreparedStatement st = null;
+
+			try {
+				con = DBManager.getConnection();
+				st = con.prepareStatement("UPDATE t_item SET name = ?,detail = ?,price = ?,file_name = ?,update_date = now() WHERE id = ?");
+				st.setString(1, name);
+				st.setString(2, detail);
+				st.setInt(3, price);
+				st.setString(4, fileName);
+				st.setInt(5,id);
+				st.executeUpdate();
+				System.out.println("updating user has been completed");
+
+		      } catch (SQLException e) {
+		            e.printStackTrace();
+		        } finally {
+		            // データベース切断
+		            if (con != null) {
+		                try {
+		                    con.close();
+		                } catch (SQLException e) {
+		                    e.printStackTrace();
+		                }
+		            }
+		        }
+		    }
+
+
 }

@@ -29,9 +29,9 @@
 				<div class="container">
 					<div class="icon profile_con">
 							<img src="img/${user.fileName}">
-							<form action="MyPage" method="POST">
+							<form action="MyPage"  enctype="multipart/form-data" method="POST">
 								<input type="submit" value="送信"></input>
-								<input type="file" name="file_name">
+								<input type="file" name="file">
 							</form>
 					</div>
 					<div class="name profile_con">

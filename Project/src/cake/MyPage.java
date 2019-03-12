@@ -5,20 +5,24 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import beans.BuyDataBeans;
 import beans.UserDataBeans;
 import dao.BuyDAO;
+import dao.UserDAO;
 
 /**
  * Servlet implementation class MyPage
  */
 @WebServlet("/MyPage")
+@MultipartConfig(location="/Users/tsujiakihiro/Documents/GitHub/MyWebSite/Project/WebContent/img", maxFileSize=1048576)
 public class MyPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -74,12 +78,45 @@ public class MyPage extends HttpServlet {
 		throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 
-		String fileName = request.getParameter("file_name");
+	    // セッションスコープからインスタンスを取得
+	    UserDataBeans user = (UserDataBeans)session.getAttribute("user");
+
+		Part part = request.getPart("file");
+        String name = this.getFileName(part);
+        part.write(name);
+
+     // 画像をデータベースに登録
+        UserDAO userDao = new UserDAO();
+        userDao.updateImgDao(user.getId(), name);
+
+        //セッションスコープ再登録
+        user.setFileName(name);
+		session.setAttribute("user", user);
+
+		// 購入一覧情報を取得
+		BuyDAO buyDao = new BuyDAO();
+		List<BuyDataBeans> buyList = buyDao.findById(user.getId());
+
+		// リクエストスコープにユーザ一覧情報をセット
+		request.setAttribute("buyList", buyList);
 
         // フォワード
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
         dispatcher.forward(request, response);
 	}
+
+	private String getFileName(Part part) {
+        String name = null;
+        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
+            if (dispotion.trim().startsWith("filename")) {
+                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
+                name = name.substring(name.lastIndexOf("\\") + 1);
+                break;
+            }
+        }
+        return name;
+    }
 
 }

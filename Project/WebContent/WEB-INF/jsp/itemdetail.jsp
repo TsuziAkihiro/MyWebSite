@@ -27,7 +27,7 @@
 </head>
 	<body>
 		<jsp:include page="../../baselayout/header.jsp" />
-		<form action="ItemAdd" method="POST">
+		<form action="ItemDetail" enctype="multipart/form-data" method="POST">
 			<div class="top-wrapper">
 				<div class="container">
 					<div class="a">
@@ -39,17 +39,17 @@
 								<img src="img/${item.fileName}" width="500" height="375" alt="">
 									<div class="good_title">
 										<label for="item_name detail" class="item_detail">商品名</label>
-										<input type="text" class="detail" value="${item.name}" required>
+										<input type="text" class="detail" value="${item.name}" name="name" required>
 									</div>
 								</div>
-								<input type="file" class="file">
+								<input type="file" class="file" name="file">
 								<input type="hidden" name="item_id" value="${item.id}" required>
 								<div class="container_in">
 									<div class="price">
 										<label for="price2">値段</label>
-										<input type="text" class="detail" value="${item.price}" required>
+										<input type="text" class="detail" value="${item.price}" name="price" required>
 										<label for="item_detail detail">詳細</label>
-										<textarea class="detail itemDetail" readonly>${item.detail}</textarea>
+										<textarea class="detail itemDetail" name="detail" readonly>${item.detail}</textarea>
 										<button class="cart_btn" type="submit" name="action" onclick='return confirm("本当に更新しますか？");'>更新</button>
 									</div>
 								</div>
