@@ -49,7 +49,7 @@
 										<label for="price2">値段</label>
 										<input type="text" class="detail" value="${item.price}" name="price" required>
 										<label for="item_detail detail">詳細</label>
-										<textarea class="detail itemDetail" name="detail" readonly>${item.detail}</textarea>
+										<textarea class="detail itemDetail" name="detail" required>${item.detail}</textarea>
 										<button class="cart_btn" type="submit" name="action" onclick='return confirm("本当に更新しますか？");'>更新</button>
 									</div>
 								</div>

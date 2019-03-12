@@ -65,6 +65,7 @@ public class ItemDetail extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
 		try {
@@ -77,11 +78,19 @@ public class ItemDetail extends HttpServlet {
 			String inputdetail = request.getParameter("detail");
 
 			Part part = request.getPart("file");
-	        String name = this.getFileName(part);
-	        part.write(name);
+		    String name = this.getFileName(part);
+		    if(name == null) {
+		    	part.write(name);
+		        ItemDAO itemDao = new ItemDAO();
+		        itemDao.updateItemDao(inputName, inputprice, inputdetail, name, id);
 
-	        ItemDAO itemDao = new ItemDAO();
-	        itemDao.updateItemDao(inputName, inputprice, inputdetail, name, id);
+		    }else {
+
+		        ItemDAO itemDao = new ItemDAO();
+		        ItemDataBeans item = itemDao.getItemByItemID(id);
+		        itemDao.updateItemDao(inputName, inputprice, inputdetail, item.getFileName(), id);
+
+		    }
 
 			response.sendRedirect("ItemList");
 
