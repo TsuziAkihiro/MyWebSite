@@ -25,7 +25,7 @@
 				<h1>全商品リスト</h1>
 			</div>
 			<div class="goods_wrapper">
-				<c:forEach var="item" items="${itemList}" >
+				<c:forEach var="item" items="${itemList}" varStatus="status">
 				<div class="goods">
 					<a href="Item?item_id=${item.id}"><img src="img/${item.fileName}" width="280" height="210" alt=""></a>
 					<p class="name">${item.name}</p>
@@ -41,21 +41,6 @@
 				</div>
 				</c:forEach>
 			</div>
-		</div>
-	</div>
-	<div class="page_wrapper">
-		<div class="container">
-			<a class="page-link page-link1" href="#">
-				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-			</a>
-			<a class="page-link" href="#">1</a>
-			<a class="page-link" href="#">2</a>
-			<a class="page-link" href="#">3</a>
-			<a class="page-link" href="#">4</a>
-			<a class="page-link page-link6" href="#">5</a>
-			<a class="page-link" href="#">
-				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-			</a>
 		</div>
 	</div>
 	<div class="up_icon">

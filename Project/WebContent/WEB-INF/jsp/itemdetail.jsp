@@ -50,7 +50,7 @@
 										<input type="text" class="detail" value="${item.price}" required>
 										<label for="item_detail detail">詳細</label>
 										<textarea class="detail itemDetail" readonly>${item.detail}</textarea>
-										<button class="cart_btn" type="submit" name="action">更新</button>
+										<button class="cart_btn" type="submit" name="action" onclick='return confirm("本当に更新しますか？");'>更新</button>
 									</div>
 								</div>
 						</div>

@@ -109,7 +109,10 @@ public class UpdateResult extends HttpServlet {
 					session.setAttribute("udb", udb);
 
 					request.setAttribute("validationMessage", validationMessage);
-					response.sendRedirect("Regist");
+
+				       // フォワード
+			        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/update.jsp");
+			        dispatcher.forward(request, response);
 				}
 			}
 

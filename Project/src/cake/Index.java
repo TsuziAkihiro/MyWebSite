@@ -2,7 +2,6 @@ package cake;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,33 +35,6 @@ public class Index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
-
-		try {
-
-		//商品情報を全取得
-		ItemDAO itemDao = new ItemDAO();
-		List<ItemDataBeans> itemList = itemDao.findAll();
-
-		//リクエストスコープにセット
-		request.setAttribute("itemList", itemList);
-		//総アイテム数
-		request.setAttribute("itemCount",itemList.size());
-
-
-        // フォワード
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Index.jsp");
-        dispatcher.forward(request, response);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			response.sendRedirect("TopPage");
-		}
-	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 
         // リクエストパラメータの文字コードを指定

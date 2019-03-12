@@ -16,7 +16,7 @@
 	<jsp:include page="../../baselayout/header.jsp" />
 	<div class="main">
 		<div class="container">
-			<form action="Index" method="POST">
+			<form action="Index">
 				<div class="refer">
 					<input class="eat_text" type="text" placeholder="食べ物をさがす"  name="search_word">
 				</div>
@@ -54,7 +54,7 @@
 				</c:choose>
 					<!-- ページインデックス -->
 					<c:forEach begin="${(pageNum - 5) > 0 ? pageNum - 5 : 1}" end="${(pageNum + 5) > pageMax ? pageMax : pageNum + 5}" step="1" varStatus="status">
-						<c:if test="${pageNum == status.index }"> </c:if><a href="Index?search_word=${searchWord}&page_num=${status.index}" class="page-link">${status.index}</a>
+						<a href="Index?search_word=${searchWord}&page_num=${status.index}" class="page-link">${status.index}</a>
 					</c:forEach>
 					<!-- 1ページ送るボタン -->
 					<c:choose>

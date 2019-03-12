@@ -16,7 +16,7 @@
 	<div class="top-wrapper">
 		<div class="container">
 			<h1>さがしてみる。</h1>
-			<form id="form" action="Index" method="POST">
+			<form id="form" action="Index">
 				<div class="inputs">
 					<input class="eatText" type="text" placeholder="食べ物を入力" name="search_word">
 					<button class="eat_input"><i class="fas fa-search"></i></button>
