@@ -18,8 +18,9 @@
 		<div class="item">
 			<img src="img/${deleteUser.fileName}" width="200" height="150" alt="">
 		    <label for="name" class="name">&emsp;&emsp;${deleteUser.name}</label>
-		    <form action="Delete" method="POST">
+		    <form action="UserDelete" method="POST">
 			    <div class="button-panel">
+			      <input type="hidden" value="${deleteUser.id}" name="id">
 			      <input type="submit" class="button" title="Sign In" value="削除する"></input>
 			    </div>
 		    </form>

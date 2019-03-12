@@ -24,6 +24,11 @@
 					<div class="row">
 						<h3 class="cart_title">ユーザーリスト</h3>
 					</div>
+						  <c:if test="${msg != null}">
+					  		<div class="alert alert-danger" role="alert">
+	  					<FONT color="#ff0000">${msg}</FONT>
+	  				</div>
+			  </c:if>
 				<table class="table">
 					  <thead>
 					    <tr>
@@ -47,7 +52,7 @@
 					      <td>${user.loginId}</td>
 					      <td>${user.name}</td>
 					      <td></td>
-					      <td><a href="Update?id=${user.id}" class="go">編集</a></td>
+					      <td><a href="UserUpdate?id=${user.id}" class="go">編集</a></td>
 					      <td><a href="UserDelete?id=${user.id}" class="delete">削除</a></td>
 					      <td></td>
 					    </tr>

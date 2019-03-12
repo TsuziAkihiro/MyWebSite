@@ -218,7 +218,8 @@ public class UserDAO {
             String postalData = rs.getString("postal_code");
             String prefectureData = rs.getString("prefecture");
             String AddressData = rs.getString("address");
-            return new UserDataBeans(idData,loginIdData, nameData,mailAddressData,postalData,prefectureData,AddressData);
+            String fileNameData = rs.getString("file_name");
+            return new UserDataBeans(idData,loginIdData, nameData,mailAddressData,postalData,prefectureData,AddressData,fileNameData);
 
         } catch (SQLException e) {
             e.printStackTrace();

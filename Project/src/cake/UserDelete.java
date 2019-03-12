@@ -60,9 +60,17 @@ public class UserDelete extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		//選択された商品のIDを型変換し利用
+		int userId = Integer.parseInt(request.getParameter("id"));
+
+		UserDAO userDao = new UserDAO();
+		userDao.deleteDao(userId);
+
+		response.sendRedirect("UserManager");
+		return;
 	}
 
 }

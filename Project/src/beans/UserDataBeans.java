@@ -43,7 +43,7 @@ public class UserDataBeans implements Serializable{
 		this.fileName = fileName;
 	}
 
-	public UserDataBeans(int id, String loginId, String name, String mailAddress, String postalCode, String prefecture, String address) {
+	public UserDataBeans(int id, String loginId, String name, String mailAddress, String postalCode, String prefecture, String address, String fileName) {
 		this.id = id;
 		this.loginId = loginId;
 		this.name = name;
@@ -51,6 +51,7 @@ public class UserDataBeans implements Serializable{
 		this.postalCode = postalCode;
 		this.prefecture = prefecture;
 		this.address = address;
+		this.fileName = fileName;
 	}
 
 
