@@ -11,8 +11,6 @@
 	<link rel="stylesheet" href="css/Favorite.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
-
-
 </head>
 <body>
 	<jsp:include page="../../baselayout/header.jsp" />
@@ -42,11 +40,7 @@
 	<div class="up_icon">
 		<i class="fas fa-angle-up fa-2x color" id="hoge"></i>
 	</div>
-	<footer>
-		<div class="container">
-			<div class="text">Cake</div>
-		</div>
-	</footer>
+	<jsp:include page="/baselayout/footer.jsp" />
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="

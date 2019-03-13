@@ -58,10 +58,6 @@
 				</div>
 			</div>
 		</form>
-		<footer>
-			<div class="container">
-				<div class="text">Cake</div>
-			</div>
-		</footer>
+		<jsp:include page="/baselayout/footer.jsp" />
 	</body>
 </html>

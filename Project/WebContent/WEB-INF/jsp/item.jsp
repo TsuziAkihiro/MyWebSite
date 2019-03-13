@@ -11,8 +11,6 @@
 	<link rel="stylesheet" href="css/Item.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
-
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -84,10 +82,6 @@
 				</div>
 			</div>
 		</c:if>
-		<footer>
-			<div class="container">
-				<div class="text">Cake</div>
-			</div>
-		</footer>
+		<jsp:include page="/baselayout/footer.jsp" />
 	</body>
 </html>

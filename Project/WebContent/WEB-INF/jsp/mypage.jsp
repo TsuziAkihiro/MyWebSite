@@ -15,7 +15,6 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-
 </head>
 	<body>
 		<jsp:include page="../../baselayout/header.jsp" />
@@ -101,10 +100,6 @@
 				</div>
 			</div>
 		</div>
-		<footer>
-			<div class="container">
-				<div class="text">Cake</div>
-			</div>
-		</footer>
+		<jsp:include page="/baselayout/footer.jsp" />
 	</body>
 </html>

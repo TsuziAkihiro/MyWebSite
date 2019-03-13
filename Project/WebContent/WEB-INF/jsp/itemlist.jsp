@@ -46,11 +46,7 @@
 	<div class="up_icon">
 		<i class="fas fa-angle-up fa-2x color" id="hoge"></i>
 	</div>
-	<footer>
-		<div class="container">
-			<div class="text">Cake</div>
-		</div>
-	</footer>
+	<jsp:include page="/baselayout/footer.jsp" />
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="

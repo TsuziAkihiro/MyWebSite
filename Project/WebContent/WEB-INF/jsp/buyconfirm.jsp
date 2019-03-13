@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +11,6 @@
 	<link rel="stylesheet" href="css/BuyConfirm.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/ice_cream.png">
-
 </head>
 	<body>
 		<jsp:include page="../../baselayout/header.jsp" />
@@ -87,10 +85,6 @@
 		<div class="go_container">
 			<a href="BuyResult" class="go">購入します。</a>
 		</div>
-		<footer>
-			<div class="container">
-				<div class="text">Cake</div>
-			</div>
-		</footer>
+	<jsp:include page="/baselayout/footer.jsp" />
 	</body>
 </html>

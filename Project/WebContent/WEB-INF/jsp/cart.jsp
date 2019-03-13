@@ -71,11 +71,7 @@
 				</form>
 			</div>
 		</div>
-		<footer>
-			<div class="container">
-				<div class="text">Cake</div>
-			</div>
-		</footer>
+		<jsp:include page="/baselayout/footer.jsp" />
 		<script>
 			$(function(){
 				$("#number").change(function(){
