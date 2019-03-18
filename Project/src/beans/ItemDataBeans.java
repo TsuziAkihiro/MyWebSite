@@ -14,6 +14,8 @@ public class ItemDataBeans implements Serializable{
 	private int price;
 	private String fileName;
 
+	private int star;
+
 	private int number;
 	private int subtotal;
 
@@ -61,6 +63,14 @@ public class ItemDataBeans implements Serializable{
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
+
+	public int getStar() {
+		return star;
+	}
+	public void setStar(int star) {
+		this.star = star;
+	}
+
 
 	public int getNumber() {
 		return number;

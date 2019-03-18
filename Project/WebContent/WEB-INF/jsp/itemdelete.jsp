@@ -21,7 +21,7 @@
 		    <form action="ItemDelete" method="POST">
 		   	    <input type="hidden" value="${item.id}" name="item_id">
 			    <div class="button-panel">
-			      <input type="submit" class="button" title="Sign In" value="削除する" onclick='return confirm("本当に「${item.id}」を削除しますか？");'></input>
+			      <input type="submit" class="button" title="Sign In" value="削除する" onclick='return confirm("本当に「${item.name}」を削除しますか？");'></input>
 			    </div>
 		    </form>
 		</div>

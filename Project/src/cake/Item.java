@@ -48,10 +48,13 @@ public class Item extends HttpServlet {
 		//対象のアイテム情報を取得
 		ItemDataBeans item = ItemDAO.getItemByItemID(itemId);
 
+		FavoriteDAO favoriteDao = new FavoriteDAO();
+		int count = favoriteDao.favoriteCount(itemId);
+
 		//リクエストパラメーターにセット
 		request.setAttribute("item", item);
+		request.setAttribute("count", count);
 
-		FavoriteDAO favoriteDao = new FavoriteDAO();
 		//ユーザー情報があればお気に入りボタンを表示し、メッセージを入れる
 
 		if(user != null) {
@@ -70,14 +73,4 @@ public class Item extends HttpServlet {
 			response.sendRedirect("Error");
 		}
      }
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

@@ -250,5 +250,33 @@ public static double getItemCount(int user_id, String searchWord) throws SQLExce
 	}
 }
 
+/**
+ * 商品が何人からお気に入りにされているか取得
+ *
+ */
+		public int favoriteCount(int item_id)
+			throws SQLException {
+			Connection con = null;
+			PreparedStatement st = null;
+			try {
+				con = DBManager.getConnection();
+				st = con.prepareStatement("select count(*) as cnt from t_favorite where item_id = ?");
+				st.setInt(1, item_id);
+				ResultSet rs = st.executeQuery();
+				int count  = 0;
+				while (rs.next()) {
+					count = rs.getInt("cnt");
+				}
+				return count;
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				throw new SQLException(e);
+			} finally {
+				if (con != null) {
+					con.close();
+				}
+			}
+		}
+
 
 }

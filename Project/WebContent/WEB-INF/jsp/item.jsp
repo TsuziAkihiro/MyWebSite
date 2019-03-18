@@ -38,6 +38,9 @@
 						<form action="ItemAdd" method="POST">
 							<input type="hidden" name="item_id" value="${item.id}">
 							<div class="container_in">
+							<c:if test="${count > 0}">
+								<p style="text-align: center;">${count}人の方がお気に入りにしています</p>
+							</c:if>
 								<h2><fmt:formatNumber value="${item.price}"
 					                    type="currency" currencySymbol="¥"
 					                    maxFractionDigits="0"/>&emsp;
@@ -58,18 +61,19 @@
 						</form>
 					</div>
 					<div class="container-right w_container">
-						<form action="FavoriteChange" method="POST">
 						<div class="container-right_in">
-							<input type="hidden" name="item_id" value="${item.id}">
 							<p class="item_name">${item.name}</p>
 							<p class="item_detail">${item.detail}</p>
-							<c:if test="${user != null}" >
-								<div class="submit_btn">
-									<button class="favorite_btn" type="submit" name="action">${Msg}</button>
-								</div>
-							</c:if>
+							<form action="FavoriteChange" method="POST">
+								<input type="hidden" name="item_id" value="${item.id}">
+								<c:if test="${user != null}" >
+									<div class="submit_btn">
+										<button class="favorite_btn" type="submit" name="action">${Msg}</button>
+									</div>
+								</c:if>
+							</form>
 						</div>
-						</form>
+
 					</div>
 				</div>
 			</div>
@@ -83,5 +87,22 @@
 			</div>
 		</c:if>
 		<jsp:include page="/baselayout/footer.jsp" />
+		<script type="Javascript">
+			$(function() {
+			  $('.range-group').each(function() {
+  			  for (var i = 0; i < 5; i ++) {
+  			    $(this).append('<a>');
+ 			   }
+  			});
+ 			 $('.range-group>a').on('click', function() {
+    			 var index = $(this).index();
+   			 $(this).siblings().removeClass('on');
+    			 for (var i = 0; i < index; i++) {
+    			    $(this).parent().find('a').eq(i).addClass('on');
+    			 }
+  			  $(this).parent().find('.input-range').attr('value', index);
+			  });
+			});
+		</script>
 	</body>
 </html>

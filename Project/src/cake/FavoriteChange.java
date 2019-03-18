@@ -60,8 +60,11 @@ public class FavoriteChange extends HttpServlet {
 			//対象のアイテム情報を取得
 			ItemDataBeans item = ItemDAO.getItemByItemID(itemId);
 
+			int count = favoriteDao.favoriteCount(itemId);
+
 			//リクエストパラメーターにセット
 			request.setAttribute("item", item);
+			request.setAttribute("count", count);
 
 	        // フォワード
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/item.jsp");
